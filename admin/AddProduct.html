@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <title>Add Product</title>
+  </head>
+  <body style="background-color:rgb(115, 183, 206,0.5);">
+    <h1 style="text-align:center;">New Your Product</h1>
+    <br>
+    <form class="container text-center" >
+            <div class="form-group">
+              <label for="ProductName"><h3>Product Name</h3></label>
+              <input  class="form-control" id="ProductName" aria-describedby="emailHelp" placeholder="Enter Product Name">
+            </div>
+            <br>
+            <div class="form-group ">
+                    <label for="Product Image"><h4>Product Image (Link)</h4></label>
+                    <input  class="form-control" id="ImgProduct" placeholder="Add Link Image">
+                  </div>
+            <div class="form-group">
+              <label for="Price"><h4>Price Product (THB)</h4></label>
+              <input type="number" class="form-control" id="Price" placeholder="Price">
+            </div>
+            <div class="form-group">
+                    <label for="Price"><h4>Product Detail </h4></label>
+                    <textarea class="form-control" id="detail" rows="3" placeholder="Add Product Detail"></textarea>
+                  </div>
+            <button type="submit" class="btn btn-success " onclick="ADD()" ><h4>Add Product</h4></button>
+          </form>
+         
+    <div class="text-center">
+        <button class="btn btn-danger" onclick="GoPro()">Go To Product Page</button>
+    </div>
+   
+<div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+      
+</div>
+    </body>
+<style>
+ 
+</style>
+<script>
+    function ADD(){
+        var Name = $('#ProductName').val();
+        var Image = $('#ImgProduct').val();
+        var Price = $('#Price').val();
+        var Detail = $('#detail').val();
+        if(Name && Price && Detail){
+            var product = {Name , Image , Price , Detail};
+            var products = localStorage.getItem("products");   
+                if(!products){products = [product]}
+                else {
+                    products = JSON.parse(products)
+                    products.push(product)
+                }
+        localStorage.setItem('products',JSON.stringify(products))
+        }
+        else{ alert("Please Fill All Blank")} 
+        }
+     function GoPro(){
+         window.location.href = 'product.html'
+     }
+</script>
+</html>

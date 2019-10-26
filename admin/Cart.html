@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <title>Cart Page!</title>
+  </head>
+  <bodyclass="container " >
+
+      <div > 
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+                    <a class="navbar-brand" href="#"><h1>E-commerce</h1></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                  
+                      <button class="btn btn-primary Cart " onclick="GoHome()">
+                            Go To Homepage
+                      </button>
+                    </div>
+                  </nav>
+      </div>
+      <div class="container"    >
+        <div class="row" id="InCart" >
+        
+        </div>
+      </div>
+      <div class="card text-center" style="width: 90vw; position:relative;left:80px; top:20px">
+            <div class="card-body">
+              <h2 class="card-title" style="color:rgb(124, 124, 167)">TOTAL PRICE </h2>
+              <h3 id="total"> </h3>
+              <a href="#" class="btn btn-primary" onclick="GoCheck()">Check out</a>
+            </div>
+          </div>
+
+    <div>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>        
+    </div>
+    <style>
+        .Cart{
+         position: absolute;
+         right:100px;
+         font-size: 20px;
+        }
+        .ItemImg{
+    height: 300px;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 10px;
+    }
+    </style>
+    <script>
+        function getHtml(data) {
+        console.log(data)
+        var html = ''
+        for (var i = 0; i < data.length; i++) {
+            
+            html = html + ` 
+                <div class="col-4 text-center" style = "margin-top:20px;">
+                    <div class="card">
+                        <img class="card-img-top ItemImg" src="${data[i].image || 'black.jpg'} " alt="${data[i].Name}">
+                        <div class="card-body">
+                            <h4 class="card-title">${data[i].name}</h4>
+                            <p class="card-text">${data[i].detail}</p>
+                            <h5 class="card-text" style="color:blue;">Price: ${data[i].price} THB</h5>
+                            <button class="btn btn-danger" onclick="Remove(${i})">Remove Item</button>
+                        </div> 
+                    </div>
+                </div>
+            `
+        }
+        return html
+    }
+
+    $(function () {
+        var products = localStorage.getItem('cart')
+        products = JSON.parse(products)
+        $('#InCart').html(getHtml(products))
+        
+        var total =0;
+        for(var i =0;i<products.length;i++){
+            total = total+ parseInt(products[i].price)
+        }
+        $('#total').html( total + ' THB')
+    })
+   
+function GoHome(){
+    window.location.href="index.html"
+  }
+  function GoCheck(){
+    window.location.href="checkout.html"
+  }
+  function Remove(index){
+        console.log(index)
+        var products = JSON.parse(localStorage.getItem('cart'))
+        products = products.filter(function (product, i) {
+            // console.log(i, product)
+            if (i === index) return false
+            else return true
+        })
+       
+       localStorage.setItem('cart', JSON.stringify(products))
+       console.log(products)
+       location.reload();
+    }
+    </script>
+</body>
+</html>
