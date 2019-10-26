@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+
+    <title>Product Manager</title>
+</head>
+
+<body style="background-color:rgb(243, 195, 75); text-align:center;">
+    
+    <br>
+    <h1 style="color:white;">Product</h1>
+    <br>
+    <div>
+            <button class="btn btn-primary" onclick="Admin()">GO To Admin Login</button>
+            <button class="btn btn-warning" onclick="Index()">GO To Home Page</button>
+    
+        </div>
+        <br>
+
+    <button class="btn btn-success btn-lg btn-block container" onclick="add_pro()">Add Product</button>
+    <div class="card-deck row" ></div>
+     
+   
+
+
+    <div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+
+    </div>
+</body>
+<style>
+     .ItemImg{
+    height: 300px;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 10px;
+    }
+    
+</style>
+<script>
+    function add_pro() {
+        window.location.href = "AddProduct.html"
+    }
+    function getHtml(data) {
+        var html = ''
+        for (var i = 0; i < data.length; i++) {
+            html = html + ` 
+                <div class="col-4" style = "margin-top:20px;">
+                    <div class="card">
+                        <img class="card-img-top ItemImg" src="${data[i].Image || '2.jpg'} " alt="${data[i].Name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${data[i].Name}</h5>
+                            <p class="card-text">${data[i].Detail}</p>
+                            <p class="card-text">Price: ${data[i].Price} THB</p>
+                            <button class="btn btn-danger" onclick="Remove(${i})">Remove Product</button>
+                            
+                        </div> 
+                    </div>
+                </div>
+            `
+        }
+        return html
+    }
+
+    $(function () {
+        var products = localStorage.getItem('products')
+        products = JSON.parse(products)
+        $('.row').html(getHtml(products))
+        
+    })
+    function Remove(index){
+        if (confirm("Confirm")) {
+            var products = JSON.parse(localStorage.getItem('products'))
+        products = products.filter(function (product, i) {
+            if (i === index) return false
+            else return true
+        })
+       
+       localStorage.setItem('products', JSON.stringify(products))
+       console.log(products)
+       location.reload();
+    } else {
+       
+    }
+        
+    }
+    function Admin(){
+    window.location.href="E-commerce.html"
+  }
+  function Index(){
+    window.location.href="Index.html"
+  }
+</script>
+
+</html>
