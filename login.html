@@ -19,15 +19,15 @@
             <div class="container text-center " id="block">
 
                             <form>
-                                    <div class="form-group">
-                                      <label for="InputEmail">Email address</label>
-                                      <input type="email" class="form-control" id="InputEmail" placeholder="Username ">
+                                    <div class="form-group" >
+                                      <label for="InputEmail">Username</label>
+                                      <input id="username" class="form-control" type="text" placeholder="Username">
                                     </div>
                                     <div class="form-group">
                                       <label for="InputPassword">Password</label>
-                                      <input type="password" class="form-control" id="InputPassword" placeholder="Password">
+                                      <input  type="password" class="form-control" id="password" placeholder="Password">
                                     </div>
-                                    <button type="submit" class="btn btn-warning  btn-lg ">Submit</button>
+                                    <button id="Login" onclick="Submit()" type="submit" class="btn btn-warning  btn-lg ">Submit</button>
                                   </form>
                                   <a id="forget" href="index.html">Forget Password</a>
                                   
@@ -71,13 +71,35 @@
         background-color: rgba(0, 0, 0, 0.397);
     }
     #act{
+        display: block;
+        position: relative;
+        top: -30px;
         width: 40vh;
         height: 30vh;
     }
 </style>
 <!---------JavaScript------------------------------------------------------------------------------------>
 <script>
-
+   function Submit(){
+      var username = $('#username').val();
+      var password = $('#password').val();
+      var ID = ["123","456","789"];
+      var Pass = ["123","456","789"];
+      var C = 0;
+      for(i=0;i<=ID.length;i++){
+        if(username == ID[i] && password == Pass[i]){
+          window.location.href="Home.html"
+          alert('hello Admin');
+          C = 1;
+          break;
+          } 
+      }
+        if(username == "" && password == ""){alert("Please fill Username and Password");}
+        else if(username != "" && password == ""){alert("Please fill Password");}
+        else if(username == "" && password != ""){alert("Please fill Username");}
+        else if(C == 0){alert("Wrong Password");}
+        event.preventDefault();
+   }
 </script>
 <div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

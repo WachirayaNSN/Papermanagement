@@ -4,3 +4,12 @@ Front End process
  3. frontend_test คือตัวที่จะเอาไว้ back up เวลาทำเเล้วจะได้หมดห่วงว่ามีอันเก่าไว้สำรอง
  4. example คือไฟล์ที่ข้าพเจ้า(Arm)เคยทำไว้ มีหลายอย่างที่เอามาใช้กะอันของเราได้ เอาไว้ดูเป็นตัวอย่าง
   
+
+  Pages:
+  1.Login       S
+  2.Home        
+  3.Add Admin   S
+  4.Form
+  5.Approve
+  6.Process
+  7.In form
