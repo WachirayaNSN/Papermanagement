@@ -1,1 +1,66 @@
-Test push
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <title>Paper Management</title>
+  </head> 
+<!-------------HTML-------------------------------------------------------------------------------------->
+<body>
+    <div class="container" id="Menu">
+        <div> </div>
+        <a href="">Sign Out</a>
+        <button id="Test1" onclick="t1()" class="btn btn-outline-light btn-lg btn-block"><div class="container " id="T">Test</div></button>
+        <a id="Test2" onclick="t2()"><div class="container " id="T2">Test</div></a>
+    </div>
+<!--------------CSS-------------------------------------------------------------------------------------->
+<style>
+    #Menu{
+        background-color: rgb(150, 150, 150);
+        position: fixed;
+        left: 0px;
+        height: 100vh;
+        width: 300px;
+
+    }
+    #T{
+        text-align: center;
+        font-size: large;
+        color: rgb(53, 53, 53);
+    }
+    #T:hover{
+        opacity: 0.5;
+        color: black;
+    }   
+    #T2{
+        text-align: center;
+        font-size: large;
+        background-color: rgba(66, 66, 66, 0.295);
+        color: rgb(53, 53, 53);
+    }
+    #T2:hover{
+        opacity: 0.5;
+        color: black;
+    }
+</style>
+<!---------JavaScript------------------------------------------------------------------------------------>
+<script>
+    function t1(){
+        alert("Test1");
+    }
+    function t2(){
+        alert("Test2");
+    }
+</script>
+<div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</div>
+</body>
+</html>
