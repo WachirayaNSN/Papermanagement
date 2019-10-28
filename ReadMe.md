@@ -7,7 +7,7 @@ Front End process
 
   Pages:
   1.Login       S
-  2.Home        
+  2.Home        I
   3.Add Admin   S
   4.Form
   5.Approve
