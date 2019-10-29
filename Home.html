@@ -13,10 +13,13 @@
 <!-------------HTML-------------------------------------------------------------------------------------->
 <body>
     <div class="container" id="Menu">
-        <div> </div>
-        <a href="">Sign Out</a>
-        <button id="Test1" onclick="t1()" class="btn btn-outline-light btn-lg btn-block"><div class="container " id="T">Test</div></button>
-        <a id="Test2" onclick="t2()"><div class="container " id="T2">Test</div></a>
+        <div ><a href="Team.html"><img src="img/Poala_1.png"  href="login.html"id="logo" alt="Logo" ></a></div>
+        <div> <h3 id="Name" >Paper Management</h3></div>
+        <a href="login.html" id="signout">Sign Out</a>
+        <button id="Menu1" onclick="M1()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 1</div></button>
+        <button id="Menu2" onclick="M2()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 2</div></button>
+        <button id="Menu3" onclick="M3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 3</div></button>
+        <button id="Menu4" onclick="M4()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 4</div></button>
     </div>
 <!--------------CSS-------------------------------------------------------------------------------------->
 <style>
@@ -28,33 +31,67 @@
         width: 300px;
 
     }
-    #T{
+    .T{
         text-align: center;
         font-size: large;
         color: rgb(53, 53, 53);
+
     }
-    #T:hover{
+    .T:hover{
         opacity: 0.5;
         color: black;
     }   
-    #T2{
-        text-align: center;
-        font-size: large;
-        background-color: rgba(66, 66, 66, 0.295);
-        color: rgb(53, 53, 53);
+    .M{
+        
+        padding: 30px;
     }
-    #T2:hover{
-        opacity: 0.5;
-        color: black;
+    #Menu1{
+        margin-top: 25px;
+    }
+    #Menu2{
+        margin-top: 40px;
+    }
+    #Menu3{
+        margin-top: 40px;
+    }
+    #Menu4{
+        margin-top: 40px;
+    }
+    
+    #Name{
+        margin-top:40px;
+    }
+    #signout{
+        margin-top: 20px;
+        margin-left: 80px;
+        padding-bottom: 40px;
+        font-size: larger;
+        color: rgb(243, 230, 212);
+    }
+    #logo{
+        position: absolute;
+        bottom: 0px;
+        height: 90px;
+        width: 250px;
+        transition: transform .2s;
+    }
+    #logo:hover{
+        transform: scale(1.1);
     }
 </style>
 <!---------JavaScript------------------------------------------------------------------------------------>
 <script>
-    function t1(){
+    function M1(){
         alert("Test1");
     }
-    function t2(){
+    function M2(){
         alert("Test2");
+    }
+    function M3(){
+        alert("Test3");
+    }
+    function M4(){
+        alert("Test4");
     }
 </script>
 <div>
