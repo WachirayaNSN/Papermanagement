@@ -15,7 +15,8 @@
     <div class="container" id="A">
             <div style="position: relative; left: 0; top: 0;">
                     <img src="img/KMUTT.png" id="kmutt" alt="kmutt background" />
-                    <a href="http://www2.kmutt.ac.th/"><div id="logo"><img src="img/kmuttLogo.png" id="act" alt="logo"/></div></a>
+                    <div id="logo"><a href="http://www2.kmutt.ac.th/"><img src="img/kmuttLogo.png" id="act" alt="logo"/></a></div>
+                    <div id="logoP"><a href="Team.html"><img src="img/Poala_1.png" id="actP" alt="logo"/></a></div>
             <div class="container text-center " id="block">
                             <form>
                                     <div class="form-group" >
@@ -53,9 +54,10 @@
     #kmutt{
         display: block;
         position: relative;
-        width: 100%;
+        width: 95%;
         height: 80%;
-        
+        margin-left: auto;
+        margin-right: auto;
     }
     #bk{
         background-color: rgba(24, 24, 24, 0.575);
@@ -65,16 +67,16 @@
         display: block;
         top: 0px;
         height: 20%;
-        width: 100%;
+        width: 95%;
         background-color: rgba(0, 0, 0, 0.397);
-        
+        left: 28px;
     }
     #username{
       margin-bottom: 30px;
     }
     #act{
-        display: block;
-        position: relative;
+
+        position: absolute;
         top: -30px;
         width: 50vh;
         height: 30vh;
@@ -84,9 +86,21 @@
     #act:hover{
       transform: scale(1.2);
     }
-    #act:hover{
-        background-color: aliceblue;
-        opacity: 0.5;
+    #actP{
+        position: absolute;
+        top: 35px;
+        width: 30vh;
+        height: 15vh;
+        left:500px;
+        transition: transform .2s;
+    }
+    #actP:hover{
+      transform: scale(1.2);
+    }
+    #Login{
+      font-size: larger;
+      font-display: bold;
+      font-weight: bold;
     }
     
 </style>
