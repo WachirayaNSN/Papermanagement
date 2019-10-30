@@ -12,7 +12,7 @@
   </head> 
 <!-------------HTML-------------------------------------------------------------------------------------->
 <body>
-    <div class="container" id="Menu">
+    <div class=" card container" id="Menu">
         <div ><a href="Team.html"><img src="img/Poala_1.png"  href="login.html"id="logo" alt="Logo" ></a></div>
         <div> <h3 id="Name" >Paper Management</h3></div>
         <a href="login.html" id="signout">Sign Out</a>
@@ -20,12 +20,32 @@
         <button id="Menu2" onclick="M2()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 2</div></button>
         <button id="Menu3" onclick="M3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 3</div></button>
         <button id="Menu4" onclick="M4()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 4</div></button>
-
+        
     </div>
+    <div id="from" >
+            <div class="container">
+                <h1>Test</h1>
+            </div>
+        </div>
 <!--------------CSS-------------------------------------------------------------------------------------->
 <style>
+    #from{
+        position: absolute;
+        width: 78%;
+        height: 100vh;
+        right: 0;
+        background-color: rgba(240, 239, 239, 0.514);
+    }
+    .card{
+        position: absolute;
+        display: inline-block;
+    }
+    .container{
+        display: block;
+        position: relative;
+    }
     #Menu{
-        background-color: rgb(150, 150, 150);
+        background-color: rgb(109, 230, 145);
         position: fixed;
         left: 0px;
         height: 100vh;
@@ -35,7 +55,7 @@
     .T{
         text-align: center;
         font-size: large;
-        color: rgb(53, 53, 53);
+        color:bisque;
 
     }
     .T:hover{
@@ -44,19 +64,27 @@
     }   
     .M{
         
-        padding: 30px;
+        padding: 20px;
     }
     #Menu1{
         margin-top: 25px;
+        font-weight: bold;
+        color:bisque;
     }
     #Menu2{
         margin-top: 40px;
+        font-weight: bold;
+        color:bisque;
     }
     #Menu3{
         margin-top: 40px;
+        font-weight: bold;
+        color:bisque;
     }
     #Menu4{
         margin-top: 40px;
+        font-weight: bold;
+        color:bisque;
     }
     
     #Name{
