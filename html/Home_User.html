@@ -13,34 +13,76 @@
 <!-------------HTML-------------------------------------------------------------------------------------->
 <body>
     <div class=" card container" id="Menu">
-        <div ><a href="Team.html"><img src="img/Poala_1.png"  href="login.html"id="logo" alt="Logo" ></a></div>
+        <div ><a href="Team.html"><img src="../img/Poala_1.png"  href="login.html"id="logo" alt="Logo" ></a></div>
         <div> <h3 id="Name" >Paper Management</h3></div>
         <a href="login.html" id="signout">Sign Out</a>
-        <button id="Menu1" onclick="M1()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสาร</div></button>
-        <button id="Menu2" onclick="M2()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 2</div></button>
+
+        <button id="Menu1" onclick="Test()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสาร</div></button>
+        <button id="Menu2" onclick="M2()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >พิจารณา</div></button>
         <button id="Menu3" onclick="M3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 3</div></button>
         <button id="Menu4" onclick="M4()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 4</div></button>
-        
+        <script type="" src="Test.js"></script>
     </div>
     <div id="from" >
-            <div class="container">
-                <div id='wrap'>
-                <div id='calendar'></div>
-                <div style='clear:both'></div>
+            <div class="container row-3">
+                <a href="From_place.html" class="link"><div class="card" id="paper"><div class="overlay text">ขอใช้สถานที่</div></div></a>
+                <a href="Team.html" class="link"><div class="card" id="paper"><div class="overlay text">ตัวอย่าง</div></div></a>
+                <a href="Team.html" class="link"><div class="card" id="paper"><div class="overlay text">ตัวอย่าง</div></div></a>
+                <a href="Team.html" class="link"><div class="card" id="paper"><div class="overlay text">ตัวอย่าง</div></div></a>    
             </div>
         </div>
+    <script src="javascript/Test.js"></script>
 <!--------------CSS-------------------------------------------------------------------------------------->
 <style>
+    .text {
+  background-color: rgb(79, 228, 84);
+  color: rgb(0, 0, 0);
+  font-size: large;
+  font-weight: bold;
+  padding: 20px 20px ;
+  border-radius: 8px;
+
+    }
+    .text:hover{
+        opacity: 100%;
+    }
+    #paper{
+        background-color: rgba(54, 54, 54, 0.719);
+
+    }
+    #paper:hover{
+        transition: transform .2s;
+        transform: scale(1.1);
+        background-color: rgba(109, 109, 109, 0.24);
+        font-weight: 900;
+    }
+    .overlay{
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    bottom: 0px;
+    width: 100%;
+    }
+    
     #from{
         position: absolute;
         width: 78%;
-        height: 100vh;
+        height:auto;
         right: 0;
         background-color: rgba(240, 239, 239, 0.514);
     }
+    #paper{
+        
+        height: 370px;
+        width: 300px;
+        margin:20px 15px 20px;
+    }
+    
     .card{
-        position: absolute;
+        position:relative;
         display: inline-block;
+        transition: .5s ease;
+        backface-visibility: hidden;
     }
     .container{
         display: block;
@@ -57,7 +99,8 @@
     .T{
         text-align: center;
         font-size: large;
-        color:rgb(253, 238, 220);
+
+        color:rgb(97, 97, 97);
 
     }
     .T:hover{
@@ -97,7 +140,7 @@
         margin-left: 80px;
         padding-bottom: 40px;
         font-size: larger;
-        color: rgb(243, 230, 212);
+        color: rgb(141, 141, 141);
     }
     #logo{
         position: absolute;
