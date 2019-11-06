@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
-    <title>Login</title>
+    <title>Login Pin</title>
   </head> 
 <!-------------HTML-------------------------------------------------------------------------------------->
 <body id="bk">
@@ -17,24 +17,18 @@
                     <img src="../img/KMUTT.png" id="kmutt" alt="kmutt background" />
                     <div id="logo"><a href="http://www2.kmutt.ac.th/"><img src="../img/kmuttLogo.png" id="act" alt="logo"/></a></div>
                     <div id="logoP"><a href="Team.html"><img src="../img/Poala_1.png" id="actP" alt="logo"/></a></div>
-            <div class="container text-center " id="block">
-                            <form>
-                                    <div class="form-group" >
-                                      <input id="username" class="form-control" type="text" placeholder="Username">
-                                    </div>
-                                    <div class="form-group">
-
-                                      <input  type="password" class="form-control" id="password" placeholder="Password">
-                                    </div>
-                                    <button id="Login" onclick="Submit()" type="submit" class="btn btn-warning  btn-lg ">Submit</button>
-                                    <button id="PIN"  type="submit" class="btn btn-primary  btn-lg " onclick="Pin()"> 6 PIN </button>
-                                  </form>
-                                  <a id="forget" href="Forget.html">Forget Password</a>
-                                  
+            <div class="container text-center " id="block"  >
+                             <div class="form-row ">
+                                    <input id="password" class="form-control form-control-lg" type="password" placeholder="6 PIN PASSWORD" maxlength="6">
+                                    <button id="Login" class="btn btn-lg btn-warning" type="submit" onclick="Submit()"> Submit </button>
+                                    <a id="forget" href="Forget_Pin.html">Forget PIN</a>
+                                    <script src="../javascript/Submit_Pin.js"></script>
+                            
+                                </div>     
                     </div>
                   </div>
     </div>
-    <script src="../javascript/Submit.js"></script>
+        
               
 <!--------------CSS-------------------------------------------------------------------------------------->
 <style>
@@ -51,7 +45,12 @@
     }
     #forget{
         color: rgb(226, 226, 226);
-    }
+        display: block;
+        position: relative;
+        top: 170px;
+        left: 50px;
+        font-size: 20px;
+            }
     #kmutt{
         display: block;
         position: relative;
@@ -102,17 +101,14 @@
       font-size: larger;
       font-display: bold;
       font-weight: bold;
+      position: relative;
+      top: 100px;
+      left: 150px;
     }
-    #PIN{
-      font-size: larger;
-      font-display: bold;
-      font-weight: bold;
-    }
-    
 </style>
 <!---------JavaScript------------------------------------------------------------------------------------>
 <script>
-  
+   
 </script>
 <div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

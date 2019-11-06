@@ -18,33 +18,40 @@
         <a href="login.html" id="signout">Sign Out</a>
 
         <a href="Home_User.html" ><button id="Menu1" onclick="" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสาร</div></button></a>
-        <a href="Approve.html" ><button id="Menu1" onclick="" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >พิจารณา</div></button></a>
-        <button id="Menu3" onclick="Test()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 3</div></button>
+        <button id="Menu2" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >พิจารณา</div></button>
+        <button id="Menu3" onclick="M3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 3</div></button>
         <button id="Menu4" onclick="M4()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 4</div></button>
-        <script type="" src="../javascript/Test.js"></script>
+        <script type="" src="Test.js"></script>
     </div>
     <div id="from" >
-            <div class="container row-3">
-                <a href="Form_place.html" class="link"><div class="card" id="paper"><div class="overlay text">ขอใช้สถานที่</div></div></a>
-                <a href="Team.html" class="link"><div class="card" id="paper"><div class="overlay text">ตัวอย่าง</div></div></a>
-                <a href="Team.html" class="link"><div class="card" id="paper"><div class="overlay text">ตัวอย่าง</div></div></a>
-                <a href="Team.html" class="link"><div class="card" id="paper"><div class="overlay text">ตัวอย่าง</div></div></a>    
+            <div class="container row-1">
+                <a href="Approve.html" class="link"><div class="card" id="paper"><div class="overlay approve">อนุมัติ</div></div></a>
+                <a href="Approve.html" class="link"><div class="card" id="paper"><div class="overlay approve">อนุมัติ</div></div></a>
+                <a href="Approve.html" class="link"><div class="card" id="paper"><div class="overlay no-approve">ไม่อนุมัติ</div></div></a>
             </div>
         </div>
     <script src="javascript/Test.js"></script>
 <!--------------CSS-------------------------------------------------------------------------------------->
 <style>
-    .text {
-  background-color: rgb(79, 228, 84);
+    .approve {
+        display:block;
+  background-color: rgb(92, 238, 97);
   color: rgb(0, 0, 0);
-  font-size: large;
-  font-weight: bold;
-  padding: 20px 20px ;
-  border-radius: 8px;
-
+  font-size: 40px;
+  padding-top: 40px;
+  padding-right: 50px;
+  padding-bottom: 40px;
+  border-radius: 20px;
     }
-    .text:hover{
-        opacity: 100%;
+    .no-approve{
+        display:block;
+  background-color: rgb(233, 100, 67);
+  color: rgb(0, 0, 0);
+  font-size: 40px;
+  padding-top: 40px;
+  padding-right: 30px;
+  padding-bottom: 40px;
+  border-radius: 20px;
     }
     #paper{
         background-color: rgba(54, 54, 54, 0.719);
@@ -52,16 +59,17 @@
     }
     #paper:hover{
         transition: transform .2s;
-        transform: scale(1.1);
         background-color: rgba(109, 109, 109, 0.24);
-        font-weight: 900;
     }
     .overlay{
     position: absolute;
     justify-content: center;
-    text-align: center;
-    bottom: 0px;
-    width: 100%;
+    text-align: right;
+    margin-right: 10px;
+    bottom: 20px;
+    right: 0px;
+    width: 20%;
+    top: 20px;
     }
     
     #from{
@@ -73,9 +81,9 @@
     }
     #paper{
         
-        height: 370px;
-        width: 300px;
-        margin:20px 15px 20px;
+        height: 200px;
+        width: 100%;
+        margin:10px 10px 10px 5px;
     }
     
     .card{
