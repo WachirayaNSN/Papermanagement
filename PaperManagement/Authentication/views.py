@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from django.template import loader
 from django.contrib.auth.models import User
 from django.urls import reverse
@@ -17,12 +17,11 @@ def user_login(request):
         user_password = request.POST['password']
         user = authenticate(request,username = user_name,password = user_password)
         if user:
-            login(request,user)
-            return HttpResponseRedirect(reverse('user_success'))
-        else :
-            context["error"]="Invalid login or password"
+            context["answer"]="success"
             return render(request,'login.html',context)
-        
+        else :
+            context["answer"]="error"
+            return render(request,'login.html',context)
     else :
         return render(request,'login.html',context)
 
