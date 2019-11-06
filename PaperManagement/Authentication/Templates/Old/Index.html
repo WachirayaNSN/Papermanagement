@@ -1,9 +1,0 @@
-<h1>hello</h1>
-{% block content%}
-<b>{{user.username}}</b>
-<form method="post" action='/logout/'>
-{% csrf_token %}
-    <input type="submit" value="Logout">
-                                  
-</form>
-{% endblock %}

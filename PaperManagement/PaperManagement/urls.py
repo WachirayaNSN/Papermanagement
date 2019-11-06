@@ -18,7 +18,6 @@ from django.urls import path
 
 urlpatterns = [
     path('login/',views.user_login, name ='user_login'),
-    path('success/',views.success, name ='user_success'),
-    path('logout/',views.user_logout, name ='user_loout'),
+    path('Home/',views.acess_success, name ='home_user'),
     
 ]
