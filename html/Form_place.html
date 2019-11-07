@@ -12,7 +12,7 @@
   </head> 
 <!-------------HTML-------------------------------------------------------------------------------------->
 <body>
-    <div class=" card container" id="Menu">
+    <div class=" container container" id="Menu">
         <div ><a href="Team.html"><img src="../img/Poala_1.png"  href="login.html"id="logo" alt="Logo" ></a></div>
         <div> <h3 id="Name" >Paper Management</h3></div>
         <a href="login.html" id="signout">Sign Out</a>
@@ -21,40 +21,166 @@
         <button id="Menu2" formaction="Process.html" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >พิจารณา</div></button>
         <button id="Menu3" onclick="M3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 3</div></button>
         <button id="Menu4" onclick="M4()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 4</div></button>
-        
-        
 </form>
-        
+        <!------------------------------------------------------------------Place---------------------------------------------------------------------------------->
     </div>
-    <div id="form" >
-            <form>
+    <div id="form" >    
+        <form>
                     <div class="form-group">
-                        <div class="card" id="img">
-                            <img class="img" >
-                        </div>
+                            <div class="row">
+                                    <div class="column" style="margin-bottom: 30px;">
+                                      <img id="img-1" class="img" src="../img/Namo.jpg" alt="Place 1" >
+                                    </div>
+                                    <div class="column">
+                                      <img id="img-2" class="img" src="../img/Namo.jpg" alt="Place 2" >
+                                    </div>
+                                    <div class="column">
+                                      <img id="img-3" class="img" src="../img/Namo.jpg" alt="Place 3" >
+                                    </div>
+                                    <div class="column">
+                                      <img id="img-4" class="img" src="../img/Namo.jpg" alt="Place 3" >
+                                    </div>
+                                    <div class="column">
+                                      <img id="img-5" class="img" src="../img/Namo.jpg" alt="Place 3" >
+                                    </div>
+                                  </div>    
                             <label for="exampleFormControlSelect1">สถานที่</label>
                             <select onchange="Select()" id="Sel" class="browser-default custom-select">
-                                    <option selected value="0">Open this select menu</option>
+                                    <option selected value="0">สถานที่ / Place</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
                             </select>
+                          </div> 
+<!------------------------------------------------------------------Time---------------------------------------------------------------------------------->
+                            <form>
+                                <div class="row" style="margin-top: 50px;">
+                                        <label for="Time-b" style="font-size: larger;">เวลา </label>
+                                    <div class="col">
+                                            <select class="form-control" name="time" id="Time"> 
+                                <option value="B6.00">6:00 น</option><option value="B6.15">6:15 น</option>      <option value="B6.30">6:30 น</option>   <option value="B6.45">6:45 น</option>  
+                                <option value="B7.00">7:00 น</option><option value="B7:15">7:15 น</option>      <option value="B7:30">7:30 น</option>   <option value="B7:45">7:45 น</option> 
+                                <option value="B8:00">8:00 น</option><option value="B8:15">8:15 น</option>      <option value="1:30 น">8:30 น</option>  <option value="1:45 น">8:45 น</option> 
+                                <option value="2:00 น">9:00 น</option><option value="2:15 น">9:15 น</option>    <option value="2:30 น">9:30 น</option>  <option value="2:45 น">9:45 น</option>  
+                                <option value="3:00 น">10:00 น</option><option value="3:15 น">10:15 น</option>  <option value="3:30 น">10:30 น</option> <option value="3:45 น">10:45 น</option>  
+                                <option value="4:00 น">11:00 น</option><option value="4:15 น">11:15 น</option>  <option value="4:30 น">11:30 น</option> <option value="4:45 น">11:45 น</option> 
+                                <option value="5:00 น">12:00 น</option><option value="5:15 น">12:15 น</option>  <option value="5:30 น">12:30 น</option> <option value="5:45 น">12:45 น</option> 
+                                <option value="6:00 น">13:00 น</option><option value="6:15 น">13:15 น</option>  <option value="6:30 น">13:30 น</option> <option value="6:45 น">13:45 น</option>
+                                <option value="7:00 น">14:00 น</option><option value="7:15 น">14:15 น</option>  <option value="7:30 น">14:30 น</option> <option value="7:45 น">14:45 น</option> 
+                                <option value="8:00 น">15:00 น</option><option value="8:15 น">15:15 น</option>  <option value="8:30 น">15:30 น</option> <option value="8:45 น">15:45 น</option>  
+                                <option value="9:00 น">16:00 น</option><option value="9:15 น">16:15 น</option>  <option value="9:30 น">16:30 น</option> <option value="9:45 น">16:45 น</option> 
+                                <option value="10:00 น">17:00 น</option><option value="10:15 น">17:15 น</option><option value="10:30 น">17:30 น</option><option value="10:45 น">17:45 น</option>
+                                <option value="11:00 น">18:00 น</option><option value="11:15 น">18:15 น</option><option value="11:30 น">18:30 น</option><option value="11:45 น">18:45 น</option>
+                                <option value="11:00 น">18:00 น</option><option value="11:15 น">18:15 น</option><option value="11:30 น">18:30 น</option><option value="11:45 น">18:45 น</option>
+                                <option value="11:00 น">18:00 น</option><option value="11:15 น">18:15 น</option><option value="11:30 น">18:30 น</option><option value="11:45 น">18:45 น</option>
+                                <option value="11:00 น">19:00 น</option><option value="11:15 น">19:15 น</option><option value="11:30 น">19:30 น</option><option value="11:45 น">19:45 น</option>
+                                <option value="11:00 น">20:00 น</option><option value="11:15 น">20:15 น</option><option value="11:30 น">20:30 น</option><option value="11:45 น">20:45 น</option>
+                                <option value="11:00 น">21:00 น</option><option value="11:15 น">21:15 น</option><option value="11:30 น">21:30 น</option><option value="11:45 น">21:45 น</option>
+                                <option value="11:00 น">22:00 น</option><option value="11:15 น">22:15 น</option><option value="11:30 น">22:30 น</option><option value="11:45 น">22:45 น</option>
+                                <option value="11:00 น">23:00 น</option><option value="11:15 น">23:15 น</option><option value="11:30 น">23:30 น</option><option value="11:45 น">23:45 น</option>
+                                                    </select>
+                                    </div>
+                                    <div class="col">
+                                            <div style="text-align: center;"><h4>ถึง</h4></div>
+                                    </div>
+                                <div class="col">
+                                        <select class="form-control">
+                                                <option>Default select</option>
+                                        </select>
+                                </div>
+                             </div>
+                            </form>
+<!------------------------------------------------------------------Date---------------------------------------------------------------------------------->
+                           <form>
+                                <div class="row" style="margin-top: 50px;">
+                                        <label for="Time-b" style="font-size: larger;">วันที่</label>
+                                    <div class="col">
+                                            <select class="form-control" id="date">
+                                                <option>Default select</option>
+                                            </select>
+                                    </div>
+                                    <div class="col">
+                                            <div style="text-align: center;"><h4>ถึง</h4></div>
+                                    </div>
+                                <div class="col">
+                                        <select class="form-control" id="date">
+                                                <option>1</option>
+                                            </select>
+                                </div>
+                             </div>
+                            </form>
+ <!------------------------------------------------------------------Check---------------------------------------------------------------------------------->
+                          <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="electric">
+                                <label class="form-check-label" for="electric">
+                                  ใช้ไฟฟ้า
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1"  id="checkrule" >
+                                <label class="form-check-label" for="checkrule">
+                                        <a href="Rule.html" id="rule" target="_blank"> ยอมรับ ระเบียบการใช้สถานที่ </a>
+                                </label>
+                              </div>
+                      <div class="form-check">
+                      </div>
+                  <form>
+                        <div class="form-group">
+                          <label for="exampleFormControlFile1">เอกสาร อ้างอิง</label>
+                          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                      </form>
+    <!------------------------------------------------------------------Submit---------------------------------------------------------------------------------->
+    <div class="row">
+            <div class="column" >
+                    <button onclick="Submit()" class="btn btn-lg btn-success" style="margin-bottom: 30px;" >Submit</button>
+            </div>
+            <div class="column">
+                    <div id="alert" class="alert alert-danger collapse" style="margin-left: 20px;">
+                            <a id="Close"  class="close"  aria-label="close">&times;</a>
+                            <strong>คำเตือน!</strong>คุณยังไม่ได้กด ยอมรับ ระเบียบการใช้สถานที่ 
                           </div>
-                <div class="form-group">
-                    <label for="Descript">เหตุผล</label>
-                    <textarea class="form-control" id="Descript" rows="5"></textarea>
-                  </div>
-                  
-                <button onclick="Submit()">Submit</button>
+            </div>
+          </div> 
+                
             </form>
         </div>
         <script type="" src="../javascript/Test.js"></script>
         <script type="" src="../javascript/Place.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#electric').click(function () {
+                    $('#alert').hide();
+                });
+        
+            });
+        </script>
 <!--------------CSS-------------------------------------------------------------------------------------->
 <style>
+    .form-check{
+        margin-top: 40px;
+    }
+    .form-group{
+        margin-top: 30px;
+    }
+    #rule{
+        font-weight: bold;
+        font-size: large;
+    }
+    .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+    .card{
+        width: 90vh;
+        height: 200px;
+    }
     .img{
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
+        margin-left: 20px;
+        
     }
     .container{
         display: block;
@@ -148,18 +274,9 @@
 </style>
 <!---------JavaScript------------------------------------------------------------------------------------>
 <script>
-    function M1(){
-        alert("Test1");
-    }
-    function M2(){
-        alert("Test2");
-    }
-    function M3(){
-        alert("Test3");
-    }
-    function M4(){
-        alert("Test4");
-    }
+    $('#Close').click(function () {
+        $('#alert').hide('fade');
+});
 </script>
 <div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
