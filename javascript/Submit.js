@@ -1,4 +1,5 @@
 function Submit(){
+    
     var username = $('#username').val();
     var password = $('#password').val();
     var ID = [["123","456"],["789"],["61340500057"]];
@@ -26,7 +27,7 @@ function Submit(){
  }
 
  function Pin(A){
-    alert(document.getElementById(A));
+    alert();
     window.location.href="Pin.html"
     event.preventDefault();
   }

@@ -16,23 +16,46 @@
         <div ><a href="Team.html"><img src="../img/Poala_1.png"  href="login.html"id="logo" alt="Logo" ></a></div>
         <div> <h3 id="Name" >Paper Management</h3></div>
         <a href="login.html" id="signout">Sign Out</a>
-
-        <button id="Menu1" onclick="Test()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสาร</div></button>
-        <button id="Menu2" onclick="M2()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >พิจารณา</div></button>
+<form>
+        <button id="Menu1" formaction="Home_User.html" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสาร</div></button>
+        <button id="Menu2" formaction="Process.html" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >พิจารณา</div></button>
         <button id="Menu3" onclick="M3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 3</div></button>
         <button id="Menu4" onclick="M4()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 4</div></button>
-        <script type="" src="Test.js"></script>
+        
+        
+</form>
+        
     </div>
     <div id="form" >
-            <div>
-                <input id="" class="form-control" type="text" placeholder="Default input">    
-                
-            </div>
+            <form>
+                    <div class="form-group">
+                        <div class="card" id="img">
+                            <img class="img" >
+                        </div>
+                            <label for="exampleFormControlSelect1">สถานที่</label>
+                            <select onchange="Select()" id="Sel" class="browser-default custom-select">
+                                    <option selected value="0">Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                            </select>
+                          </div>
+                <div class="form-group">
+                    <label for="Descript">เหตุผล</label>
+                    <textarea class="form-control" id="Descript" rows="5"></textarea>
+                  </div>
+                  
+                <button onclick="Submit()">Submit</button>
+            </form>
         </div>
-        
+        <script type="" src="../javascript/Test.js"></script>
+        <script type="" src="../javascript/Place.js"></script>
 <!--------------CSS-------------------------------------------------------------------------------------->
 <style>
-    
+    .img{
+        width: 100px;
+        height: 100px;
+    }
     .container{
         display: block;
         position: relative;
@@ -115,8 +138,12 @@
         position: absolute;
         width: 78%;
         height:auto;
+        font-weight: bold;
         right: 0;
-        background-color: rgba(126, 126, 126, 0.911);
+        padding-top:50px ;
+        padding-left:30px;
+        padding-right: 30px;
+        background-color:rgba(240, 239, 239, 0.514);
     }
 </style>
 <!---------JavaScript------------------------------------------------------------------------------------>

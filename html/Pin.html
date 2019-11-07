@@ -18,13 +18,16 @@
                     <div id="logo"><a href="http://www2.kmutt.ac.th/"><img src="../img/kmuttLogo.png" id="act" alt="logo"/></a></div>
                     <div id="logoP"><a href="Team.html"><img src="../img/Poala_1.png" id="actP" alt="logo"/></a></div>
             <div class="container text-center " id="block"  >
-                             <div class="form-row ">
-                                    <input id="password" class="form-control form-control-lg" type="password" placeholder="6 PIN PASSWORD" maxlength="6">
-                                    <button id="Login" class="btn btn-lg btn-warning" type="submit" onclick="Submit()"> Submit </button>
-                                    <a id="forget" href="Forget_Pin.html">Forget PIN</a>
-                                    <script src="../javascript/Submit_Pin.js"></script>
-                            
-                                </div>     
+              <form>
+                <div class="form ">
+                  <input id="password" class="form-control form-control-lg" type="password" placeholder="6 PIN PASSWORD" maxlength="6">
+                  <button id="Login" class="btn btn-lg btn-warning" type="submit" onclick="Submit()"> Submit </button>
+                  <button id="Login" class="btn  btn-primary btn-sm" type="submit" formaction="login.html"> KMUTT account </button>
+                  <a id="forget" href="Forget_Pin.html">Forget PIN</a>
+                  <script src="../javascript/Submit_Pin.js"></script>
+          
+              </div>
+              </form>                 
                     </div>
                   </div>
     </div>
@@ -47,9 +50,7 @@
         color: rgb(226, 226, 226);
         display: block;
         position: relative;
-        top: 170px;
-        left: 50px;
-        font-size: 20px;
+        font-size: 15px;
             }
     #kmutt{
         display: block;
@@ -102,8 +103,8 @@
       font-display: bold;
       font-weight: bold;
       position: relative;
-      top: 100px;
-      left: 150px;
+      margin-top: 30px;
+      margin-left: 7px;
     }
 </style>
 <!---------JavaScript------------------------------------------------------------------------------------>
