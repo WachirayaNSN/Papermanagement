@@ -39,7 +39,6 @@ function Select(){
 function Submit(){
     
     if(Place == "0"){
-        alert("0");
     }
     else if(Place == "1"){
         alert("1");
@@ -51,7 +50,7 @@ function Submit(){
         alert("3");
     }
     else{
-        
+
     }
     if(Rule == 'on'){
         $('#alert_Rule').show('fade');
@@ -61,6 +60,7 @@ function Submit(){
     }
 }
 function checkrule(){
+    alert('!!')
     if(Rule == 'on'){
         $('#alert_Rule').hide();
         Rule = 'off';
@@ -78,7 +78,15 @@ function checkelec(){
         Elec = 'on';
     }
 }
+function checkRule(){
+    if(Rule == 'on'){
+        $('#alert_Elec').hide();
+        Rule = 'off';
+    }
+    else if (Rule =='off'){
+        Rule = 'on';
+    }
+}
 function Close(ID){
-    
     $(ID).hide();
 }
