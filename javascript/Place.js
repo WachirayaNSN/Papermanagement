@@ -1,6 +1,6 @@
 var Place;
-var Rule = document.getElementById('checkrule')
-var Elec = document.getElementById('electric')
+var Rule = document.getElementById('checkrule').value
+var Elec = document.getElementById('electric').value
 function Select(){
     var Val = $('#Sel').val();
     var S1 = document.getElementById('img-1')
@@ -37,6 +37,7 @@ function Select(){
     }
 }
 function Submit(){
+    
     if(Place == "0"){
         alert("0");
     }
@@ -49,11 +50,35 @@ function Submit(){
     else if(Place == "3"){
         alert("3");
     }
-    //else{alert("ERROR");}
-    if(Rule != "1"){
-        $('#alert').show();
+    else{
+        
     }
-
-    if(Elec!='1'){
+    if(Rule == 'on'){
+        $('#alert_Rule').show('fade');
     }
+    if(Elec == 'on'){
+        $('#alert_Elec').show('fade');
+    }
+}
+function checkrule(){
+    if(Rule == 'on'){
+        $('#alert_Rule').hide();
+        Rule = 'off';
+    }
+    else if (Rule =='off'){
+        Rule = 'on';
+    }
+}
+function checkelec(){
+    if(Elec == 'on'){
+        $('#alert_Elec').hide();
+        Elec = 'off';
+    }
+    else if (Elec =='off'){
+        Elec = 'on';
+    }
+}
+function Close(ID){
+    
+    $(ID).hide();
 }
