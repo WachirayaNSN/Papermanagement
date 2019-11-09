@@ -23,6 +23,7 @@ var img_3 ='../img/Namo.jpg';
 var img_4 ='../img/Namo.jpg';
 var img_5 ='../img/Namo.jpg';
 
+
 document.getElementById('img-1').src = img_1;
 document.getElementById('img-2').src = img_2;
 document.getElementById('img-3').src = img_3;
@@ -47,7 +48,8 @@ document.getElementById('Elec').innerHTML = Elec;
 document.getElementById('Process-1').style.backgroundColor = 'rgb(255, 255, 255)';
 
 function Cancel(){
-    
+    alert("!!!!");
+    event.preventDefault();
 }
 
 
