@@ -50,7 +50,7 @@ function Submit(){
         alert("3");
     }
     else{
-
+        event.preventDefault();
     }
     if(Rule == 'on'){
         $('#alert_Rule').show('fade');
