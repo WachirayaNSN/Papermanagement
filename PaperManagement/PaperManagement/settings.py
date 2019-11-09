@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'PaperManagement.wsgi.application'
 
 DATABASES = {
     'default': {
-        'NAME': 'project_paper',
+        'NAME': 'poala',
         'ENGINE': 'django.db.backends.mysql',
         'USER': 'root',
         'PASSWORD': '12ab53@',

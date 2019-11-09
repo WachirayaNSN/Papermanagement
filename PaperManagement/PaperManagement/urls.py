@@ -18,6 +18,9 @@ from django.urls import path
 
 urlpatterns = [
     path('login/',views.user_login, name ='user_login'),
+    # should change url's home_user
     path('Home/',views.acess_success, name ='home_user'),
+    path('login/pin/',views.user_login_pin, name='user_pin'),
+    path('logout/',views.acess_success, name ='user_logout'),
     
 ]

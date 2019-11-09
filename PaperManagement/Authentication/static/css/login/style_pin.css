@@ -11,7 +11,10 @@
     }
     #forget{
         color: rgb(226, 226, 226);
-    }
+        display: block;
+        position: relative;
+        font-size: 15px;
+            }
     #kmutt{
         display: block;
         position: relative;
@@ -50,7 +53,7 @@
     #actP{
         position: absolute;
         top: 35px;
-        width: 30vh;
+        width: 35vh;
         height: 15vh;
         left:500px;
         transition: transform .2s;
@@ -62,4 +65,7 @@
       font-size: larger;
       font-display: bold;
       font-weight: bold;
+      position: relative;
+      margin-top: 30px;
+      margin-left: 7px;
     }

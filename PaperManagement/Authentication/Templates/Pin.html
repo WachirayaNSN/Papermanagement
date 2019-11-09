@@ -8,54 +8,41 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/login/style_login.css' %}">
-    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login/style_pin.css' %}">
+    <title>Login Pin</title>
   </head> 
 <!-------------HTML-------------------------------------------------------------------------------------->
 <body id="bk">
-    
     <div class="container" id="A">
             <div style="position: relative; left: 0; top: 0;">
                     <img src="{% static "img/login/KMUTT.png"%}" id="kmutt" alt="kmutt background" />
                     <div id="logo"><a href="http://www2.kmutt.ac.th/"><img src="{% static "img/login/kmuttLogo.png"%}" id="act" alt="logo"/></a></div>
                     <div id="logoP"><a href="Team.html"><img src="{% static "img/login/Poala_1.png"%}" id="actP" alt="logo"/></a></div>
-            <div class="container text-center " id="block">
-                  
-                            <form method = 'post'>
-                                    {% csrf_token %}
-                                    <div class="form-group" >
-                                      <input name = 'username' id="username" class="form-control" type="text" placeholder="Username">
-                                    </div>
-                                    <div class="form-group">
+            <div class="container text-center " id="block"  >
+              <form method = "POST">
+                <div class="form ">
 
-                                      <input name = 'password' type="password" class="form-control" id="password" placeholder="Password">
-                                    </div>
-                                    <button id="Login"  type="submit" class="btn btn-warning  btn-lg ">Submit</button> 
-                                    <a id="PIN" href = "{% url 'user_pin' %}" class="btn btn-primary  btn-sm">6 PIN</a>
-                            </form>
-                                  <input type="hidden" id="response" name="response" value={{error}}>
-                            <a id="forget" href="Forget.html">Forget Password</a>
-                                  
+
+                  <input id="password" class="form-control form-control-lg" type="password" placeholder="6 PIN PASSWORD" maxlength="6">
+                  <button id="Login" class="btn btn-lg btn-warning" type="submit" onclick="Submit()"> Submit </button>
+                  <a id="Login" href = "{% url 'user_login' %}" class="btn btn-primary  btn-sm">KMUTT account</a>
+                  <a id="forget" href="Forget_Pin.html">Forget PIN</a>
+                  <input type="hidden" id="response" name="response" value={{error}}>
+          
+              </div>
+              </form>                 
                     </div>
                   </div>
     </div>
         
-              
-
+      
 <!---------JavaScript------------------------------------------------------------------------------------>
-<script >
-    
+<script>
     var tap_error = document.getElementById("response").value;
-    if(tap_error=='None_input'){alert("Please fill Username and Password");}
+    if(tap_error=='None_input'){alert("Please Check Your Card");}
     else if(tap_error=='None_password'){alert("Please fill Password");}
-    else if(tap_error== "None_username"){alert("Please fill Username");}
     else if(tap_error== "invalid"){alert("Wrong Password ");}
 
-    
-      
-    
-     
-  
 </script>
 <div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
