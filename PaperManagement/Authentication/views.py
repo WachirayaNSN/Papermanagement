@@ -15,11 +15,20 @@ def user_login(request):
     if request.method == "POST":
         user_name = request.POST['username']
         user_password = request.POST['password']
+        if user_name == '' and user_password == '' :
+            context['error']="None_input"
+            return render(request,'login.html',context)
+        elif user_name == '' :
+            context['error']="None_username"
+            return render(request,'login.html',context)
+        elif user_password == '' :
+            context['error']="None_password"
+            return render(request,'login.html',context)
         user = authenticate(request,username = user_name,password = user_password)
         if user:
             return HttpResponseRedirect(reverse("home_user"))
         else :
-            context["error"]="invalid"
+            context['error']="invalid"
             return render(request,'login.html',context)
     else :
         return render(request,'login.html',context)

@@ -13,6 +13,7 @@
   </head> 
 <!-------------HTML-------------------------------------------------------------------------------------->
 <body id="bk">
+    
     <div class="container" id="A">
             <div style="position: relative; left: 0; top: 0;">
                     <img src="{% static "img/login/KMUTT.png"%}" id="kmutt" alt="kmutt background" />
@@ -108,7 +109,14 @@
 </style>
 <!---------JavaScript------------------------------------------------------------------------------------>
 <script>
-
+     
+    function Submit (){  
+      var tap_error = "{{error}}";
+      if(tap_error=='None_input'){alert("Please fill Username and Password");}
+      else if(tap_error=='None_password'){alert("Please fill Password");}
+      else if(tap_error== "None_username"){alert("Please fill Username");}
+    }
+     
   
 </script>
 <div>
