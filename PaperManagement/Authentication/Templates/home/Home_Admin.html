@@ -1,4 +1,5 @@
 <!doctype html>
+{% load static %}
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -7,16 +8,19 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home/style_ad_home.css' %}">
     <title>Paper Management</title>
   </head> 
 <!-------------HTML-------------------------------------------------------------------------------------->
 <body>
+{% if  request.session.user_role == 'Admin' %}
     <div class=" card container" id="Menu">
-        <div ><a href="Team.html"><img src="img/Poala_1.png"  href="login.html"id="logo" alt="Logo" ></a></div>
+        <div ><a href="Team.html"><img src="{% static 'img/login/Poala_1.png'%}"  id="logo" alt="Logo" ></a></div>
         <div> <h3 id="Name" >Paper Management</h3></div>
-        <a href="login.html" id="signout">Sign Out</a>
-        <button id="Menu1" onclick="M1()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 1</div></button>
+        <!-- Logout -->
+        <a href="{% url 'user_logout' %}" id="signout">Sign Out</a>
+        <!--       -->
+        <button id="Menu1" onclick="M1()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสาร</div></button>
         <button id="Menu2" onclick="M2()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 2</div></button>
         <button id="Menu3" onclick="M3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 3</div></button>
         <button id="Menu4" onclick="M4()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 4</div></button>
@@ -24,100 +28,15 @@
     </div>
     <div id="from" >
             <div class="container">
-                <h1>Test</h1>
+                <div class="card"> </div>
             </div>
         </div>
+{% else %}
+    <p>Access Denied </p>
+{% endif %}
 <!--------------CSS-------------------------------------------------------------------------------------->
 <style>
-    #from{
-        position: absolute;
-        width: 78%;
-        height: 100vh;
-        right: 0;
-        background-color: rgba(240, 239, 239, 0.514);
-    }
-    .card{
-        position: absolute;
-        display: inline-block;
-    }
-    .container{
-        display: block;
-        position: relative;
-    }
-    #Menu{
-        background-color: rgb(248, 198, 106);
-        position: fixed;
-        left: 0px;
-        height: 100vh;
-        width: 300px;
-
-    }
-    .T{
-        text-align: center;
-        font-size: large;
-        color:bisque;
-
-    }
-    .T:hover{
-        opacity: 0.5;
-        color: black;
-    }   
-    .M{
-        
-        padding: 20px;
-    }
-    #Menu1{
-        margin-top: 25px;
-        font-weight: bold;
-        color:bisque;
-    }
-    #Menu2{
-        margin-top: 40px;
-        font-weight: bold;
-        color:bisque;
-    }
-    #Menu3{
-        margin-top: 40px;
-        font-weight: bold;
-        color:bisque;
-    }
-    #Menu4{
-        margin-top: 40px;
-        font-weight: bold;
-        color:bisque;
-    }
-    
-    #Name{
-        margin-top:40px;
-    }
-    #signout{
-        margin-top: 20px;
-        margin-left: 80px;
-        padding-bottom: 40px;
-        font-size: larger;
-        color: rgb(243, 230, 212);
-    }
-    #logo{
-        position: absolute;
-        bottom: 0px;
-        height: 90px;
-        width: 250px;
-        transition: transform .2s;
-    }
-    #logo:hover{
-        transform: scale(1.1);
-    }
-    
-    #T3{
-        text-align: center;
-        font-size: large;
-        background-color: rgba(66, 66, 66, 0.295);
-        color: rgb(53, 53, 53);
-    }
-    #T3:hover{
-        opacity: 0.5;
-        color: black;
-    }
+   
 </style>
 <!---------JavaScript------------------------------------------------------------------------------------>
 <script>

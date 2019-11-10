@@ -1,0 +1,89 @@
+ #from{
+        position: absolute;
+        width: 78%;
+        height: 100vh;
+        right: 0;
+        background-color: rgba(240, 239, 239, 0.514);
+    }
+    .card{
+        position: absolute;
+        display: inline-block;
+    }
+    .container{
+        display: block;
+        position: relative;
+    }
+    #Menu{
+        background-color: rgb(156, 156, 156);
+        position: fixed;
+        left: 0px;
+        height: 100vh;
+        width: 300px;
+
+    }
+    .T{
+        text-align: center;
+        font-size: large;
+        color:bisque;
+
+    }
+    .T:hover{
+        opacity: 0.5;
+        color: black;
+    }   
+    .M{
+        
+        padding: 20px;
+    }
+    #Menu1{
+        margin-top: 25px;
+        font-weight: bold;
+        color:bisque;
+    }
+    #Menu2{
+        margin-top: 40px;
+        font-weight: bold;
+        color:bisque;
+    }
+    #Menu3{
+        margin-top: 40px;
+        font-weight: bold;
+        color:bisque;
+    }
+    #Menu4{
+        margin-top: 40px;
+        font-weight: bold;
+        color:bisque;
+    }
+    
+    #Name{
+        margin-top:40px;
+    }
+    #signout{
+        margin-top: 20px;
+        margin-left: 80px;
+        padding-bottom: 40px;
+        font-size: larger;
+        color: rgb(243, 230, 212);
+    }
+    #logo{
+        position: absolute;
+        bottom: 0px;
+        height: 90px;
+        width: 250px;
+        transition: transform .2s;
+    }
+    #logo:hover{
+        transform: scale(1.1);
+    }
+    
+    #T3{
+        text-align: center;
+        font-size: large;
+        background-color: rgba(66, 66, 66, 0.295);
+        color: rgb(53, 53, 53);
+    }
+    #T3:hover{
+        opacity: 0.5;
+        color: black;
+    }
