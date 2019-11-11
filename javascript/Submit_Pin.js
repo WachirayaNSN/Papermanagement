@@ -1,19 +1,23 @@
+
+var Name = 'Wachiraya Tangsirivichaikul'
+
+document.getElementById('Name').innerHTML = Name;
 function Submit(){
 
-      var username = $('#username').val();
+      var username = Name;
       var password = $('#password').val();
-      var ID = [["123","456"],["789"],["61340500057"]];
-      var Pass = [["123","456"],["789"],["Arm"]];
+      var ID = [["123****","***456"],["***789"],["****57" ,'Wachiraya Tangsirivichaikul']];
+      var Pass = [["******","******"],["******"],["1234ถุ","896293"]];
       var C = 0;
     for(n = 0;n<3;n++){
       for(i=0;i<=ID[n].length;i++){
         if(username == ID[n][i] && password == Pass[n][i]){
           if(n == 0){ window.location.href="Home_User.html"
-          alert('hello User');}
+          alert('Hello User');}
           else if(n == 1){ window.location.href="Home_T.html"
-          alert('hello Teacher');}
+          alert('Hello Teacher');}
           else if(n == 2){ window.location.href="Home_Admin.html"
-          alert('hello Admin');}
+          alert('Hello Admin');}
           C = 1;
           break;
           } 

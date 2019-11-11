@@ -7,9 +7,9 @@ Front End process
 
   Pages:
   1.Login       S
-  2.Home        I
+  2.Home        S
   3.Add Admin   S
-  4.Form
-  5.Approve
-  6.Process
-  7.In form
+  4.Form        S
+  5.Approve     S
+  6.Process     S
+  7.Profile     

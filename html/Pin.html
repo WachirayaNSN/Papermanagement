@@ -12,7 +12,7 @@
   </head> 
 <!-------------HTML-------------------------------------------------------------------------------------->
 <body id="bk">
-    <div class="container" id="A">
+    <div class="container text-center" id="A">
             <div style="position: relative; left: 0; top: 0;">
                     <img src="../img/KMUTT.png" id="kmutt" alt="kmutt background" />
                     <div id="logo"><a href="http://www2.kmutt.ac.th/"><img src="../img/kmuttLogo.png" id="act" alt="logo"/></a></div>
@@ -20,7 +20,8 @@
             <div class="container text-center " id="block"  >
               <form>
                 <div class="form ">
-                  <input id="password" class="form-control form-control-lg" type="password" placeholder="6 PIN PASSWORD" maxlength="6">
+                  <div class="card" ><div style="margin-bottom: 10px;font-size: 30px;">Name: </div><div id="Name" style="margin-bottom: 10px;font-size: 20px; color: green;"></div></div>
+                  <input id="password" class="form-control form-control-lg" type="password" placeholder="6 PIN PASSWORD" maxlength="6" style="margin-top: 30px;">
                   <button id="Login" class="btn btn-lg btn-warning" type="submit" onclick="Submit()"> Submit </button>
                   <button id="Login" class="btn  btn-primary btn-sm" type="submit" formaction="login.html"> KMUTT account </button>
                   <a id="forget" href="Forget_Pin.html">Forget PIN</a>

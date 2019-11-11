@@ -15,14 +15,13 @@
     <div class=" container container" id="Menu">
         <div ><a href="Team.html"><img src="../img/Poala_1.png"  href="login.html"id="logo" alt="Logo" ></a></div>
         <div> <h3 id="Name" >Paper Management</h3></div>
-        <a href="" id="Profile">Profile</a>
+        <a href="Profile.html" id="Profile">Profile</a>
         <a href="login.html" id="signout">Sign Out</a>
       
 <form>
         <button id="Menu1" formaction="Home_User.html" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสาร</div></button>
-        <button id="Menu2" formaction="Approve_User.html" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >พิจารณา</div></button>
+        <button id="Menu2" formaction="Approve_User.html" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >พิจารณา</div><span class="badge badge-light" id="Count"></span></button>
         <button id="Menu3" onclick="M3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 3</div></button>
-        <button id="Menu4" onclick="M4()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 4</div></button>
 </form>
         <!------------------------------------------------------------------Place---------------------------------------------------------------------------------->
     </div>
@@ -31,11 +30,13 @@
         <form>
                     <div class="form-group">
                             <div class="row">   
-                                    <label for="Place_img" style="margin-right: 50px;"><h3>สถานที่</h3></label>
+                                    <label for="Place_img" style=""><h3>สถานที่</h3></label>
                                   <div id="Place_img" class="carousel slide" data-ride="carousel" style="margin-left:150px;">
                                         <div class="carousel-inner">
                                           <div class="carousel-item active" >
+                                            
                                             <img class="d-block " id="img-1" src="../img/Namo.jpg" alt="First slide" style="width: 700px;">
+                                            
                                           </div>
                                           <div class="carousel-item">
                                             <img class="d-block " id="img-2" src="../img/Namo.jpg" alt="Second slide" style="width: 700px;">
@@ -163,12 +164,15 @@
     <!------------------------------------------------------------------Submit---------------------------------------------------------------------------------->
     <div class="row">
             <div class="column" >
-                    <button onclick="Submit()" class="btn btn-lg btn-success" style="margin-top: 50px; margin-bottom: 30px;" id="but">Submit</button>
+                    <button onclick="Submit()" class="btn btn-lg btn-success" style="margin-top: 50px; margin-bottom: 30px; text-align: center;" id="but">Submit</button>
             </div>
             <div class="column">
-                    <div id="alert_Rule" class="alert alert-danger collapse" style="margin-left: 20px;">
+                    <div id="alert" class="alert alert-danger collapse" style="margin-left: 20px; margin-top: 50px; margin-bottom: 30px;">
                             <a id="Close" onclick="Close('#alert_Rule')" class="close"  aria-label="close">&times;</a>
-                            <strong>คำเตือน!</strong>คุณยังไม่ได้กด ยอมรับ ระเบียบการใช้สถานที่ 
+                            <div><strong>คำเตือน!</strong>
+                              
+                          
+                          </div>
                           </div>
             </div>
           </div> 
@@ -177,6 +181,7 @@
         </div>
         <script type="" src="../javascript/Test.js"></script>
         <script type="" src="../javascript/Place.js"></script>
+        <script src="../javascript/Notification.js"></script>
 <!--------------CSS-------------------------------------------------------------------------------------->
 <style>
   

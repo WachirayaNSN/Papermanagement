@@ -9,11 +9,11 @@ function Submit(){
     for(i=0;i<=ID[n].length;i++){
       if(username == ID[n][i] && password == Pass[n][i]){
         if(n == 0){ window.location.href="Home_User.html"
-        alert('hello User');}
+        alert('Hello User');}
         else if(n == 1){ window.location.href="Home_T.html"
-        alert('hello Teacher');}
+        alert('Hello Teacher');}
         else if(n == 2){ window.location.href="Home_Admin.html"
-        alert('hello Admin');}
+        alert('Hello Admin');}
         C = 1;
         break;
         } 

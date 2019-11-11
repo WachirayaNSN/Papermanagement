@@ -47,12 +47,16 @@ document.getElementById('Reason').innerHTML = Reason;
 document.getElementById('Elec').innerHTML = Elec;
 document.getElementById('Process-1').style.backgroundColor = 'rgb(255, 255, 255)';
 
-function Cancel(){
-    alert("!!!!");
-    event.preventDefault();
-}
 
 
+function Cancel() {
+    var r = confirm("ยืนยันการ ยกเลิกเอกสาร!");
+    if (r == true) {
+      alert("คุณได้ยักเลิกเอกสารหมายเลข "+ID_Paper)
+    } else {
+      
+    }
+  }
 
 
 

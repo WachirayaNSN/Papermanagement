@@ -1,6 +1,15 @@
 var Place;
 var Rule = document.getElementById('checkrule').value
 var Elec = document.getElementById('electric').value
+var Rule_text = 'โปรดกดยอมรับ ระเบียบการใช้สถานที่
+var Reason_text = 'โปรดกรอกเหตุผลในการใช้สถานที่'
+
+document.getElementById('alert').innerHTML += Rule_text 
+document.getElementById('alert').innerHTML += Reason_text 
+//document.getElementById('alert').innerHTML = Rule_text
+//document.getElementById('alert').innerHTML = Rule_text
+
+
 function Select(){
     var Val = $('#Sel').val();
     var S1 = document.getElementById('img-1')
@@ -53,16 +62,18 @@ function Submit(){
         event.preventDefault();
     }
     if(Rule == 'on'){
-        $('#alert_Rule').show('fade');
+        $('#alert').show('fade');
     }
-    if(Elec == 'on'){
-        $('#alert_Elec').show('fade');
+    var r = confirm("ยืนยันการส่งเอกสาร ขอใช้สถานที่");
+    if (r == true) {
+      alert("คุณได้ยืนยันการส่งเอกสารหมายเลข "+ID_Paper)
+    } else {
+      
     }
 }
 function checkrule(){
     alert('!!')
     if(Rule == 'on'){
-        $('#alert_Rule').hide();
         Rule = 'off';
     }
     else if (Rule =='off'){
@@ -71,7 +82,6 @@ function checkrule(){
 }
 function checkelec(){
     if(Elec == 'on'){
-        $('#alert_Elec').hide();
         Elec = 'off';
     }
     else if (Elec =='off'){
@@ -80,7 +90,7 @@ function checkelec(){
 }
 function checkRule(){
     if(Rule == 'on'){
-        $('#alert_Elec').hide();
+        Rule_text = ''
         Rule = 'off';
     }
     else if (Rule =='off'){
