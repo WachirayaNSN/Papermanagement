@@ -1,13 +1,16 @@
-var Place;
-var Rule = document.getElementById('checkrule').value
-var Elec = document.getElementById('electric').value
-var Rule_text = 'โปรดกดยอมรับ ระเบียบการใช้สถานที่
-var Reason_text = 'โปรดกรอกเหตุผลในการใช้สถานที่'
 
-document.getElementById('alert').innerHTML += Rule_text 
-document.getElementById('alert').innerHTML += Reason_text 
-//document.getElementById('alert').innerHTML = Rule_text
-//document.getElementById('alert').innerHTML = Rule_text
+var Rule = document.getElementById('checkrule').value;
+var reason = document.getElementById('Reason').value
+//var Reason = $("#Reason").val();
+var Place = document.getElementById('Sel').value
+var Time_b = document.getElementById('Time_Before').value
+var Time_a = document.getElementById('Time_After').value
+
+var Rule_text = ''
+var Reason_text = ''
+var Place_text = ''
+var Time_text = ''
+var Date_text = '- โปรดเลือกวันในการใช้สถานที่'
 
 
 function Select(){
@@ -45,32 +48,70 @@ function Select(){
         Place = "3";
     }
 }
+////////////////////////////////////////////////////////////////////////
 function Submit(){
-    
-    if(Place == "0"){
-    }
-    else if(Place == "1"){
-        alert("1");
-    }
-    else if(Place == "2"){
-        alert("2");
-    }
-    else if(Place == "3"){
-        alert("3");
-    }
-    else{
-        event.preventDefault();
-    }
+
     if(Rule == 'on'){
+        Rule_text = '- โปรดกดยอมรับ ระเบียบการใช้สถานที่'
+        document.getElementById('Rule_text').innerHTML = Rule_text 
         $('#alert').show('fade');
     }
+    else if(Rule = 'off'){
+        Rule_text = ''
+        document.getElementById('Rule_text').innerHTML = Rule_text 
+    }
+    /////////////////////////////////////////////////////////////////////////
+    if(document.getElementById('Reason').value == ''){
+        Reason_text = '- โปรดกรอกเหตุผลในการใช้สถานที่'
+        document.getElementById('Reason_text').innerHTML = Reason_text 
+        $('#alert').show('fade');
+    }
+    else if(document.getElementById('Reason').value != ''){
+        Reason_text = ''
+        document.getElementById('Reason_text').innerHTML = Reason_text 
+    }
+    ////////////////////////////////////////////////////////////////////////
+    if(Place == ''){
+        Place_text = '- โปรดเลือกสถานที่'
+        document.getElementById('Place_text').innerHTML = Place_text 
+        $('#alert').show('fade');
+    }
+    else if(Place != ''){
+        Place_text = ''
+        document.getElementById('Place_text').innerHTML = Place_text 
+    }
+    /////////////////////////////////////////////////////////////////////////
+    if(Time_b == ''){
+        Time_text = '- โปรดเลือกเวลาในการใช้สถานที่'
+        document.getElementById('Time_text').innerHTML = Time_text 
+        $('#alert').show('fade');
+    }
+    else if(Time_b != ''){
+        Time_text = ''
+        document.getElementById('Time_text').innerHTML = Time_text 
+    }
+    else if(Time_a == ''){
+        Time_text = '- โปรดเลือกเวลาในการใช้สถานที่'
+        document.getElementById('Time_text').innerHTML = Time_text 
+        $('#alert').show('fade');
+    }
+    else if(Time_a != ''){
+        Time_text = ''
+        document.getElementById('Time_text').innerHTML = Time_text 
+    }
+    /////////////////////////////////////////////////////////////////////////
+
     var r = confirm("ยืนยันการส่งเอกสาร ขอใช้สถานที่");
+
     if (r == true) {
+        
       alert("คุณได้ยืนยันการส่งเอกสารหมายเลข "+ID_Paper)
     } else {
-      
+        event.preventDefault();
     }
+    /////////////////////////////////////////////////////////////////////////
 }
+/////////////////////////////////////////////////////////////////////////////////
 function checkrule(){
     alert('!!')
     if(Rule == 'on'){
@@ -94,9 +135,16 @@ function checkRule(){
         Rule = 'off';
     }
     else if (Rule =='off'){
+
         Rule = 'on';
     }
 }
 function Close(ID){
     $(ID).hide();
 }
+
+
+document.getElementById('Reason_text').innerHTML += Reason_text 
+document.getElementById('Place_text').innerHTML += Place_text 
+document.getElementById('Time_text').innerHTML += Time_text 
+document.getElementById('Date_text').innerHTML += Date_text 

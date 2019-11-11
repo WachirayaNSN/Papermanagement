@@ -57,7 +57,7 @@
 
                             
                             <select onchange="Select()" id="Sel" class="browser-default custom-select ">
-                                    <option selected value="0">สถานที่ / Place</option>
+                                    <option selected value="">สถานที่ / Place</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
@@ -69,6 +69,7 @@
                                         <label for="Time-b" style="font-size: larger;">เวลา </label>
                                     <div class="col">
                                             <select class="form-control" name="time" id="Time_Before"> 
+                                                <option value="">เวลาในการใช้สถานที่</option>
                                 <option value="6:00">6:00 น</option>      <option value="6:30">6:30 น</option>   
                                 <option value="7:00">7:00 น</option>      <option value="7:30">7:30 น</option>   
                                 <option value="8:00">8:00 น</option>      <option value="8:30">8:30 น</option>  
@@ -94,6 +95,7 @@
                                     </div>
                                 <div class="col">
                                             <select class="form-control" name="time" id="Time_After"> 
+                                                <option value="">เวลาในการใช้สถานที่</option>
                                                 <option value="6:00">6:00 น</option>      <option value="6:30">6:30 น</option>   
                                                 <option value="7:00">7:00 น</option>      <option value="7:30">7:30 น</option>   
                                                 <option value="8:00">8:00 น</option>      <option value="8:30">8:30 น</option>  
@@ -138,7 +140,7 @@
  <!------------------------------------------------------------------Reason---------------------------------------------------------------------------------->
                             <div class="form-group">
                                     <label for="Reason" style="font-weight: bolder; font-size: larger;">เหตุผลในการขอใช้สถานที่</label>
-                                    <textarea class="form-control" id="Reason" rows="6"></textarea>
+                                    <textarea  id="Reason" class="form-control "rows="6"></textarea>
                                   </div>
  <!------------------------------------------------------------------Check---------------------------------------------------------------------------------->
                           <div class="form-check">
@@ -168,9 +170,13 @@
             </div>
             <div class="column">
                     <div id="alert" class="alert alert-danger collapse" style="margin-left: 20px; margin-top: 50px; margin-bottom: 30px;">
-                            <a id="Close" onclick="Close('#alert_Rule')" class="close"  aria-label="close">&times;</a>
+                            <a id="Close" onclick="Close('#alert')" class="close"  aria-label="close">&times;</a>
                             <div><strong>คำเตือน!</strong>
-                              
+                              <div id="Rule_text"></div>
+                              <div id="Reason_text"></div>
+                              <div id="Place_text"></div>
+                              <div id="Time_text"></div>
+                              <div id="Date_text"></div>
                           
                           </div>
                           </div>
