@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'Authentication',
 ]
 
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -76,7 +78,7 @@ WSGI_APPLICATION = 'PaperManagement.wsgi.application'
 
 DATABASES = {
     'default': {
-        'NAME': 'project_paper',
+        'NAME': 'poladatabase',
         'ENGINE': 'django.db.backends.mysql',
         'USER': 'root',
         'PASSWORD': '12ab53@',
@@ -85,6 +87,7 @@ DATABASES = {
         'ATOMIC_REQUESTS': True,
     }
 }
+
 
 
 # Password validation
