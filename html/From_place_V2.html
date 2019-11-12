@@ -14,7 +14,7 @@
 <body style="background-image: url(../img/KMUTT.png);">
     <div class=" container container" id="Menu">
         <div ><a href="Team.html"><img src="../img/Poala_1.png"  href="login.html"id="logo" alt="Logo" ></a></div>
-        <div> <h3 id="Name" >Paper Management</h3></div>
+        <div> <h3 id="Name" ></h3></div>
         <a href="Profile.html" id="Profile">Profile</a>
         <a href="login.html" id="signout">Sign Out</a>
       
@@ -26,12 +26,84 @@
         <!------------------------------------------------------------------Place---------------------------------------------------------------------------------->
     </div>
     <div id="form" >
-        <h1 style="text-align: center; margin-bottom: 50px;">เอกสาร ขอใช้สถานที่</h1>    
-        <form>
+        <h1 style="text-align: center; margin-bottom: 50px; font-weight: bolder;">เอกสาร ขอใช้สถานที่</h1>    
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" >
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">ชื่อ / Name : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Name_User" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div>
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" >
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">รหัสนักศึกษา / ID : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="ID" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div>
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column">
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">ชั้นปี / Years : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Years" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div>        
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" >
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">คณะ / Faculty : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Department" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div>    
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" >
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">ภาควิชา / Major : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Major" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div> 
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" >
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">เบอร์ติดต่อ / Tel. : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Tel" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div> 
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" style="margin-bottom: 30px;">
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">Email : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Email" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div> 
+
+   <!----------------------------------------------------------------------Form-------------------------------------------------->    
+        <form  style="margin-left: 40px;">
                     <div class="form-group">
                             <div class="row">   
-                                    <label for="Place_img" style=""><h3>สถานที่</h3></label>
-                                  <div id="Place_img" class="carousel slide" data-ride="carousel" style="margin-left:150px;">
+                                    <label for="Place_img"><h3>สถานที่</h3></label>
+                                  <div id="Place_img" class="carousel slide" data-ride="carousel" style="margin-left:120px;">
                                         <div class="carousel-inner">
                                           <div class="carousel-item active" >
                                             
@@ -166,7 +238,7 @@
     <!------------------------------------------------------------------Submit---------------------------------------------------------------------------------->
     <div class="row">
             <div class="column" >
-                    <button onclick="Submit()" class="btn btn-lg btn-success" style="margin-top: 50px; margin-bottom: 30px; text-align: center;" id="but">Submit</button>
+                    <button onclick="Submit()" class="btn btn-lg btn-success" style="margin-top: 30px; margin-bottom: 30px; margin-left: 100px;" id="but">Submit</button>
             </div>
             <div class="column">
                     <div id="alert" class="alert alert-danger collapse" style="margin-left: 20px; margin-top: 50px; margin-bottom: 30px;">
@@ -188,9 +260,15 @@
         <script type="" src="../javascript/Test.js"></script>
         <script type="" src="../javascript/Place.js"></script>
         <script src="../javascript/Notification.js"></script>
+        <script src="../javascript/Name.js"></script>
 <!--------------CSS-------------------------------------------------------------------------------------->
 <style>
-  
+  .content{
+        font-weight: bolder;
+    }
+    .text{
+        font-size: larger;
+        }
   #Profile{
         margin-top: 20px;
         margin-left: 40px;

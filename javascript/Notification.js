@@ -1,1 +1,3 @@
-document.getElementById('Count').innerHTML = ''
+var Count = '';
+
+document.getElementById('Count').innerHTML = Count

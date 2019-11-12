@@ -1,10 +1,11 @@
 
-var Process_1 = 'rgb(10, 10, 10)';
-var Process_2 = 'rgb(10, 10, 10)';
-var Process_3 = 'rgb(10, 10, 10)';
+var Wait = 'rgb(192, 192, 192)';
+var Success = 'rgb(153, 204, 0)';
+var Process_1 = Success;
+var Process_2 = Wait;
+var Process_3 = Wait;
 var Topic = 'เอกสารขอใช้สถานที่';
 var ID_Paper = '';
-var Name_Student = '';
 var ID_Student = '';
 var Department = '';
 var Major = '';
@@ -32,7 +33,6 @@ document.getElementById('img-5').src = img_2;
 
 document.getElementById('Topic').innerHTML = Topic;
 document.getElementById('Id_Paper').innerHTML = ID_Paper;
-document.getElementById('Name_Student').innerHTML = Name_Student;
 document.getElementById('Id_Student').innerHTML = ID_Student;
 document.getElementById('Department').innerHTML = Department;
 document.getElementById('Major').innerHTML = Major;
@@ -45,7 +45,9 @@ document.getElementById('Time').innerHTML = Time;
 document.getElementById('Date').innerHTML = date;
 document.getElementById('Reason').innerHTML = Reason;
 document.getElementById('Elec').innerHTML = Elec;
-document.getElementById('Process-1').style.backgroundColor = 'rgb(255, 255, 255)';
+document.getElementById('Process-1').style.backgroundColor = Process_1;
+document.getElementById('Process-2').style.backgroundColor = Process_2;
+document.getElementById('Process-3').style.backgroundColor = Process_3;
 
 
 
