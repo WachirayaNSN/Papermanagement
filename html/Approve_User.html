@@ -20,15 +20,17 @@
         
         <a href="Home_User.html" ><button id="Menu1" onclick="" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสาร</div></button></a>
         <a href="Approve_User.html" ><button id="Menu1" onclick="" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >พิจารณา</div><span class="badge badge-light" id="Count"></span></button></a>
-        <button id="Menu3" onclick="Test()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 3</div></button>
+        <button id="Menu3" onclick="" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 3</div></button>
                 <script type="" src="Test.js"></script>
                 
     </div>
+    <button class="btn btn-success btn-lg">OK</button>
+    <buttin class="btn btn-danger btn-lg">NO</buttin>
     <div id="from" >
-            <div class="container row-1">
-                <a href="Info_Approve.html" class="link"><div class="card" id="paper"><div id="A1" class="overlay approve">อนุมัติ</div></div></a>
-                <a href="Info_Approve.html" class="link"><div class="card" id="paper"><div id="A2" class="overlay approve">อนุมัติ</div></div></a>
-                <a href="Info_Approve.html" class="link"><div class="card" id="paper"><div id="A3" class="overlay approve">ไม่อนุมัติ</div></div></a>
+            <button class="btn btn-success btn-lg" onclick="Add('OK')">OK</button>
+            <buttin class="btn btn-danger btn-lg" onclick="Add()">NO</buttin>
+            <div class="container row-1"  >
+                <div id='A' ></div>
             </div>
         </div>
     <script src="javascript/Test.js"></script>

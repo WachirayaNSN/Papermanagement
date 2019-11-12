@@ -5,12 +5,15 @@ var reason = document.getElementById('Reason').value
 var Place = document.getElementById('Sel').value
 var Time_b = document.getElementById('Time_Before').value
 var Time_a = document.getElementById('Time_After').value
-
+var Date_before = document.getElementById('date_before').value
+var File = document.getElementById('File').value
+//var Date_after = document.getElementById('date_after').value
+var fileList = document.getElementById('File').file;
 var Rule_text = ''
 var Reason_text = ''
 var Place_text = ''
 var Time_text = ''
-var Date_text = '- โปรดเลือกวันในการใช้สถานที่'
+var Date_text = ''
 
 var ID = ''
 var Years = ''
@@ -26,6 +29,7 @@ document.getElementById('Department').innerHTML = Department
 document.getElementById('Major').innerHTML = Major
 document.getElementById('Tel').innerHTML = Tel
 document.getElementById('Email').innerHTML = Email
+
 
 
 function Select(){
@@ -65,7 +69,7 @@ function Select(){
 }
 ////////////////////////////////////////////////////////////////////////
 function Submit(){
-
+    alert(fileList)
     if(Rule == 'on'){
         Rule_text = '- โปรดกดยอมรับ ระเบียบการใช้สถานที่'
         document.getElementById('Rule_text').innerHTML = Rule_text 
@@ -96,23 +100,24 @@ function Submit(){
         document.getElementById('Place_text').innerHTML = Place_text 
     }
     /////////////////////////////////////////////////////////////////////////
-    if(Time_b == ''){
+    if(document.getElementById('Time_Before').value == '' || document.getElementById('Time_After').value == ''){
         Time_text = '- โปรดเลือกเวลาในการใช้สถานที่'
         document.getElementById('Time_text').innerHTML = Time_text 
         $('#alert').show('fade');
     }
-    else if(Time_b != ''){
+    else if(document.getElementById('Time_Before').value != '' && document.getElementById('Time_After').value != ''){
         Time_text = ''
         document.getElementById('Time_text').innerHTML = Time_text 
     }
-    else if(Time_a == ''){
-        Time_text = '- โปรดเลือกเวลาในการใช้สถานที่'
-        document.getElementById('Time_text').innerHTML = Time_text 
+    /////////////////////////////////////////////////////////////////////////
+    if(document.getElementById('date_before').value == '' || document.getElementById('date_after').value == ''){
+        Date_text = '- โปรดเลือกวันที่ในการใช้สถานที่'
+        document.getElementById('Date_text').innerHTML = Date_text
         $('#alert').show('fade');
     }
-    else if(Time_a != ''){
-        Time_text = ''
-        document.getElementById('Time_text').innerHTML = Time_text 
+    else if(document.getElementById('date_before').value != '' && document.getElementById('date_after').value != ''){
+        Date_text = ''
+        document.getElementById('Date_text').innerHTML = Date_text
     }
     /////////////////////////////////////////////////////////////////////////
 
