@@ -18,11 +18,11 @@
         <a href="Profile.html" id="Profile">Profile</a>
         <a href="login.html" id="signout">Sign Out</a>
 
-        <a href="Home_User.html" ><button id="Menu1" onclick="" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสาร</div></button></a>
-        <a href="Approve.html" ><button id="Menu1" onclick="" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >พิจารณา</div><span class="badge badge-light" id="Count"></span></button></a>
-        <button id="Menu3" onclick="Test()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 3</div></button>
-        <script type="" src="../javascript/Test.js"></script>
+        <button id="Menu1" onclick="Menu1()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >แบบฟอร์มเอกสาร</div></button>
+        <button id="Menu1" onclick="Menu2()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสารที่ส่ง</div><span class="badge badge-light" id="Count"></span></button>
+        <div id="Hide"><button id="Menu1" onclick="Menu3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >การพิจารณาเอกสาร</div><span class="badge badge-light" id="Count_T"></span></button></div>
     </div>
+    
 <!---------------------------------------------Profile-------------------------------------------------------------------------------------->
 <div id="from" >
     <h1 style="text-align: center; margin-bottom: 50px;">ประวัติส่วนตัว / Profile</h1>
@@ -98,10 +98,10 @@
         </div> 
     </div>
 
-
+    <input id="Role" value="Student" hidden>
     <script src="../javascript/Notification.js"></script>
     <script src="../javascript/Profile.js"></script>
-    <script src="../javascript/Name.js"></script>
+    <script src="../javascript/Index.js"></script>
 <!--------------CSS-------------------------------------------------------------------------------------->
 <style>
     .content{

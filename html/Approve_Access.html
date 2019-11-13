@@ -15,11 +15,11 @@
     <div class=" card container" id="Menu">
         <div ><a href="Team.html"><img src="../img/Poala_1.png"  href="login.html"id="logo" alt="Logo" ></a></div>
         <div> <h3 id="Name" ></h3></div>
-        <a href="Profile_Teacher.html" id="Profile">Profile</a>
+        <a href="Profile.html" id="Profile">Profile</a>
         <a href="login.html" id="signout">Sign Out</a>
-        <a href="Home_T.html" ><button id="Menu1" onclick="" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสาร</div></button></a>
-        <a href="Approve_Teacher.html" ><button id="Menu1" onclick="" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >พิจารณา</div><span class="badge badge-light" id="Count"></span></button></a>
-        <button id="Menu3" onclick="Test()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 3</div></button>
+        <button id="Menu1" onclick="Menu1()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >แบบฟอร์มเอกสาร</div></button>
+        <button id="Menu1" onclick="Menu2()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสารที่ส่ง</div><span class="badge badge-light" id="Count"></span></button>
+        <div id="Hide"> <button id="Menu1" onclick="Menu3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >การพิจารณาเอกสาร</div><span class="badge badge-light" id="Count_T"></span></button></div>
         <script type="" src="Test.js"></script>
     </div>
 
@@ -29,27 +29,7 @@
     <form>
 <!------------------------------------------------------------------Process---------------------------------------------------------------------------------->
             <div id="from" >
-                    <div class=" container card" style=" margin-top: 100px; border-radius: 100px;" >
-                            <div class="form-group">
-                                    <div class="row ">
-                                            <div class="column"  >
-                                              <img id="Process-1" class="img" src="../img/Paper.png" alt="Process 1" >
-                                        </div>
-                                            <div class="column"  >
-                                                    <img class="Next" src="../img/Next.png" alt="Next" >
-                                            </div>
-                                            <div class="column">
-                                              <img  id="Process-2" class="img" src="../img/Paper.png" alt="Process 2 " >
-                                            </div>
-                                            <div class="column"  >
-                                              <img class="Next" src="../img/Next.png" alt="Next" >
-                                            </div>
-                                            <div class="column">
-                                              <img id="Process-3" class="img" src="../img/Paper.png" alt="Process 3" >
-                                            </div>
-                                          </div>    
-                                        </div>    
-                    </div>
+                    
 
 <!------------------------------------------------------------------Information---------------------------------------------------------------------------------->
                     <div id="Topic" class="text"  style="text-align: center; margin-top: 30px; font-size: 50px; font-weight: bolder;" >Topic</div>
@@ -214,10 +194,22 @@
                 </div>
                 
     </form>
-    <button class="btn btn-lg btn-danger" onclick="Cancel()">ยกเลิกเอกสาร</button>
+    <div class="form-group text" style="margin-left: 400px;">
+                <div class="row">
+                        <div class="column" style="margin-bottom: 30px;">
+                                        <button class="btn btn-lg btn-success" onclick="Access_A()">อนุมัติ</button>
+                        </div>
+                        <div class="column">
+                                <button class="btn btn-lg btn-danger" onclick="Access_N()" style="margin-left: 70px;">ไม่อนุมัติ</button>
+                        </div>
+        </div>
+    <input id="Role" value="Teacher" hidden>
+    
     <script src="../javascript/Info.js"></script>
     <script src="../javascript/Notification.js"></script>
-    <script src="../javascript/Name.js"></script>
+    <script src="../javascript/Submit.js"></script>
+    <script src="../javascript/Index.js"></script>
+    <script src="../javascript/Access.js"></script>
 <!--------------CSS-------------------------------------------------------------------------------------->
 <style>
     .content{
@@ -266,7 +258,7 @@
         position: relative;
     }
     #Menu{
-        background-color: rgb(138, 231, 142);
+        
         position: fixed;
         left: 0px;
         height: 100vh;
@@ -347,7 +339,7 @@
 </style>
 <!---------JavaScript------------------------------------------------------------------------------------>
 <script>
-
+        document.getElementById('Name_Student').innerHTML = Name;
 </script>
 <div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

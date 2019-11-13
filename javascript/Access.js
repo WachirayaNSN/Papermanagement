@@ -1,9 +1,4 @@
 
-var Wait = 'rgb(192, 192, 192)';
-var Success = 'rgb(153, 204, 0)';
-var Process_1 = Success;
-var Process_2 = Wait;
-var Process_3 = Wait;
 var Topic = 'เอกสารขอใช้สถานที่';
 var ID_Paper = '';
 var ID_Student = '';
@@ -45,21 +40,20 @@ document.getElementById('Time').innerHTML = Time;
 document.getElementById('Date').innerHTML = date;
 document.getElementById('Reason').innerHTML = Reason;
 document.getElementById('Elec').innerHTML = Elec;
-document.getElementById('Process-1').style.backgroundColor = Process_1;
-document.getElementById('Process-2').style.backgroundColor = Process_2;
-document.getElementById('Process-3').style.backgroundColor = Process_3;
 
-
-
-function Cancel() {
-    var r = confirm("ยืนยันการ ยกเลิกเอกสาร!");
+function Access_A(){
+    var r = confirm("ยืนยันการ อนุมัติเอกสาร!");
     if (r == true) {
-      alert("คุณได้ยกเลิกเอกสารหมายเลข "+ID_Paper)
-      
+      alert("คุณได้ อนุมัติ เอกสารหมายเลข "+ID_Paper)
     } else {
-      event.preventDefault();
+        event.preventDefault();
     }
-  }
-
-
-
+}
+function Access_N(){
+    var r = confirm("ยืนยันการ ไม่อนุมัติเอกสาร!");
+    if (r == true) {
+      alert("คุณได้ ไม่อนุมัติ เอกสารหมายเลข "+ID_Paper)
+    } else {
+        event.preventDefault();
+    }
+}

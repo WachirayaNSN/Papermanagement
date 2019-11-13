@@ -17,11 +17,12 @@
         <div> <h3 id="Name" ></h3></div>
         <a href="Profile.html" id="Profile">Profile</a>
         <a href="login.html" id="signout">Sign Out</a>
-      
+        <button id="Menu1" onclick="Menu1()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >แบบฟอร์มเอกสาร</div></button>
+        <button id="Menu1" onclick="Menu2()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสารที่ส่ง</div><span class="badge badge-light" id="Count"></span></button>
+        <div id="Hide"><button id="Menu1" onclick="Menu3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >การพิจารณาเอกสาร</div><span class="badge badge-light" id="Count_T"></span></button></div>
+        
 <form>
-        <button id="Menu1" formaction="Home_User.html" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสาร</div></button>
-        <button id="Menu2" formaction="Approve_User.html" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >พิจารณา</div><span class="badge badge-light" id="Count"></span></button>
-        <button id="Menu3" onclick="M3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 3</div></button>
+                
 </form>
         <!------------------------------------------------------------------Place---------------------------------------------------------------------------------->
     </div>
@@ -253,10 +254,11 @@
                 
             </form>
         </div>
+        <input id="Role" value="Student" hidden>
         <script type="" src="../javascript/Test.js"></script>
         <script type="" src="../javascript/Place.js"></script>
         <script src="../javascript/Notification.js"></script>
-        <script src="../javascript/Name.js"></script>
+        <script src="../javascript/Index.js"></script>
 <!--------------CSS-------------------------------------------------------------------------------------->
 <style>
   .content{

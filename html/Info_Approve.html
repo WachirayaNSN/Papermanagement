@@ -17,9 +17,9 @@
         <div> <h3 id="Name" ></h3></div>
         <a href="Profile.html" id="Profile">Profile</a>
         <a href="login.html" id="signout">Sign Out</a>
-        <a href="Home_User.html" ><button id="Menu1" onclick="" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสาร</div></button></a>
-        <a href="Approve_User.html" ><button id="Menu1" onclick="" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >พิจารณา</div><span class="badge badge-light" id="Count"></span></button></a>
-        <button id="Menu3" onclick="Test()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >Menu 3</div></button>
+        <button id="Menu1" onclick="Menu1()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >แบบฟอร์มเอกสาร</div></button>
+        <button id="Menu1" onclick="Menu2()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสารที่ส่ง</div><span class="badge badge-light" id="Count"></span></button>
+        <div id="Hide"> <button id="Menu1" onclick="Menu3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >การพิจารณาเอกสาร</div><span class="badge badge-light" id="Count_T"></span></button></div>
         <script type="" src="Test.js"></script>
     </div>
 
@@ -214,10 +214,12 @@
                 </div>
                 
     </form>
+    <input id="Role" value="Student" hidden>
     <button class="btn btn-lg btn-danger" onclick="Cancel()">ยกเลิกเอกสาร</button>
     <script src="../javascript/Info.js"></script>
     <script src="../javascript/Notification.js"></script>
-    <script src="../javascript/Name.js"></script>
+    <script src="../javascript/Submit.js"></script>
+    <script src="../javascript/Index.js"></script>
 <!--------------CSS-------------------------------------------------------------------------------------->
 <style>
     .content{
@@ -266,7 +268,7 @@
         position: relative;
     }
     #Menu{
-        background-color: rgb(248, 198, 106);
+        
         position: fixed;
         left: 0px;
         height: 100vh;
@@ -347,7 +349,7 @@
 </style>
 <!---------JavaScript------------------------------------------------------------------------------------>
 <script>
-
+        document.getElementById('Name_Student').innerHTML = Name;
 </script>
 <div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
