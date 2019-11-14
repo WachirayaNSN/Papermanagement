@@ -12,7 +12,7 @@
   </head> 
 <!-------------HTML-------------------------------------------------------------------------------------->
 <body style="background-image: url(../img/KMUTT.png);">
-    <div class=" container container" id="Menu">
+    <div class=" container " id="Menu">
         <div ><a href="Team.html"><img src="../img/Poala_1.png"  href="login.html"id="logo" alt="Logo" ></a></div>
         <div> <h3 id="Name" ></h3></div>
         <a href="Profile.html" id="Profile">Profile</a>
@@ -26,8 +26,71 @@
 </form>
         <!------------------------------------------------------------------Place---------------------------------------------------------------------------------->
     </div>
-    <div id="form" >
-        <h1 style="text-align: center; margin-bottom: 50px; font-weight: bolder;">เอกสาร ขอใช้สถานที่</h1>    
+    <div class="container " style="margin-left: 300px; width: 78%; height:auto; font-weight: bold;">
+                <h1 style="text-align: center; margin-bottom: 50px; font-weight: bolder; margin-right: 400px;padding-top: 60px;">เอกสาร ขอใช้สถานที่</h1>  
+                <div id="Calendar" class=" col-sm-4 col-md-7 col-lg-4 mt-5" >
+                                <div class="card">
+                                    <h3 class="card-header" id="monthAndYear"></h3>
+                                    <table class="table table-bordered " id="calendar">
+                                        <thead>
+                                        <tr>
+                                            <th>อาทิตย์  </th>
+                                            <th>จันทร์ </th>
+                                            <th>อังคาร</th>
+                                            <th>พุธ</th>
+                                            <th>พฤหัส</th>
+                                            <th>ศุกร์</th>
+                                            <th>เสาร์</th>
+                                        </tr>
+                                        </thead> 
+                            
+                                        <tbody id="calendar-body" style="margin-top: 100px;">
+                            
+                                        </tbody>
+                                    </table>
+                            
+                                    <div class="form-inline">
+                            
+                                        <button class="btn btn-outline-primary col-sm-6" id="previous" onclick="previous()">Previous</button>
+                            
+                                        <button class="btn btn-outline-primary col-sm-6" id="next" onclick="next()">Next</button>
+                                    </div>
+                                    <br/>
+                                    <form class="form-inline">
+                                        <label class="lead mr-2 ml-2" for="month">Jump To: </label>
+                                        <select class="form-control col-sm-4" name="month" id="month" onchange="jump()">
+                                            <option value=0>มกราคม</option>
+                                            <option value=1>กุมภาพันธ์</option>
+                                            <option value=2>มีนาคม</option>
+                                            <option value=3>เมษายน</option>
+                                            <option value=4>พฤษภาคม</option>
+                                            <option value=5>มิถุนายน</option>
+                                            <option value=6>กรกฏาคม</option>
+                                            <option value=7>สิงหาคม</option>
+                                            <option value=8>กันยายน</option>
+                                            <option value=9>ตุลาคม</option>
+                                            <option value=10>พฤศจิกายน</option>
+                                            <option value=11>ธันวาคม</option>
+                                        </select>
+                            
+                            
+                                        <label for="year"></label><select class="form-control col-sm-4" name="year" id="year" onchange="jump()">
+                                        <option value=2562>2562</option>
+                                        <option value=2563>2563</option>
+                                        <option value=2564>2564</option>
+                                        <option value=2565>2565</option>
+                                        <option value=2566>2566</option>
+                                        <option value=2567>2567</option>
+                                        <option value=2568>2568</option>
+                                        <option value=2569>2569</option>
+                                        <option value=2570>2570</option>
+                                        <option value=2571>2571</option>
+                                        <option value=2572>2572</option>
+                                    </select></form>
+                                </div>
+                            </div>
+</div>
+    <div id="form" style="">
         <div class="form-group text" >
                 <div class="row">
                         <div class="column" >
@@ -255,12 +318,26 @@
             </form>
         </div>
         <input id="Role" value="Student" hidden>
+        <script src="../javascript/calendar.js"></script>
         <script type="" src="../javascript/Test.js"></script>
         <script type="" src="../javascript/Place.js"></script>
         <script src="../javascript/Notification.js"></script>
         <script src="../javascript/Index.js"></script>
 <!--------------CSS-------------------------------------------------------------------------------------->
 <style>
+.Day{
+        width: 100px;
+        height: 100px;
+}
+.Day:hover
+{
+        background-color: rgba(109, 109, 109, 0.39);
+}
+.Today{
+  background-color: rgba(143, 229, 176, 0.781);
+  
+  
+}
   .content{
         font-weight: bolder;
     }
@@ -296,8 +373,8 @@
   display: table;
 }
     .card{
-        width: 90vh;
-        height: 200px;
+        width: 1000px;
+        height: 800px;
     }
     .img{
         width: 200px;
@@ -384,7 +461,9 @@
         color: black;
     }
     #form{
-        position: absolute;
+        position: relative;
+        margin-top: 60px;
+        margin-left: 295px;
         width: 78%;
         height:auto;
         font-weight: bold;
