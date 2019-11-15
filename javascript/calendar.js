@@ -30,7 +30,7 @@ function jump() {
 }
 
 function showCalendar(month, year) {
-
+    var C = 1;
     let firstDay = (new Date(year, month)).getDay();
     let daysInMonth = 32 - new Date(year, month, 32).getDate();
     let tbl = document.getElementById("calendar-body"); // body of the calendar
@@ -61,17 +61,24 @@ function showCalendar(month, year) {
             else {
                 var link = '<a href="Team.html">AAA</a>';
                 let cell = document.createElement("td");
-                var bt = document.createElement("button");
+                let bt = document.createElement("a");
+                let B = document.createElement("div");
                 let cellText = document.createTextNode(date);
                 if (date === today.getDate() && year === today.getFullYear()+543 && month === today.getMonth()) {
                     cell.classList.add("Today");
                 } // color today's date
                 cell.classList.add('Day');
-               
+
+                B.setAttribute("id","B"+String(C));
+                B.setAttribute("class","show-on-hover");
+                bt.setAttribute("class","hoverable");
+               bt.setAttribute("id",'A'+String(C));
+               C+=1;
                 //document.getElementsByClassName('Day').innerHTML += '<a href="login.html"></a>'
-                var D = '<a href="Team.html"></a>';
-                document.getElementsByClassName('Day').innerHTML  = D;
+                bt.innerHTML = 'A'
+                B.innerHTML = "AAAA"
                 cell.appendChild(cellText);
+                cell.appendChild(B);
                 cell.appendChild(bt);
                 row.appendChild(cell);
                 date++;
