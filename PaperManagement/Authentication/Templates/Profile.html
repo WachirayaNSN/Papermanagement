@@ -1,0 +1,148 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_profile.css' %}">
+    <title>Paper Management</title>
+  </head> 
+<!-------------HTML-------------------------------------------------------------------------------------->
+<body style="background-image: url({% static "img/login/KMUTT.png"%});">
+    <div class=" card container" id="Menu">
+        <div ><a href="{% url 'team' %}"><img src="{% static "img/login/Poala_1.png"%}" id="logo" alt="Logo" ></a></div>
+        <div> <h3 id = 'Name'>{{Name}}</h3></div>
+        <a href="{% url 'home' %}" id="home">Home</a>
+        <a href="{% url 'user_logout' %}" id="signout">Sign Out</a>
+
+        <button id="Menu1" onclick="Menu1()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >แบบฟอร์มเอกสาร</div></button>
+        <button id="Menu1" onclick="Menu2()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสารที่ส่ง</div><span class="badge badge-light" id="Count"></span></button>
+        <div id="Hide"><button id="Menu1" onclick="Menu3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >การพิจารณาเอกสาร</div><span class="badge badge-light" id="Count_T"></span></button></div>
+    </div>
+    
+<!---------------------------------------------Profile-------------------------------------------------------------------------------------->
+<div id="from" >
+    <h1 style="text-align: center; margin-bottom: 50px;">ประวัติส่วนตัว / Profile</h1>
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" style="margin-bottom: 30px;">
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">ชื่อ / Name : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Name_User" class="text content" style="margin-top: 30px; margin-left: 100px;">{{Name}}</div>
+                        </div>
+                </div>
+        </div>
+        {% if request.session.user_role == 'Student' %}
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" style="margin-bottom: 30px;">
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">รหัสนักศึกษา / ID : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="ID" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div>
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" style="margin-bottom: 30px;">
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">ชั้นปี / Years : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Years" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div>        
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" style="margin-bottom: 30px;">
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">คณะ / Faculty : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Department" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div>    
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" style="margin-bottom: 30px;">
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">ภาควิชา / Major : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Major" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div> 
+        {% elif request.session.user_role == 'Approver' or request.session.user_role == 'Officer' or request.session.user_role == 'Admin'  %}
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" style="margin-bottom: 30px;">
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">สังกัด / Affiliation : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Department" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="column" style="margin-bottom: 30px;">
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">ตำแหน่ง / Position : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Position" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div> 
+        {% endif %}
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" style="margin-bottom: 30px;">
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">เบอร์ติดต่อ / Tel. : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Tel" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div> 
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" style="margin-bottom: 30px;">
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">Email : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Email" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div> 
+    </div>
+
+    
+    
+    
+    <input id="ID_" value= {{request.session.user_id}} hidden>
+    <input id="Role" value= {{request.session.user_role}} hidden>
+    <input id="Years_" value= {{Years}} hidden>
+    <input id="Department_" value= {{Department}} hidden>
+    <input id="Major_" value= {{Major}} hidden>
+    <input id="Tel_" value= {{Tel}} hidden>
+    <input id="Email_" value= {{Email}} hidden>
+    <input id="Position_" value= {{Position}} hidden>
+    <script src="{% static 'js/home/Notification.js' %}"></script>
+    <script src="{% static 'js/Profile.js' %}"></script>
+    <script src="{% static 'js/home/Index.js' %}"></script>
+
+<!---------JavaScript------------------------------------------------------------------------------------>
+<script>
+
+</script>
+<div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</div>
+</body>
+</html>
