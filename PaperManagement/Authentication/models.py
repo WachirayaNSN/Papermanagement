@@ -30,7 +30,7 @@ class Roles (models.Model):
 class Action (models.Model):
     action_name = models.CharField(max_length=50)
 
-    
+   
 
 class Permission (models.Model):
     role = models.ForeignKey(Roles, on_delete=models.CASCADE)
