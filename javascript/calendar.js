@@ -10,7 +10,24 @@ let monthAndYear = document.getElementById("monthAndYear");
 currentYear+=543;
 showCalendar(currentMonth, currentYear);
 
+let Name = document.getElementById("Name_info");
+let Place = document.getElementById("Place_info");
+let Date_info = document.getElementById("Date_info");
+let Time_info = document.getElementById("Time_info");
+let Name_Teacher = document.getElementById("Name_Teacher_info");
+let Status = document.getElementById("Status");
+let B1 = document.getElementById("B1");
+let B3 = document.getElementById("B3");
 
+
+Name.innerHTML = 'A';
+Place.innerHTML = 'B';
+Date_info.innerHTML = 'C';
+Time_info.innerHTML = 'D';
+Name_Teacher.innerHTML = 'E';
+Status.innerHTML ='F';
+B1.innerHTML = 'AAA';
+B3.innerHTML = 'AAA';
 function next() {
     currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
     currentMonth = (currentMonth + 1) % 12;
@@ -59,28 +76,27 @@ function showCalendar(month, year) {
             }
 
             else {
-                var link = '<a href="Team.html">AAA</a>';
                 let cell = document.createElement("td");
-                let bt = document.createElement("a");
-                let B = document.createElement("div");
+                let D = document.createElement("div");
+                let B = document.createElement("button");
+            
                 let cellText = document.createTextNode(date);
                 if (date === today.getDate() && year === today.getFullYear()+543 && month === today.getMonth()) {
                     cell.classList.add("Today");
+                    C+=1;
                 } // color today's date
                 cell.classList.add('Day');
-
                 B.setAttribute("id","B"+String(C));
-                B.setAttribute("class","show-on-hover");
-                bt.setAttribute("class","hoverable");
-               bt.setAttribute("id",'A'+String(C));
-               C+=1;
-                //document.getElementsByClassName('Day').innerHTML += '<a href="login.html"></a>'
-                bt.innerHTML = 'A'
-                B.innerHTML = "AAAA"
+                B.setAttribute("type","button");
+                B.setAttribute("class","btn ");
+                B.setAttribute("data-toggle","modal");
+                B.setAttribute("data-target","#Info");
+                D.setAttribute("id",'A'+String(C));
                 cell.appendChild(cellText);
-                cell.appendChild(B);
-                cell.appendChild(bt);
+                D.appendChild(B);
+                cell.appendChild(D);
                 row.appendChild(cell);
+                C+=1;
                 date++;
             }
 
