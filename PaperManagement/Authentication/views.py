@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from django.http import JsonResponse,HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.template import loader
 from django.contrib.sessions.models import Session
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User , Group
 from django.urls import reverse
 from django.contrib.auth import authenticate,login,logout
-from Authentication.models import User_Profile , Roles 
+from Authentication.models import *
 
 # Create your views here.
 
@@ -28,16 +28,12 @@ def user_login(request):
             # Check name and password in database
             user = authenticate(request,username = user_name,password = user_password)
             if user:
-                user_obj = User.objects.get(username=user_name)
-                userRole = User_Profile.objects.get(user = user_obj).user_role.role_name
-                request.session['user_id'] = user_obj.pk
-                request.session['user_role'] = userRole
-                if userRole == 'Student':
-                    return HttpResponseRedirect(reverse("student_home"))
-                elif userRole == 'Approver' or userRole == 'Officer':
-                    return HttpResponseRedirect(reverse("stackholder_home"))
-                elif userRole == 'Admin':
-                    return HttpResponseRedirect(reverse("admin_home"))
+                user = User.objects.get(username=user_name)
+                user_profile = User_Profile.objects.get(user=user)
+                request.session['user_id'] = user.pk
+                request.session['user_role'] = user_profile.user_role.name
+                if request.session['user_role'] != '' :
+                    return HttpResponseRedirect(reverse("home"))
                 else :
                     context['error']="lost"
                     return render(request,'login/login.html',context)
@@ -78,19 +74,12 @@ def user_login_pin(request):
 #   role -----------> student , stakeholder (teacher,approver,officer) , admin 
 #
 #
-def acess_sthome(request):
+def acess_home(request):
     context={}
+    user_obj = User.objects.get(pk=request.session['user_id'])
+    context['name'] = user_obj.first_name +"  "+user_obj.last_name
     return render(request,'home/Home_User.html',context)
 
-
-def acess_shhome(request):
-    context={}
-    return render(request,'home/Home_T.html',context)
-
-
-def acess_adhome(request):
-    context={}
-    return render(request,'home/Home_admin.html',context)
 
 # Logout : done
 def user_logout(request):
@@ -102,3 +91,72 @@ def user_logout(request):
             pass
         logout(request)
     return HttpResponseRedirect(reverse('user_login'))
+
+# Team : done
+def team(request):
+    context={}
+    return render(request,'Team.html',context)
+
+# Profile : done
+# Have to check words in this page
+# never have tested with AdminID yet 
+def profile(request):
+    context={}
+    user_profile = User_Profile.objects.get(pk=request.session['user_id'])
+    user = User.objects.get(pk=request.session['user_id'])
+    context['Name'] = user.first_name +"  "+user.last_name
+    context['Tel'] = user_profile.user_tel
+    context['Email'] = user.email
+    context['Department'] = user_profile.user_Department.department_name
+    if request.session['user_role'] == "Student" :
+        context['stID'] = user_profile.user_stID
+        context['Years'] = user_profile.user_stYear
+        context['Level'] = user_profile.user_stLevel.level_name
+        context['Major'] = user_profile.user_stFaculty.faculty_name
+    elif request.session['user_role'] in ["Approver","Officer","Admin"] :
+        context['Position'] = user_profile.user_officerPosition.position_name
+    return render(request,'Profile.html',context)
+
+def send_request (request):
+    context={}
+    user_obj = User.objects.get(pk=request.session['user_id'])
+    user_profile = User_Profile.objects.get(user=user_obj)
+    context['stID'] = user_profile.user_stID
+    context['Name'] = user_obj.first_name +"  "+user_obj.last_name
+    context['Tel'] = user_profile.user_tel
+    context['Email'] = user.email
+    context['Department'] = user_profile.user_Department.department_name
+    context['stID'] = user_profile.user_stID
+    context['Years'] = user_profile.user_stYear
+    context['Level'] = user_profile.user_stLevel.level_name
+    context['Major'] = user_profile.user_stFaculty.faculty_name
+
+    if request.method == "POST":
+        place = Place.objects.get(place_name=request.POST['place'])
+        requestor = User.objects.get(pk=request.session['user_id'])
+        try :
+            advisor = User.objects.get(first_name=request.POST['first_name'],last_name=request.POST['last_name'])
+        except User.DoesNotExist:
+            context['advisor'] = 'not_find'
+
+    return render(request,'form/From_place_V2.html',context)
+
+
+# Send : Not yet
+# Connect : All basic have done 
+def send_request_list (request):
+    context={}
+    user_profile = User_Profile.objects.get(pk=request.session['user_id'])
+    user = User.objects.get(pk=request.session['user_id'])
+    context['Name'] = user.first_name +"  "+user.last_name
+    
+    
+    return render(request,'request_list/Approve_User.html',context)
+
+# Send : Not yet
+# Connect : Not yet
+def approve_request_list (request):
+    context={}
+    user_obj = User.objects.get(pk=request.session['user_id'])
+    context['Name'] = user_obj.first_name +"  "+user_obj.last_name
+    return render(request,'request_list/Approve_Teacher.html',context)

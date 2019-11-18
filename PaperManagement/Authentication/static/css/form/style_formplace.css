@@ -1,52 +1,66 @@
-    .text {
-  background-color: rgb(79, 228, 84);
-  color: rgb(0, 0, 0);
-  font-size: large;
-  font-weight: bold;
-  padding: 20px 20px ;
-  border-radius: 8px;
+#A1{
+        opacity: 0.0;
+}
 
+.Day{
+        width: 100px;
+        height: 100px;
+}
+.Day:hover
+{
+        background-color: rgba(109, 109, 109, 0.39);
+}
+.Day:hover #A1{
+        opacity: 1.0;
+}
+.Today{
+  background-color: rgba(143, 229, 176, 0.781);
+  
+  
+}
+  .content{
+        font-weight: bolder;
     }
-    .text:hover{
-        opacity: 100%;
+    .text{
+        font-size: larger;
+        }
+  #Profile{
+        margin-top: 20px;
+        margin-left: 40px;
+        padding-bottom: 40px;
+        font-size: larger;
+        color: rgb(72, 87, 114);
     }
-    #paper{
-        background-color: rgba(54, 54, 54, 0.719);
-
+    .d-block{
+        height: 500px;
     }
-    #paper:hover{
-        transition: transform .2s;
-        transform: scale(1.1);
-        background-color: rgba(109, 109, 109, 0.24);
-        font-weight: 900;
+    #Sel{
+        margin-top: 50px;
     }
-    .overlay{
-    position: absolute;
-    justify-content: center;
-    text-align: center;
-    bottom: 0px;
-    width: 100%;
+    .form-check{
+        margin-top: 40px;
     }
-    
-    #from{
-        position: absolute;
-        width: 78%;
-        height:auto;
-        right: 0;
-        background-color: rgba(240, 239, 239, 0.514);
+    .form-group{
+        margin-top: 30px;
     }
-    #paper{
-        
-        height: 370px;
-        width: 300px;
-        margin:20px 15px 20px;
+    #rule{
+        font-weight: bold;
+        font-size: large;
     }
-    
+    .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
     .card{
-        position:relative;
-        display: inline-block;
-        transition: .5s ease;
-        backface-visibility: hidden;
+        width: 1000px;
+        height: 800px;
+    }
+    .img{
+        width: 200px;
+        height: 200px;
+        margin-left: 20px;
+        
     }
     .container{
         display: block;
@@ -63,7 +77,6 @@
     .T{
         text-align: center;
         font-size: large;
-
         color:rgb(97, 97, 97);
 
     }
@@ -101,7 +114,7 @@
     }
     #signout{
         margin-top: 20px;
-        margin-left: 80px;
+        margin-left: 40px;
         padding-bottom: 40px;
         font-size: larger;
         color: rgb(141, 141, 141);
@@ -126,4 +139,17 @@
     #T3:hover{
         opacity: 0.5;
         color: black;
+    }
+    #form{
+        position: relative;
+        margin-top: 60px;
+        margin-left: 295px;
+        width: 78%;
+        height:auto;
+        font-weight: bold;
+        right: 0;
+        padding-top:50px ;
+        padding-left:30px;
+        padding-right: 30px;
+        background-color:rgba(240, 239, 239, 0.63);
     }
