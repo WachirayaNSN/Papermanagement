@@ -1,7 +1,12 @@
 
-var Name = 'Wachiraya Tangsirivichaikul'
+var Name = ''
 
 document.getElementById('Name').innerHTML = Name;
+if(Name != ''){ChangeName();}
+function ChangeName(){
+  document.getElementById('Name').innerHTML = Name;
+  event.preventDefault();
+}
 function Submit(){
 
       var username = Name;
@@ -25,7 +30,7 @@ function Submit(){
    }
         if(username == "" && password == ""){alert("Please fill Username and Password");}
         else if(username != "" && password == ""){alert("Please fill Password");}
-        else if(username == "" && password != ""){alert("Please fill Username");}
+        else if(username == "" && password != ""){alert("Please Scan your card");}
         else if(C == 0){alert("Wrong Password");}
         event.preventDefault();
    }

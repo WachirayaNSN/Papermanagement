@@ -69,13 +69,12 @@ function Select(){
 }
 ////////////////////////////////////////////////////////////////////////
 function Submit(){
-    alert(fileList)
     if(Rule == 'on'){
         Rule_text = '- โปรดกดยอมรับ ระเบียบการใช้สถานที่'
         document.getElementById('Rule_text').innerHTML = Rule_text 
         $('#alert').show('fade');
     }
-    else if(Rule = 'off'){
+    else if(Rule == 'off'){
         Rule_text = ''
         document.getElementById('Rule_text').innerHTML = Rule_text 
     }
@@ -120,15 +119,17 @@ function Submit(){
         document.getElementById('Date_text').innerHTML = Date_text
     }
     /////////////////////////////////////////////////////////////////////////
-
-    var r = confirm("ยืนยันการส่งเอกสาร ขอใช้สถานที่");
-
+    if(document.getElementById('date_before').value != ''||document.getElementById('date_after').value != ''&&Rule != 'on'&&document.getElementById('Reason').value != ''&&Place != ''&&document.getElementById('Time_Before').value != '' || document.getElementById('Time_After').value != ''){var r = confirm("ยืนยันการส่งเอกสาร ขอใช้สถานที่");
     if (r == true) {
-        
-      alert("คุณได้ยืนยันการส่งเอกสารหมายเลข "+ID_Paper)
+      alert("คุณได้ยืนยันการส่งเอกสารหมายเลข "+ID_Paper);
+      event.preventDefault();
+
     } else {
         event.preventDefault();
-    }
+    }}
+    else{event.preventDefault();}
+    
+
     /////////////////////////////////////////////////////////////////////////
     
 

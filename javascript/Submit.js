@@ -11,7 +11,8 @@ function Submit(){
       if(username == ID[n][i] && password == Pass[n][i]){
         if(n == 0){
         Role = "Student";
-        alert('Hello User');}
+       // alert('Hello User');
+      }
         else if(n == 1){
         Role ="Teacher";
         alert('Hello Teacher');}

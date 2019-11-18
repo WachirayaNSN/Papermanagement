@@ -9,7 +9,9 @@ var ID = ''
 var C = 0;
 var Role = document.getElementById('Role').value;
 //$('#A').html('<a href="Info_Approve.html" class="link"><div class="card" id="paper"><div id="A1" class="overlay approve">ไม่อนุมัติ</div></div></a>);
-
+for(var i=1;i<=3;i++){
+    Add('OK');
+}
 function Add(D){
     C+=1
     ID = String(C)
