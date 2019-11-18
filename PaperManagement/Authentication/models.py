@@ -37,22 +37,48 @@ class User_Profile (models.Model):
 
 #----------------------------------------------------------------------
 
-# Form Models
+
+
+# Place ------------------ 
+# In future , should have group
 class Place (models.Model):
     place_name = models.CharField(max_length=30)
     remind = models.TextField(null=True, blank=True)
-
-
-#class FormType (models.Model):
-#    form_typeName = models.CharField(max_length=128)
+# ------------------------
+# Form Models
+# 
+class FormType (models.Model):
+    form_typeName = models.CharField(max_length=128)
     
-
-class Bookplace_form (models.Model):
-#   form_type = models.ForeignKey(FormType,on_delete=models.CASCADE)
+class AllForm (models.Model):
+    form_type = models.ForeignKey(FormType,on_delete=models.CASCADE)
     requestor = models.ForeignKey(User,on_delete=models.CASCADE, related_name='student')
     advisor = models.ForeignKey(User,on_delete=models.CASCADE, related_name='teacher')
     request_tel = models.CharField(max_length=10, null=True, blank=True)
+
+class Bookplace_form (models.Model):
+    form = models.ForeignKey(AllForm,on_delete=models.CASCADE)
     place = models.ForeignKey(Place,on_delete=models.CASCADE)
     detail = models.TextField()
     book_datetime_being =models.CharField(max_length=10, null=True, blank=True)
     book_datetime_end =models.CharField(max_length=10, null=True, blank=True)
+
+        
+class Step (models.Model):
+    step_name = models.CharField(max_length=10)
+    form_type = models.ForeignKey(FormType,on_delete=models.CASCADE)
+
+
+class State (models.Model):
+    state_name = models.CharField(max_length=10)
+
+class ProcessTime (models.Model):
+    form = models.ForeignKey(AllForm,on_delete=models.CASCADE)
+    step = models.ForeignKey(Step,on_delete=models.CASCADE)
+    state = models.ForeignKey(State,on_delete=models.CASCADE)
+    approver = models.ForeignKey(User,on_delete=models.CASCADE)
+    datetime = models.DateTimeField(auto_now_add=True) 
+
+class Deadline_step (models.Model):
+    step = models.ForeignKey(Step,on_delete=models.CASCADE)
+    SLA =models.TimeField()
