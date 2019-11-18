@@ -1,0 +1,357 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form/style_formplace.css' %}">
+    <title>Paper Management</title>
+  </head> 
+<!-------------HTML-------------------------------------------------------------------------------------->
+<body style="background-image: url({% static "img/login/KMUTT.png"%});">
+    <div class=" card container" id="Menu">
+        <div ><a href="{% url 'team' %}"><img src="{% static "img/login/Poala_1.png"%}" id="logo" alt="Logo" ></a></div>
+        <div> <h3 id = 'Name'>{{name}}</h3></div>
+        <a href="{% url 'profile' %}" id="Profile">Profile</a>
+        <a href="{% url 'user_logout' %}" id="signout">Sign Out</a>
+        <a id="Menu1" href="{% url 'home' %}" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >แบบฟอร์มเอกสาร</div></a>
+        <a id="Menu1" href="{% url 'send_request' %}" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสารที่ส่ง</div><span class="badge badge-light" id="Count"></span></a>
+        <div id="Hide"><a id="Menu3" href="{% url 'approve_request' %}" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >การพิจารณาเอกสาร</div><span class="badge badge-light" id="Count_T"></span></a></div>
+    </div>
+        
+<form>
+                
+</form>
+        <!------------------------------------------------------------------Place---------------------------------------------------------------------------------->
+    </div>
+    <div class="container " style="margin-left: 300px; width: 78%; height:auto; font-weight: bold;">
+                <h1 style="text-align: center; margin-bottom: 50px; font-weight: bolder; margin-right: 400px;padding-top: 60px;">เอกสาร ขอใช้สถานที่</h1>  
+                <div id="Calendar" class=" col-sm-4 col-md-7 col-lg-4 mt-5" >
+                                <div class="card">
+                                    <h3 class="card-header" id="monthAndYear"></h3>
+                                    <table class="table table-bordered " id="calendar">
+                                        <thead>
+                                        <tr>
+                                            <th>อาทิตย์  </th>
+                                            <th>จันทร์ </th>
+                                            <th>อังคาร</th>
+                                            <th>พุธ</th>
+                                            <th>พฤหัส</th>
+                                            <th>ศุกร์</th>
+                                            <th>เสาร์</th>
+                                        </tr>
+                                        </thead> 
+                            
+                                        <tbody id="calendar-body" style="margin-top: 100px;">
+                            
+                                        </tbody>
+                                    </table>
+                            
+                                    <div class="form-inline">
+                            
+                                        <button class="btn btn-outline-primary col-sm-6" id="previous" onclick="previous()">Previous</button>
+                            
+                                        <button class="btn btn-outline-primary col-sm-6" id="next" onclick="next()">Next</button>
+                                    </div>
+                                    <br/>
+                                    <form class="form-inline">
+                                        <label class="lead mr-2 ml-2" for="month">Jump To: </label>
+                                        <select class="form-control col-sm-4" name="month" id="month" onchange="jump()">
+                                            <option value=0>มกราคม</option>
+                                            <option value=1>กุมภาพันธ์</option>
+                                            <option value=2>มีนาคม</option>
+                                            <option value=3>เมษายน</option>
+                                            <option value=4>พฤษภาคม</option>
+                                            <option value=5>มิถุนายน</option>
+                                            <option value=6>กรกฏาคม</option>
+                                            <option value=7>สิงหาคม</option>
+                                            <option value=8>กันยายน</option>
+                                            <option value=9>ตุลาคม</option>
+                                            <option value=10>พฤศจิกายน</option>
+                                            <option value=11>ธันวาคม</option>
+                                        </select>
+                            
+                            
+                                        <label for="year"></label><select class="form-control col-sm-4" name="year" id="year" onchange="jump()">
+                                        <option value=2562>2562</option>
+                                        <option value=2563>2563</option>
+                                        <option value=2564>2564</option>
+                                        <option value=2565>2565</option>
+                                        <option value=2566>2566</option>
+                                        <option value=2567>2567</option>
+                                        <option value=2568>2568</option>
+                                        <option value=2569>2569</option>
+                                        <option value=2570>2570</option>
+                                        <option value=2571>2571</option>
+                                        <option value=2572>2572</option>
+                                    </select></form>
+                                </div>
+                            </div>
+</div>
+    <div id="form" style="">
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" >
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">ชื่อ / Name : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Name_User" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div>
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" >
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">รหัสนักศึกษา / ID : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="ID" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div>
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column">
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">ชั้นปี / Years : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Years" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div>        
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" >
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">คณะ / Faculty : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Department" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div>    
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" >
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">ภาควิชา / Major : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Major" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div> 
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" >
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">เบอร์ติดต่อ / Tel. : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Tel" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div> 
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="column" style="margin-bottom: 30px;">
+                                <div class="text" style="margin-top: 30px; margin-left: 100px;">Email : </div>
+                        </div>
+                        <div class="column">
+                                <div  id="Email" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        </div>
+                </div>
+        </div> 
+
+   <!----------------------------------------------------------------------Form-------------------------------------------------->    
+        <form  style="margin-left: 40px;">
+                    <div class="form-group">
+                            <div class="row">   
+                                    <label for="Place_img"><h3>สถานที่</h3></label>
+                                  <div id="Place_img" class="carousel slide" data-ride="carousel" style="margin-left:120px;">
+                                        <div class="carousel-inner">
+                                          <div class="carousel-item active" >
+                                            
+                                            <img class="d-block " id="img-1" src="{% static "img/Namo.jpg"%}" alt="First slide" style="width: 700px;">
+                                            
+                                          </div>
+                                          <div class="carousel-item">
+                                            <img class="d-block " id="img-2" src="{% static "img/Namo.jpg"%}" alt="Second slide" style="width: 700px;">
+                                          </div>
+                                          <div class="carousel-item">
+                                            <img class="d-block " id="img-3" src="{% static "img/Namo.jpg"%}" alt="Third slide" style="width: 700px;"  >
+                                          </div>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#Place_img" role="button" data-slide="prev">
+                                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                          <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#Place_img" role="button" data-slide="next">
+                                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                          <span class="sr-only">Next</span>
+                                        </a>
+                                      </div>
+
+                            
+                            <select onchange="Select()" id="Sel" class="browser-default custom-select ">
+                                    <option selected value="">สถานที่ / Place</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                            </select>
+                          </div> 
+<!------------------------------------------------------------------Time---------------------------------------------------------------------------------->
+                            <form>
+                                <div class="row" style="margin-top: 50px;">
+                                        <label for="Time-b" style="font-size: larger;">เวลา </label>
+                                    <div class="col">
+                                            <select class="form-control" name="time" id="Time_Before"> 
+                                                <option value="">เวลาในการใช้สถานที่</option>
+                                <option value="6:00">6:00 น</option>      <option value="6:30">6:30 น</option>   
+                                <option value="7:00">7:00 น</option>      <option value="7:30">7:30 น</option>   
+                                <option value="8:00">8:00 น</option>      <option value="8:30">8:30 น</option>  
+                                <option value="9:00">9:00 น</option>      <option value="9:30">9:30 น</option>  
+                                <option value="10:00">10:00 น</option>    <option value="10:30">10:30 น</option>
+                                <option value="11:00">11:00 น</option>    <option value="11:30">11:30 น</option>
+                                <option value="12:00">12:00 น</option>    <option value="12:30">12:30 น</option> 
+                                <option value="13:00">13:00 น</option>    <option value="13:30">13:30 น</option>
+                                <option value="14:00">14:00 น</option>    <option value="14:30">14:30 น</option> 
+                                <option value="15:00">15:00 น</option>    <option value="15:30">15:30 น</option> 
+                                <option value="16:00">16:00 น</option>    <option value="16:30">16:30 น</option>
+                                <option value="17:00">17:00 น</option>    <option value="17:30">17:30 น</option>
+                                <option value="18:00">18:00 น</option>    <option value="18:45">18:30 น</option>
+                                <option value="19:00">19:00 น</option>    <option value="19:30">19:30 น</option>
+                                <option value="20:00">20:00 น</option>    <option value="20:30">20:30 น</option>
+                                <option value="21:00">21:00 น</option>    <option value="21:30">21:30 น</option>
+                                <option value="22:00">22:00 น</option>    <option value="22:30">22:30 น</option>
+                                <option value="23:00">23:00 น</option>    <option value="23:30">23:30 น</option>
+                                                    </select>
+                                    </div>
+                                    <div class="col">
+                                            <div style="text-align: center;"><h4>ถึง</h4></div>
+                                    </div>
+                                <div class="col">
+                                            <select class="form-control" name="time" id="Time_After"> 
+                                                <option value="">เวลาในการใช้สถานที่</option>
+                                                <option value="6:00">6:00 น</option>      <option value="6:30">6:30 น</option>   
+                                                <option value="7:00">7:00 น</option>      <option value="7:30">7:30 น</option>   
+                                                <option value="8:00">8:00 น</option>      <option value="8:30">8:30 น</option>  
+                                                <option value="9:00">9:00 น</option>      <option value="9:30">9:30 น</option>  
+                                                <option value="10:00">10:00 น</option>    <option value="10:30">10:30 น</option>
+                                                <option value="11:00">11:00 น</option>    <option value="11:30">11:30 น</option>
+                                                <option value="12:00">12:00 น</option>    <option value="12:30">12:30 น</option> 
+                                                <option value="13:00">13:00 น</option>    <option value="13:30">13:30 น</option>
+                                                <option value="14:00">14:00 น</option>    <option value="14:30">14:30 น</option> 
+                                                <option value="15:00">15:00 น</option>    <option value="15:30">15:30 น</option> 
+                                                <option value="16:00">16:00 น</option>    <option value="16:30">16:30 น</option>
+                                                <option value="17:00">17:00 น</option>    <option value="17:30">17:30 น</option>
+                                                <option value="18:00">18:00 น</option>    <option value="18:45">18:30 น</option>
+                                                <option value="19:00">19:00 น</option>    <option value="19:30">19:30 น</option>
+                                                <option value="20:00">20:00 น</option>    <option value="20:30">20:30 น</option>
+                                                <option value="21:00">21:00 น</option>    <option value="21:30">21:30 น</option>
+                                                <option value="22:00">22:00 น</option>    <option value="22:30">22:30 น</option>
+                                                <option value="23:00">23:00 น</option>    <option value="23:30">23:30 น</option>
+                                                                    </select>
+                                </div>
+                             </div>
+                            </form>
+<!------------------------------------------------------------------Date---------------------------------------------------------------------------------->
+                           <form>
+                                <div class="row" style="margin-top: 50px;margin-left: 0px;">
+                                        <label for="Time-b" style="font-size: larger;">วันที่</label>
+                                        <div class="col">
+                                          <input type="date" id="date_before" class="form-control form-control-lg">
+                                        </div>
+                                    <div class="col">
+                                            <div style="text-align: center;"><h4>ถึง</h4></div>
+                                    </div>
+                                <div class="col">
+                                  <input type="date" id="date_after" class="form-control form-control-lg">
+                                </div>
+                             </div>
+                            </form>
+ <!------------------------------------------------------------------Reason---------------------------------------------------------------------------------->
+                            <div class="form-group">
+                                    <label for="Reason" style="font-weight: bolder; font-size: larger;">เหตุผลในการขอใช้สถานที่</label>
+                                    <textarea  id="Reason" class="form-control "rows="6"></textarea>
+                                  </div>
+ <!------------------------------------------------------------------Check---------------------------------------------------------------------------------->
+                          <div class="form-check">
+                                <input class="form-check-input" type="checkbox"  id="electric" onchange="checkelec()">
+                                <label class="form-check-label" for="electric"  style="font-weight: bolder; font-size: larger;">
+                                  ใช้ไฟฟ้า
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input id="checkrule" class="form-check-input" type="checkbox" onchange="checkRule()"  >
+                                <label class="form-check-label" for="checkrule">
+                                        <a href="Rule.html" id="rule" target="_blank"  style="font-weight: bolder; font-size: larger;"> ยอมรับ ระเบียบการใช้สถานที่ </a>
+                                </label>
+                              </div>
+                      <div class="form-check">
+                      </div>
+                  <form>
+                        <div class="form-group">
+                          <label for="File">เอกสาร อ้างอิง</label>
+                          <input type="file" class="form-control-file" id="File">
+                        </div>
+                      </form>
+    <!------------------------------------------------------------------Submit---------------------------------------------------------------------------------->
+    <div class="row">
+        <form method = 'post'>
+                {% csrf_token %}
+            <div class="column" >
+                    <input type="hidden" id="Rule_" >
+                    <input type="hidden" id="reason_"  >
+                    <input type="hidden" id="Place_"  >
+                    <input type="hidden" id="Time_b_"  >
+                    <input type="hidden" id="Date_before_" >
+                    <input type="hidden" id="Time_a_"  >
+                    <input type="hidden" id="Date_after_"  >
+                    <button onclick="Submit()" class="btn btn-lg btn-success" style="margin-top: 30px; margin-bottom: 30px; margin-left: 100px;" id="but">Submit</button>
+            </div>
+        </form>
+            <div class="column">
+                    <div id="alert" class="alert alert-danger collapse" style="margin-left: 20px; margin-top: 50px; margin-bottom: 30px;">
+                            <a id="Close" onclick="Close('#alert')" class="close"  aria-label="close">&times;</a>
+                            <div><strong>คำเตือน!</strong>
+                              <div id="Rule_text"></div>
+                              <div id="Reason_text"></div>
+                              <div id="Place_text"></div>
+                              <div id="Time_text"></div>
+                              <div id="Date_text"></div>
+                          
+                          </div>
+                          </div>
+            </div>
+          </div> 
+                
+            </form>
+        </div>
+        <input type="hidden" id="Role" value= {{request.session.user_role}}>
+        <input type="hidden" id="Years_" value= {{Years}} >
+        <input type="hidden" id="Department_" value= {{Department}} >
+        <input type="hidden" id="Major_" value= {{Major}} >
+        <input type="hidden" id="Tel_" value= {{Tel}} >
+        <input type="hidden" id="Email_" value= {{Email}} >
+        <script src="{% static 'js/home/Notification.js' %}"></script>
+        <script src="{% static 'js/home/Index.js' %}"></script>
+
+        <script type="" src="{% static 'js/form/calendar.js' %}"></script>
+        <script type="" src="{% static 'js/form/Place.js' %}"></script>
+        
+
+<!---------JavaScript------------------------------------------------------------------------------------>
+<script>
+    $('#Close').click(function () {
+        $('#alert').hide('fade');
+});
+</script>
+<div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</div>
+</body>
+</html>

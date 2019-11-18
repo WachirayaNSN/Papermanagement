@@ -10,31 +10,11 @@ if(document.getElementById('Role').value == 'Student'){
   else if(document.getElementById('Role').value == 'Approver'){
     document.getElementById('Menu').style.backgroundColor = 'rgb(138, 231, 142)';
   }
-  else if(document.getElementById('Role').value == 'Admin'){
+  else if(document.getElementById('Role').value == 'Admin' || document.getElementById('Role').value == 'Officer'){
     document.getElementById('Menu').style.backgroundColor = 'rgba(193, 221, 247, 0.925)';
   }
 
+ 
+var tap_error = document.getElementById("response").value;
+if(tap_error=='denied'){alert("You not have permission!!!");}
   
-  
-
-function test(){
-    alert('')
-}
-function Menu1(){
-  window.location='Home_User.html'
-}
-function Menu2(){
-  window.location='Approve_User.html'
-}
-function Menu3(){
-  if(document.getElementById('Role').value == 'Student'){
-    alert('You not have permission!!!')  
-    
-  }
-  else if(document.getElementById('Role').value == 'Approver'){
-    window.location='Approve_Teacher.html'
-  }
-  else if(document.getElementById('Role').value == 'Admin'){
-    alert('You not have permission!!!')  
-  }
-}

@@ -1,0 +1,33 @@
+//rgb(92, 238, 97)
+var Approve = 'rgb(92, 238, 97)'
+var No_Approve = 'rgb(250, 50, 25)'
+var Status;
+var Color;
+var A = 'อนุมัติ'
+var N = 'ไม่อนุมัติ'
+var ID = ''
+var C = 0;
+var Role = document.getElementById('Role').value;
+//$('#A').html('<a href="Info_Approve.html" class="link"><div class="card" id="paper"><div id="A1" class="overlay approve">ไม่อนุมัติ</div></div></a>);
+
+function Add(D){
+    C+=1
+    ID = String(C)
+    if(D=='OK'){
+        Status = A;
+        Color = Approve;
+    }
+    else{
+          Status = N;
+          Color = No_Approve;
+        }
+    if(Role == 'Student'){
+        document.getElementById('A').innerHTML += '<a href="Info_Approve.html" class="link"><div class="card" id="paper"><div id='+ID+' class="overlay approve">'+Status+'</div></div></a>'
+        document.getElementById(ID).style.backgroundColor = Color;    
+    }
+    else if(Role == 'Teacher'){
+        document.getElementById('A').innerHTML += '<a href="Approve_Access.html" class="link"><div class="card" id="paper"><div id='+ID+' class="overlay approve">'+Status+'</div></div></a>'
+        document.getElementById(ID).style.backgroundColor = Color;
+    } 
+    
+}

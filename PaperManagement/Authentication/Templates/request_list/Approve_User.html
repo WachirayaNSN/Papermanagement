@@ -1,45 +1,45 @@
 <!doctype html>
 {% load static %}
 <html lang="en">
-
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/home/style_home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/request_list/style_approve_user.css' %}">
     <title>Paper Management</title>
   </head> 
 <!-------------HTML-------------------------------------------------------------------------------------->
-
 <body style="background-image: url({% static "img/login/KMUTT.png"%});">
     <div class=" card container" id="Menu">
         <div ><a href="{% url 'team' %}"><img src="{% static "img/login/Poala_1.png"%}" id="logo" alt="Logo" ></a></div>
-        <div> <h3 id = 'Name'>{{name}}</h3></div>
+        <div> <h3 id = 'Name'>{{Name}}</h3></div>
         <a href="{% url 'profile' %}" id="Profile">Profile</a>
         <a href="{% url 'user_logout' %}" id="signout">Sign Out</a>
+
         <a id="Menu1" href="{% url 'home' %}" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >แบบฟอร์มเอกสาร</div></a>
         <a id="Menu1" href="{% url 'send_list' %}" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสารที่ส่ง</div><span class="badge badge-light" id="Count"></span></a>
         <div id="Hide"><a id="Menu3" href="{% url 'approve_list' %}" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >การพิจารณาเอกสาร</div><span class="badge badge-light" id="Count_T"></span></a></div>
+                
     </div>
+    <button class="btn btn-success btn-lg">OK</button>
+    <buttin class="btn btn-danger btn-lg">NO</buttin>
     <div id="from" >
-            <div class="container row-3">
-                <a href="From_place_V2.html" class="link" target="_blank"><div class="card" id="paper"><div class="overlay text">ขอใช้สถานที่</div></div></a>
-                <a href="{% url 'team' %}" class="link"><div class="card" id="paper"><div class="overlay text">ตัวอย่าง</div></div></a>
-                <a href="{% url 'team' %}" class="link"><div class="card" id="paper"><div class="overlay text">ตัวอย่าง</div></div></a>
-                <a href="{% url 'team' %}" class="link"><div class="card" id="paper"><div class="overlay text">ตัวอย่าง</div></div></a>    
+            <button class="btn btn-success btn-lg" onclick="Add('OK')">OK</button>
+            <buttin class="btn btn-danger btn-lg" onclick="Add()">NO</buttin>
+            <div class="container row-1"  >
+                <div id='A' ></div>
             </div>
         </div>
-    
-
+        
+    <input id="Role" value= {{request.session.user_role}} hidden>
+    <script src="{% static 'js/form/approve.js' %}"></script>
+    <script src="{% static 'js/home/Notification.js' %}"></script>
+    <script src="{% static 'js/home/Index.js' %}"></script>   
 
 <!---------JavaScript------------------------------------------------------------------------------------>
-
-<input id="Role" value= {{request.session.user_role}} hidden>
-<script src="{% static 'js/home/Notification.js' %}"></script>
-<script src="{% static 'js/home/Index.js' %}"></script>
 
 <div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

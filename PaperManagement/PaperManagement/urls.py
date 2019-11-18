@@ -23,5 +23,8 @@ urlpatterns = [
     path('Home/',views.acess_home, name ='home'),
     path('Home/Developer_team',views.team, name ='team'),
     path('Home/Profile',views.profile, name ='profile'),
+    path('Home/form/formtype_01',views.send_request, name ='send_request'),
+    path('Home/Request_list/send',views.send_request_list, name ='send_list'),
+    path('Home/Request_list/approve',views.approve_request_list, name ='approve_list'),
     
 ]

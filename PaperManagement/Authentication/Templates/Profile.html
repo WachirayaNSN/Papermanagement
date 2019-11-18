@@ -16,12 +16,12 @@
     <div class=" card container" id="Menu">
         <div ><a href="{% url 'team' %}"><img src="{% static "img/login/Poala_1.png"%}" id="logo" alt="Logo" ></a></div>
         <div> <h3 id = 'Name'>{{Name}}</h3></div>
-        <a href="{% url 'home' %}" id="home">Home</a>
+        <a href="{% url 'profile' %}" id="Profile">Profile</a>
         <a href="{% url 'user_logout' %}" id="signout">Sign Out</a>
 
-        <button id="Menu1" onclick="Menu1()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >แบบฟอร์มเอกสาร</div></button>
-        <button id="Menu1" onclick="Menu2()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสารที่ส่ง</div><span class="badge badge-light" id="Count"></span></button>
-        <div id="Hide"><button id="Menu1" onclick="Menu3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >การพิจารณาเอกสาร</div><span class="badge badge-light" id="Count_T"></span></button></div>
+        <a id="Menu1" href="{% url 'home' %}" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >แบบฟอร์มเอกสาร</div></a>
+        <a id="Menu1" href="{% url 'send_list' %}" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสารที่ส่ง</div><span class="badge badge-light" id="Count"></span></a>
+        <div id="Hide"><a id="Menu3" href="{% url 'approve_list' %}" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >การพิจารณาเอกสาร</div><span class="badge badge-light" id="Count_T"></span></a></div>
     </div>
     
 <!---------------------------------------------Profile-------------------------------------------------------------------------------------->
@@ -122,15 +122,15 @@
 
     
     
-    
-    <input id="ID_" value= {{request.session.user_id}} hidden>
-    <input id="Role" value= {{request.session.user_role}} hidden>
-    <input id="Years_" value= {{Years}} hidden>
-    <input id="Department_" value= {{Department}} hidden>
-    <input id="Major_" value= {{Major}} hidden>
-    <input id="Tel_" value= {{Tel}} hidden>
-    <input id="Email_" value= {{Email}} hidden>
-    <input id="Position_" value= {{Position}} hidden>
+
+    <input type="hidden" id="ID_" value= {{stID}} >
+    <input type="hidden" id="Role" value= {{request.session.user_role}} >
+    <input type="hidden" id="Years_" value= {{Years}} >
+    <input type="hidden" id="Department_" value= {{Department}} >
+    <input type="hidden" id="Major_" value= {{Major}} >
+    <input type="hidden" id="Tel_" value= {{Tel}} >
+    <input type="hidden" id="Email_" value= {{Email}} >
+    <input type="hidden" id="Position_" value= {{Position}} >
     <script src="{% static 'js/home/Notification.js' %}"></script>
     <script src="{% static 'js/Profile.js' %}"></script>
     <script src="{% static 'js/home/Index.js' %}"></script>
