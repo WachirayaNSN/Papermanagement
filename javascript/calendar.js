@@ -10,8 +10,8 @@ let monthAndYear = document.getElementById("monthAndYear");
 currentYear+=543;
 showCalendar(currentMonth, currentYear);
 
-let Name = document.getElementById("Name_info");
-let Place = document.getElementById("Place_info");
+let Name_info = document.getElementById("Name_info");
+let Place_info = document.getElementById("Place_info");
 let Date_info = document.getElementById("Date_info");
 let Time_info = document.getElementById("Time_info");
 let Name_Teacher = document.getElementById("Name_Teacher_info");
@@ -20,8 +20,8 @@ let B1 = document.getElementById("B1");
 let B3 = document.getElementById("B3");
 
 
-Name.innerHTML = 'A';
-Place.innerHTML = 'B';
+Name_info.innerHTML = 'A';
+Place_info.innerHTML = 'B';
 Date_info.innerHTML = 'C';
 Time_info.innerHTML = 'D';
 Name_Teacher.innerHTML = 'E';
