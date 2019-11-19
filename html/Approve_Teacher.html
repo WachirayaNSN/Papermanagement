@@ -23,8 +23,6 @@
         <div id="Hide"><button id="Menu1" onclick="Menu3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >การพิจารณาเอกสาร</div><span class="badge badge-light" id="Count_T"></span></button></div>
     </div>
     <div id="from" >
-            <button class="btn btn-success btn-lg" onclick="Add('OK')">OK</button>
-            <buttin class="btn btn-danger btn-lg" onclick="Add()">NO</buttin>
             <div class="container row-1"  >
                 <div id='A' ></div>
             </div>
@@ -50,11 +48,15 @@
   
     }
     
-    #paper{
+    .paper{
         background-color: rgba(54, 52, 52, 0.719);
-
+        padding-top: 30px;
+        padding-left: 40px;
+        color: cornsilk;
+        font-size: 20px;
+        font-weight: bold;
     }
-    #paper:hover{
+    .paper:hover{
         transition: transform .2s;
         background-color: rgba(109, 109, 109, 0.24);
     }
@@ -67,7 +69,7 @@
     bottom: 20px;
     right: 0px;
     height: 160px;
-    width: 17%;
+    width: 160px;
     top: 20px;
     }
     
@@ -78,7 +80,7 @@
         right: 0;
         background-color: rgba(240, 239, 239, 0.514);
     }
-    #paper{
+    .paper{
         
         height: 200px;
         width: 100%;

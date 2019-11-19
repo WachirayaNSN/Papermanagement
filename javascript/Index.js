@@ -2,7 +2,7 @@
 var Name = 'Paper Management ';
 var Role = document.getElementById('Role').value
 
-document.getElementById('Role').value = 'Student';
+document.getElementById('Role').value = 'Teacher';
 if(document.getElementById('Role').value == 'Student'){
     document.getElementById('Menu').style.backgroundColor = 'rgb(248, 198, 106)';
     document.getElementById('Hide').hidden =true;
