@@ -1,4 +1,4 @@
-var Count = '';
+var Count = '3';
 var Count_T = '';
 
 document.getElementById('Count').innerHTML = Count
