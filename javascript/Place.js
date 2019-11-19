@@ -1,14 +1,22 @@
 
 var Rule = document.getElementById('checkrule').value;
 var reason = document.getElementById('Reason').value
-//var Reason = $("#Reason").val();
 var Place = document.getElementById('Sel').value
 var Time_b = document.getElementById('Time_Before').value
 var Time_a = document.getElementById('Time_After').value
 var Date_before = document.getElementById('date_before').value
 var File = document.getElementById('File').value
-//var Date_after = document.getElementById('date_after').value
+var Date_after = document.getElementById('date_after').value
 var fileList = document.getElementById('File').file;
+var Date_be = document.getElementById('Date_be').value;
+var Date_af = document.getElementById('Date_af').value;
+var Time_be = document.getElementById('Time_be').value;
+var Time_af = document.getElementById('Time_af').value;
+var Rule_Data = document.getElementById('Rule_').value;
+var Reason_Data = document.getElementById('Reason_').value;
+var Place_Data = document.getElementById('Place_').value;
+var Elec_Data = document.getElementById('Elec_').value;
+
 var Rule_text = ''
 var Reason_text = ''
 var Place_text = ''
@@ -29,6 +37,7 @@ document.getElementById('Department').innerHTML = Department
 document.getElementById('Major').innerHTML = Major
 document.getElementById('Tel').innerHTML = Tel
 document.getElementById('Email').innerHTML = Email
+
 
 
 
@@ -69,6 +78,7 @@ function Select(){
 }
 ////////////////////////////////////////////////////////////////////////
 function Submit(){
+    
     if(Rule == 'on'){
         Rule_text = '- โปรดกดยอมรับ ระเบียบการใช้สถานที่'
         document.getElementById('Rule_text').innerHTML = Rule_text 
@@ -119,22 +129,26 @@ function Submit(){
         document.getElementById('Date_text').innerHTML = Date_text
     }
     /////////////////////////////////////////////////////////////////////////
-    if(document.getElementById('date_before').value != ''||document.getElementById('date_after').value != ''&&Rule != 'on'&&document.getElementById('Reason').value != ''&&Place != ''&&document.getElementById('Time_Before').value != '' || document.getElementById('Time_After').value != ''){var r = confirm("ยืนยันการส่งเอกสาร ขอใช้สถานที่");
-    if (r == true) {
-      alert("คุณได้ยืนยันการส่งเอกสารหมายเลข "+ID_Paper);
-      event.preventDefault();
-
-    } else {
+    if((document.getElementById('date_before').value == ''||document.getElementById('date_after').value == '')&&Rule == 'on'&&document.getElementById('Reason').value == ''&&Place == ''&&document.getElementById('Time_Before').value == '' || document.getElementById('Time_After').value == ''){
+        alert('กรุณากรอกเอกสารให้ครบถ้วน');
+        event.stopPropagation();
         event.preventDefault();
-    }}
+    }
+    else if((document.getElementById('date_before').value != ''|| document.getElementById('date_after').value != '')&&Rule != 'on'&&document.getElementById('Reason').value != ''&&Place != ''&&document.getElementById('Time_Before').value != '' || document.getElementById('Time_After').value != ''){
+        document.getElementById('Information').setAttribute('method','POST');
+        Rule_Data = document.getElementById('checkrule').value;
+        Reason_Data = document.getElementById('Reason').value
+        Place_Data = document.getElementById('Sel').value
+        Time_be = document.getElementById('Time_Before').value
+        Time_af = document.getElementById('Time_After').value
+        Date_be = document.getElementById('date_before').value
+        Date_af = document.getElementById('date_after').value
+        event.preventDefault();
+    }
     else{event.preventDefault();}
     
 
     /////////////////////////////////////////////////////////////////////////
-    
-
-
-
     
 }
 /////////////////////////////////////////////////////////////////////////////////
@@ -169,7 +183,13 @@ function Close(ID){
     $(ID).hide();
 }
 
-
+function Info_close(){
+    document.getElementById('Information').setAttribute('method','');
+    event.preventDefault();
+}
+function Info_submit(){
+    alert("คุณได้ยืนยันเอกสาร");
+}
 document.getElementById('Reason_text').innerHTML += Reason_text 
 document.getElementById('Place_text').innerHTML += Place_text 
 document.getElementById('Time_text').innerHTML += Time_text 

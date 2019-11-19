@@ -163,7 +163,7 @@
         </div> 
 
    <!----------------------------------------------------------------------Form-------------------------------------------------->    
-        <form  style="margin-left: 40px;">
+        <form  style="margin-left: 40px;" id="Information" method="">
                     <div class="form-group">
                             <div class="row">   
                                     <label for="Place_img"><h3>สถานที่</h3></label>
@@ -199,6 +199,7 @@
                                     <option value="3">Three</option>
                             </select>
                           </div> 
+                          <input type="hidden" id="Place_">
 <!------------------------------------------------------------------Time---------------------------------------------------------------------------------->
                             <form>
                                 <div class="row" style="margin-top: 50px;">
@@ -254,6 +255,8 @@
                                 </div>
                              </div>
                             </form>
+                            <input type="hidden" id="Time_be">
+                             <input type="hidden" id="Time_af">
 <!------------------------------------------------------------------Date---------------------------------------------------------------------------------->
                            <form>
                                 <div class="row" style="margin-top: 50px;margin-left: 0px;">
@@ -268,12 +271,15 @@
                                   <input type="date" id="date_after" class="form-control form-control-lg">
                                 </div>
                              </div>
+                             <input type="hidden" id="Date_be">
+                             <input type="hidden" id="Date_af">
                             </form>
  <!------------------------------------------------------------------Reason---------------------------------------------------------------------------------->
                             <div class="form-group">
                                     <label for="Reason" style="font-weight: bolder; font-size: larger;">เหตุผลในการขอใช้สถานที่</label>
                                     <textarea  id="Reason" class="form-control "rows="6"></textarea>
                                   </div>
+                             <input type="hidden" id="Reason_">
  <!------------------------------------------------------------------Check---------------------------------------------------------------------------------->
                           <div class="form-check">
                                 <input class="form-check-input" type="checkbox"  id="electric" onchange="checkelec()">
@@ -281,15 +287,18 @@
                                   ใช้ไฟฟ้า
                                 </label>
                               </div>
+                              <input type="hidden" id="Elec_">
+                             
                               <div class="form-check">
                                 <input id="checkrule" class="form-check-input" type="checkbox" onchange="checkRule()"  >
                                 <label class="form-check-label" for="checkrule">
                                         <a href="Rule.html" id="rule" target="_blank"  style="font-weight: bolder; font-size: larger;"> ยอมรับ ระเบียบการใช้สถานที่ </a>
+                                        <input type="hidden" id="Rule_">
                                 </label>
                               </div>
                       <div class="form-check">
                       </div>
-                  <form>
+                  <form >
                         <div class="form-group">
                           <label for="File">เอกสาร อ้างอิง</label>
                           <input type="file" class="form-control-file" id="File">
@@ -298,7 +307,7 @@
     <!------------------------------------------------------------------Submit---------------------------------------------------------------------------------->
     <div class="row">
             <div class="column" >
-                    <button onclick="Submit()" class="btn btn-lg btn-success" style="margin-top: 30px; margin-bottom: 30px; margin-left: 100px;" id="but">Submit</button>
+                    <button onclick="Submit()" class="btn btn-lg btn-success" style="margin-top: 30px; margin-bottom: 30px; margin-left: 100px;" id="but" data-toggle="modal" data-target="#Info_modal" >Submit</button>
             </div>
             <div class="column">
                     <div id="alert" class="alert alert-danger collapse" style="margin-left: 20px; margin-top: 50px; margin-bottom: 30px;">
@@ -314,10 +323,30 @@
                           </div>
             </div>
           </div> 
-                
-            </form>
+                <!---------------------------------------------------------------------------------------------------------------------------------------------------->
+<div class="modal fade" id="Info_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">ยืนยัน</button>
+        </form>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
+            </div>
+          </div>
         </div>
-   <!------------------------------------------------------------------Modal------------------------------------------------------------------------------->     
+      </div>
+
+           
+        </div>
+   <!------------------------------------------------------------------Calendar Modal------------------------------------------------------------------------------->     
         <div class="modal fade" id="info" >
   <div class="modal-dialog modal-dialog-centered" >
     <div class="modal-content">
@@ -341,8 +370,10 @@
     </div>
   </div>
 </div>
-<!---------------------------------------------------------------------------------------------------------------------------------------------------->
-        <input id="Role" value="Student" hidden>
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------------------------> 
+<input id="Role" value="Student" hidden>
         <script src="../javascript/calendar.js"></script>
         <script type="" src="../javascript/Test.js"></script>
         <script type="" src="../javascript/Place.js"></script>
