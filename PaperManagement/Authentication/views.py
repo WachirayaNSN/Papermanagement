@@ -124,7 +124,7 @@ def send_request (request):
     context['stID'] = user_profile.user_stID
     context['Name'] = user.first_name +"  "+user.last_name
     context['Tel'] = user_profile.user_tel
-    context['Email'] = user.email
+    context['Email'] = user_obj.email
     context['Department'] = user_profile.user_Department.department_name
     context['stID'] = user_profile.user_stID
     context['Years'] = user_profile.user_stYear
@@ -150,7 +150,6 @@ def send_request_list (request):
     user = User.objects.get(pk=request.session['user_id'])
     context['Name'] = user.first_name +"  "+user.last_name
     
-    
     return render(request,'request_list/Approve_User.html',context)
 
 # Send : Not yet
@@ -159,4 +158,6 @@ def approve_request_list (request):
     context={}
     user_obj = User.objects.get(pk=request.session['user_id'])
     context['Name'] = user_obj.first_name +"  "+user_obj.last_name
+    context['request_list'] = AllForm.objects.filter(advisor=request.session['user_id']) 
+
     return render(request,'request_list/Approve_Teacher.html',context)
