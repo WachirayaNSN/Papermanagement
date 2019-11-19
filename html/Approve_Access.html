@@ -20,6 +20,7 @@
         <button id="Menu1" onclick="Menu1()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >แบบฟอร์มเอกสาร</div></button>
         <button id="Menu1" onclick="Menu2()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสารที่ส่ง</div><span class="badge badge-light" id="Count"></span></button>
         <div id="Hide"> <button id="Menu1" onclick="Menu3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >การพิจารณาเอกสาร</div><span class="badge badge-light" id="Count_T"></span></button></div>
+        <div id="Hide_Set"> <button id="Menu1" onclick="Menu4()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >ตั้งค่าเอกสาร</div></button></div>
         <script type="" src="Test.js"></script>
     </div>
 
@@ -192,6 +193,11 @@
                                         <div id="Elec" class="text content" style=" margin-left: 100px;">content</div>
                                 </div>
                 </div>
+                <div class="form-group">
+                        <label for="comment" style="font-weight: bolder; font-size: larger;">คำเเนะนำ</label>
+                        <textarea  id="comment" class="form-control "rows="6"></textarea>
+                      </div>
+                 <input type="hidden" id="comment_">
                 
     </form>
     <div class="form-group text" style="margin-left: 400px;">
