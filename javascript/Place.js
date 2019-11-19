@@ -143,7 +143,6 @@ function Submit(){
         Time_af = document.getElementById('Time_After').value
         Date_be = document.getElementById('date_before').value
         Date_af = document.getElementById('date_after').value
-        event.preventDefault();
     }
     else{event.preventDefault();}
     

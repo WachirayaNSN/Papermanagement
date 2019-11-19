@@ -13,27 +13,24 @@
 <body style="background-image: url(../img/KMUTT.png);">
   <div style="text-align: center; margin-top: 70px;"> <h1>Reset 6 Pin</h1></div>
   <div class="container card" >
-    <form>
-      <div class="form-group " style="margin: 20px;">
-        <label for="eEmail">Email address</label>
-        <input type="email" class="form-control" id="Email" placeholder="KMUTT Email">
-      </div>
-    </form>
-    <form>
+    <form id="change">
+      <form>
       <div class="form-row">
-        <div class="col">
             <label for="New">New 6 Pin</label>
           <input id="New" type="text" class="form-control" placeholder="6 Pin" maxlength="6">
         </div>
-        <div class="col">
+        </form>
+        <form>
             <label for="New">Confirm New 6 Pin</label>
           <input id="confirm" type="text" class="form-control" placeholder="Confirm 6 Pin" maxlength="6">
         </div>
       </div>
-    </form>
+     </form>
   </div>
-  <div style="text-align: center;"><button class="btn btn-lg btn-success">SUBMIT</button></div>
+</form>
+  <div style="text-align: center;"><button class="btn btn-lg btn-success" onclick="change()">SUBMIT</button></div>
   <div style="text-align: center; margin-top: 20px;"><a href="../html/login.html"> <button class="btn btn-lg btn-primary">Log in</button> </a></div>
+  <script src="../javascript/Submit_Pin.js"></script>
 <!--------------CSS-------------------------------------------------------------------------------------->
 <style>
   .card{

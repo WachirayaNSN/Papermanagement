@@ -34,3 +34,6 @@ function Submit(){
         else if(C == 0){alert("Wrong Password");}
         event.preventDefault();
    }
+   function change(){
+     
+   }
