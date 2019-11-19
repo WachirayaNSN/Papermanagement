@@ -11,14 +11,17 @@ function Submit(){
       if(username == ID[n][i] && password == Pass[n][i]){
         if(n == 0){
         Role = "Student";
+        document.getElementById('Role_').value = Role;
        // alert('Hello User');
       }
         else if(n == 1){
         Role ="Teacher";
-        alert('Hello Teacher');}
+        alert('Hello Teacher');
+        document.getElementById('Role_').value = Role;
+      }
         else if(n == 2){
         Role = "Admin";
-        alert('Hello Admin');}
+        alert('Hello Admin');} 
         window.location.href="Home_User.html"
         C = 1;
         break;
