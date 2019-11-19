@@ -9,9 +9,12 @@ var ID = ''
 var C = 0;
 var Role = document.getElementById('Role').value;
 //$('#A').html('<a href="Info_Approve.html" class="link"><div class="card" id="paper"><div id="A1" class="overlay approve">ไม่อนุมัติ</div></div></a>);
+
 for(var i=1;i<=3;i++){
     Add('OK');
+    document.getElementById('paper'+String(i)).appendChild('AAA')   
 }
+
 function Add(D){
     C+=1
     ID = String(C)
@@ -24,11 +27,11 @@ function Add(D){
           Color = No_Approve;
         }
     if(Role == 'Student'){
-        document.getElementById('A').innerHTML += '<a href="Info_Approve.html" class="link"><div class="card" id="paper"><div id='+ID+' class="overlay approve">'+Status+'</div></div></a>'
+        document.getElementById('A').innerHTML += '<a href="Info_Approve.html" class="link "><div class="card paper" id="paper'+ID+' "><div id='+ID+' class="overlay approve">'+Status+'</div></div></a>'
         document.getElementById(ID).style.backgroundColor = Color;    
     }
     else if(Role == 'Teacher'){
-        document.getElementById('A').innerHTML += '<a href="Approve_Access.html" class="link"><div class="card" id="paper"><div id='+ID+' class="overlay approve">'+Status+'</div></div></a>'
+        document.getElementById('A').innerHTML += '<a href="Info_Access.html" class="link paper"><div class="card" id="paper'+ID+'"><div id='+ID+' class="overlay approve">'+Status+'</div></div></a>'
         document.getElementById(ID).style.backgroundColor = Color;
     } 
     

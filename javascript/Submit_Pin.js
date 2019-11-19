@@ -1,8 +1,9 @@
 
 var Name = ''
-
+var Card = ''
 document.getElementById('Name').innerHTML = Name;
 if(Name != ''){ChangeName();}
+
 function ChangeName(){
   document.getElementById('Name').innerHTML = Name;
   event.preventDefault();
@@ -14,6 +15,9 @@ function Submit(){
       var ID = [["123****","***456"],["***789"],["****57" ,'Wachiraya Tangsirivichaikul']];
       var Pass = [["******","******"],["******"],["1234ถุ","896293"]];
       var C = 0;
+      if(Card == ''){
+        alert('ไม่มีข้อมูลในระบบ');
+    }
     for(n = 0;n<3;n++){
       for(i=0;i<=ID[n].length;i++){
         if(username == ID[n][i] && password == Pass[n][i]){

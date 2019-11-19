@@ -129,12 +129,13 @@ function Submit(){
         document.getElementById('Date_text').innerHTML = Date_text
     }
     /////////////////////////////////////////////////////////////////////////
-    if((document.getElementById('date_before').value == ''||document.getElementById('date_after').value == '')&&Rule == 'on'&&document.getElementById('Reason').value == ''&&Place == ''&&document.getElementById('Time_Before').value == '' || document.getElementById('Time_After').value == ''){
+    if(document.getElementById('date_before').value == ''||document.getElementById('date_after').value == ''&&Rule == 'on'&&document.getElementById('Reason').value == ''&&Place == ''&&document.getElementById('Time_Before').value == '' || document.getElementById('Time_After').value == ''){
         alert('กรุณากรอกเอกสารให้ครบถ้วน');
         event.stopPropagation();
         event.preventDefault();
     }
-    else if((document.getElementById('date_before').value != ''|| document.getElementById('date_after').value != '')&&Rule != 'on'&&document.getElementById('Reason').value != ''&&Place != ''&&document.getElementById('Time_Before').value != '' || document.getElementById('Time_After').value != ''){
+    else if(document.getElementById('date_before').value != ''|| document.getElementById('date_after').value != ''&&Rule != 'on'&&document.getElementById('Reason').value != ''&&Place != ''&&document.getElementById('Time_Before').value != '' || document.getElementById('Time_After').value != ''){
+        document.getElementById('alert').hidden;
         document.getElementById('Information').setAttribute('method','POST');
         Rule_Data = document.getElementById('checkrule').value;
         Reason_Data = document.getElementById('Reason').value
