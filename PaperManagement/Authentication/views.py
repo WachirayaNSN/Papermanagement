@@ -119,10 +119,10 @@ def profile(request):
 
 def send_request (request):
     context={}
-    user_obj = User.objects.get(pk=request.session['user_id'])
-    user_profile = User_Profile.objects.get(user=user_obj)
+    user = User.objects.get(pk=request.session['user_id'])
+    user_profile = User_Profile.objects.get(user=user)
     context['stID'] = user_profile.user_stID
-    context['Name'] = user_obj.first_name +"  "+user_obj.last_name
+    context['Name'] = user.first_name +"  "+user.last_name
     context['Tel'] = user_profile.user_tel
     context['Email'] = user.email
     context['Department'] = user_profile.user_Department.department_name
@@ -132,12 +132,12 @@ def send_request (request):
     context['Major'] = user_profile.user_stFaculty.faculty_name
 
     if request.method == "POST":
-        place = Place.objects.get(place_name=request.POST['place'])
+        place = Place.objects.get(place_name=request.POST['place_'])
         requestor = User.objects.get(pk=request.session['user_id'])
-        try :
-            advisor = User.objects.get(first_name=request.POST['first_name'],last_name=request.POST['last_name'])
-        except User.DoesNotExist:
-            context['advisor'] = 'not_find'
+        form_type = FormType.objects.get(pk=1)
+        tel = User_Profile.objects.get (user=requestor).user_tel
+        form = AllForm.objects.create(form_type = form_type , requestor = requestor , advisor = requestor , request_tel = tel )
+        
 
     return render(request,'form/From_place_V2.html',context)
 

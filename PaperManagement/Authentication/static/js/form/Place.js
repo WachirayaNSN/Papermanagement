@@ -1,43 +1,33 @@
 
 var Rule = document.getElementById('checkrule').value;
 var reason = document.getElementById('Reason').value
-//var Reason = $("#Reason").val();
 var Place = document.getElementById('Sel').value
 var Time_b = document.getElementById('Time_Before').value
 var Time_a = document.getElementById('Time_After').value
 var Date_before = document.getElementById('date_before').value
-var Date_before = document.getElementById('date_after').value
 var File = document.getElementById('File').value
-
+var Date_after = document.getElementById('date_after').value
 var fileList = document.getElementById('File').file;
+var Time_be = document.getElementById('Time_be').value;
+var Time_af = document.getElementById('Time_af').value;
+var Rule_Data = document.getElementById('Rule_').value;
+var Reason_Data = document.getElementById('Reason_').value;
+var Place_Data = document.getElementById('Place_').value;
+var Elec_Data = document.getElementById('Elec_').value;
+
 var Rule_text = ''
 var Reason_text = ''
 var Place_text = ''
 var Time_text = ''
 var Date_text = ''
 
-var Rule_ = document.getElementById('checkrule_').value;
-var reason_ = document.getElementById('Reason_').value
-var Place_ = document.getElementById('Sel_').value
-var Time_b_ = document.getElementById('Time_Before_').value
-var Date_before_ = document.getElementById('date_before_').value
-var Time_a_ = document.getElementById('Time_After_').value
-var Date_after_ = document.getElementById('date_after_').value
-
-Rule_.value = Rule.value
-reason_.value = reason.value
-Place_.value = Place.value
-Time_b_.value = Time_b.value
-Date_before_.value = Date_before.value
-Time_a_.value = Time_a.value
-Date_after_.value = Date_after.value
-
-var ID = document.getElementById('ID_').value
-var Years = document.getElementById('Years_').value
-var Department = document.getElementById('Department_').value
-var Major = document.getElementById('Major_').value
-var Tel = document.getElementById('Tel_').value
-var Email  = document.getElementById('Email_').value
+var Name = document.getElementById('Name_').value;
+var ID = document.getElementById('ID_').value;
+var Years = document.getElementById('Years_').value;
+var Department = document.getElementById('Department_').value;
+var Major = document.getElementById('Major_').value;
+var Tel = document.getElementById('Tel_').value;
+var Email  = document.getElementById('Email_').value;
 
 document.getElementById('ID').innerHTML = ID
 document.getElementById('Years').innerHTML = Years
@@ -45,6 +35,7 @@ document.getElementById('Department').innerHTML = Department
 document.getElementById('Major').innerHTML = Major
 document.getElementById('Tel').innerHTML = Tel
 document.getElementById('Email').innerHTML = Email
+
 
 
 
@@ -85,13 +76,13 @@ function Select(){
 }
 ////////////////////////////////////////////////////////////////////////
 function Submit(){
-    alert(fileList)
+    
     if(Rule == 'on'){
         Rule_text = '- โปรดกดยอมรับ ระเบียบการใช้สถานที่'
         document.getElementById('Rule_text').innerHTML = Rule_text 
         $('#alert').show('fade');
     }
-    else if(Rule = 'off'){
+    else if(Rule == 'off'){
         Rule_text = ''
         document.getElementById('Rule_text').innerHTML = Rule_text 
     }
@@ -136,16 +127,27 @@ function Submit(){
         document.getElementById('Date_text').innerHTML = Date_text
     }
     /////////////////////////////////////////////////////////////////////////
-
-    var r = confirm("ยืนยันการส่งเอกสาร ขอใช้สถานที่");
-
-    if (r == true) {
-        
-      alert("คุณได้ยืนยันการส่งเอกสารหมายเลข "+ID_Paper)
-    } else {
+    if(document.getElementById('date_before').value == ''||document.getElementById('date_after').value == ''&&Rule == 'on'&&document.getElementById('Reason').value == ''&&Place == ''&&document.getElementById('Time_Before').value == '' || document.getElementById('Time_After').value == ''){
+        alert('กรุณากรอกเอกสารให้ครบถ้วน');
+        event.stopPropagation();
         event.preventDefault();
     }
+    else if(document.getElementById('date_before').value != ''|| document.getElementById('date_after').value != ''&&Rule != 'on'&&document.getElementById('Reason').value != ''&&Place != ''&&document.getElementById('Time_Before').value != '' || document.getElementById('Time_After').value != ''){
+        Rule_Data = document.getElementById('checkrule').value;
+        Reason_Data = document.getElementById('Reason').value
+        Place_Data = document.getElementById('Sel').value
+
+        Time_be = document.getElementById('Time_Before').value
+        Time_af = document.getElementById('Time_After').value
+        document.getElementById('alert').hidden;
+        document.getElementById('Information').setAttribute('method','POST');
+        
+    }
+    else{event.preventDefault();}
+    
+
     /////////////////////////////////////////////////////////////////////////
+    
 }
 /////////////////////////////////////////////////////////////////////////////////
 function checkrule(){
@@ -179,7 +181,13 @@ function Close(ID){
     $(ID).hide();
 }
 
-
+function Info_close(){
+    document.getElementById('Information').setAttribute('method','');
+    event.preventDefault();
+}
+function Info_submit(){
+    alert("คุณได้ยืนยันเอกสาร");
+}
 document.getElementById('Reason_text').innerHTML += Reason_text 
 document.getElementById('Place_text').innerHTML += Place_text 
 document.getElementById('Time_text').innerHTML += Time_text 
