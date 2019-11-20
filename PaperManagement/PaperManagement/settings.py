@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'poladatabase',
         'ENGINE': 'django.db.backends.mysql',
         'USER': 'root',
-        'PASSWORD': 'P@ssw0rd',
+        'PASSWORD': '12ab53@',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'ATOMIC_REQUESTS': True,

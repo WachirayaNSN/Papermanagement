@@ -1,7 +1,7 @@
 {
-<<<<<<< HEAD
-    "python.pythonPath": "C:\\Users\\Aon_ApsoLute\\AppData\\Local\\Programs\\Python\\Python38\\python.exe"
-=======
-    "python.pythonPath": "C:\\Users\\pasut\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe"
->>>>>>> backend
+    "python.pythonPath": "C:\\Users\\wisar\\Anaconda3\\envs\\env4myweb\\python.exe",
+    "python.linting.pylintEnabled": false,
+    "python.linting.mypyEnabled": false,
+    "python.linting.enabled": true,
+    "python.linting.prospectorEnabled": true
 }
