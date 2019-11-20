@@ -109,7 +109,7 @@
                                 <div class="text" style="margin-top: 30px; margin-left: 100px;">รหัสนักศึกษา / ID : </div>
                         </div>
                         <div class="column">
-                                <div  id="ID" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                                <div  id="ID" class="text content" style="margin-top: 30px; margin-left: 100px;">{{stID}}</div>
                         </div>
                 </div>
         </div>
@@ -119,7 +119,7 @@
                                 <div class="text" style="margin-top: 30px; margin-left: 100px;">ชั้นปี / Years : </div>
                         </div>
                         <div class="column">
-                                <div  id="Years" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                                <div  id="Years" class="text content" style="margin-top: 30px; margin-left: 100px;">{{Years}}</div>
                         </div>
                 </div>
         </div>        
@@ -129,7 +129,7 @@
                                 <div class="text" style="margin-top: 30px; margin-left: 100px;">คณะ / Faculty : </div>
                         </div>
                         <div class="column">
-                                <div  id="Department" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                                <div  id="Department" class="text content" style="margin-top: 30px; margin-left: 100px;">{{Department}}</div>
                         </div>
                 </div>
         </div>    
@@ -139,7 +139,7 @@
                                 <div class="text" style="margin-top: 30px; margin-left: 100px;">ภาควิชา / Major : </div>
                         </div>
                         <div class="column">
-                                <div  id="Major" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                                <div  id="Major" class="text content" style="margin-top: 30px; margin-left: 100px;">{{Major}}</div>
                         </div>
                 </div>
         </div> 
@@ -149,7 +149,7 @@
                                 <div class="text" style="margin-top: 30px; margin-left: 100px;">เบอร์ติดต่อ / Tel. : </div>
                         </div>
                         <div class="column">
-                                <div  id="Tel" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                                <div  id="Tel" class="text content" style="margin-top: 30px; margin-left: 100px;">{{Tel}}</div>
                         </div>
                 </div>
         </div> 
@@ -159,7 +159,7 @@
                                 <div class="text" style="margin-top: 30px; margin-left: 100px;">Email : </div>
                         </div>
                         <div class="column">
-                                <div  id="Email" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                                <div  id="Email" class="text content" style="margin-top: 30px; margin-left: 100px;">{{Email}}</div>
                         </div>
                 </div>
         </div> 
@@ -174,14 +174,14 @@
                                         <div class="carousel-inner">
                                           <div class="carousel-item active" >
                                             
-                                            <img class="d-block " id="img-1" src="../img/Namo.jpg" alt="First slide" style="width: 700px;">
+                                            <img class="d-block " id="img-1" src="{% static "img/Namo.jpg"%}" alt="First slide" style="width: 700px;">
                                             
                                           </div>
                                           <div class="carousel-item">
-                                            <img class="d-block " id="img-2" src="../img/Namo.jpg" alt="Second slide" style="width: 700px;">
+                                            <img class="d-block " id="img-2" src="{% static "img/Namo.jpg"%}" alt="Second slide" style="width: 700px;">
                                           </div>
                                           <div class="carousel-item">
-                                            <img class="d-block " id="img-3" src="../img/Namo.jpg" alt="Third slide" style="width: 700px;"  >
+                                            <img class="d-block " id="img-3" src="{% static "img/Namo.jpg"%}" alt="Third slide" style="width: 700px;"  >
                                           </div>
                                         </div>
                                         <a class="carousel-control-prev" href="#Place_img" role="button" data-slide="prev">
@@ -202,7 +202,7 @@
                                     <option value="3">Three</option>
                             </select>
                           </div> 
-                          <input type="hidden" id="Place_">
+                          <input type="hidden" id="Place_" name ="Place_">
 <!------------------------------------------------------------------Time---------------------------------------------------------------------------------->
                             <form>
                                 <div class="row" style="margin-top: 50px;">
@@ -294,7 +294,7 @@
                                 <input id="checkrule" class="form-check-input" type="checkbox" onchange="checkRule()"  >
                                 <label class="form-check-label" for="checkrule">
                                         <a href="Rule.html" id="rule" target="_blank"  style="font-weight: bolder; font-size: larger;"> ยอมรับ ระเบียบการใช้สถานที่ </a>
-                                        <input type="hidden" id="Rule_">
+                                        
                                 </label>
                               </div>
                       <div class="form-check">
@@ -377,12 +377,6 @@
 
         <input type="hidden" id="Role" value= {{request.session.user_role}}>
         
-        <input type="hidden" id="ID_" value= {{stID}} >
-        <input type="hidden" id="Years_" value= {{Years}} >
-        <input type="hidden" id="Department_" value= {{Department}} >
-        <input type="hidden" id="Major_" value= {{Major}} >
-        <input type="hidden" id="Tel_" value= {{Tel}} >
-        <input type="hidden" id="Email_" value= {{Email}} >
         <script src="{% static 'js/home/Notification.js' %}"></script>
         <script src="{% static 'js/home/Index.js' %}"></script>
 

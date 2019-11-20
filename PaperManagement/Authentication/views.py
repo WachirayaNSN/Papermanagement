@@ -124,16 +124,17 @@ def send_request (request):
     context['stID'] = user_profile.user_stID
     context['Name'] = user.first_name +"  "+user.last_name
     context['Tel'] = user_profile.user_tel
-    context['Email'] = user_obj.email
+    context['Email'] = user.email
     context['Department'] = user_profile.user_Department.department_name
     context['stID'] = user_profile.user_stID
     context['Years'] = user_profile.user_stYear
     context['Level'] = user_profile.user_stLevel.level_name
     context['Major'] = user_profile.user_stFaculty.faculty_name
-
+    
     if request.method == "POST":
-        place = Place.objects.get(place_name=request.POST['place_'])
-        requestor = User.objects.get(pk=request.session['user_id'])
+        
+        place = Place.objects.get(place_name=request.POST['Place_'])
+        requestor = user
         form_type = FormType.objects.get(pk=1)
         tel = User_Profile.objects.get (user=requestor).user_tel
         form = AllForm.objects.create(form_type = form_type , requestor = requestor , advisor = requestor , request_tel = tel )

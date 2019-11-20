@@ -18,7 +18,7 @@
             <div style="position: relative; left: 0; top: 0;">
                     <img src="{% static "img/login/KMUTT.png"%}" id="kmutt" alt="kmutt background" />
                     <div id="logo"><a href="http://www2.kmutt.ac.th/"><img src="{% static "img/login/kmuttLogo.png"%}" id="act" alt="logo"/></a></div>
-                    <div id="logoP"><a href="Team.html"><img src="{% static "img/login/Poala_1.png"%}" id="actP" alt="logo"/></a></div>
+                    <div id="logoP"><href="{% url 'team' %}"><img src="{% static "img/login/Poala_1.png"%}" id="actP" alt="logo"/></a></div>
             <div class="container text-center " id="block">
                   
                             <form method = 'post'>

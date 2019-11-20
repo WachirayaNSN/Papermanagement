@@ -1,7 +1,7 @@
 
 var Rule = document.getElementById('checkrule').value;
 var reason = document.getElementById('Reason').value
-var Place = document.getElementById('Sel').value
+var Place = document.getElementById('Sel')
 var Time_b = document.getElementById('Time_Before').value
 var Time_a = document.getElementById('Time_After').value
 var Date_before = document.getElementById('date_before').value
@@ -10,7 +10,7 @@ var Date_after = document.getElementById('date_after').value
 var fileList = document.getElementById('File').file;
 var Time_be = document.getElementById('Time_be').value;
 var Time_af = document.getElementById('Time_af').value;
-var Rule_Data = document.getElementById('Rule_').value;
+
 var Reason_Data = document.getElementById('Reason_').value;
 var Place_Data = document.getElementById('Place_').value;
 var Elec_Data = document.getElementById('Elec_').value;
@@ -21,20 +21,6 @@ var Place_text = ''
 var Time_text = ''
 var Date_text = ''
 
-var Name = document.getElementById('Name_').value;
-var ID = document.getElementById('ID_').value;
-var Years = document.getElementById('Years_').value;
-var Department = document.getElementById('Department_').value;
-var Major = document.getElementById('Major_').value;
-var Tel = document.getElementById('Tel_').value;
-var Email  = document.getElementById('Email_').value;
-
-document.getElementById('ID').innerHTML = ID
-document.getElementById('Years').innerHTML = Years
-document.getElementById('Department').innerHTML = Department
-document.getElementById('Major').innerHTML = Major
-document.getElementById('Tel').innerHTML = Tel
-document.getElementById('Email').innerHTML = Email
 
 
 
@@ -133,12 +119,12 @@ function Submit(){
         event.preventDefault();
     }
     else if(document.getElementById('date_before').value != ''|| document.getElementById('date_after').value != ''&&Rule != 'on'&&document.getElementById('Reason').value != ''&&Place != ''&&document.getElementById('Time_Before').value != '' || document.getElementById('Time_After').value != ''){
-        Rule_Data = document.getElementById('checkrule').value;
-        Reason_Data = document.getElementById('Reason').value
-        Place_Data = document.getElementById('Sel').value
-
-        Time_be = document.getElementById('Time_Before').value
-        Time_af = document.getElementById('Time_After').value
+        
+        
+        Reason_Data = reason;
+        Place_Data = Val
+        Time_be = document.getElementById('Time_Before').value;
+        Time_af = document.getElementById('Time_After').value;
         document.getElementById('alert').hidden;
         document.getElementById('Information').setAttribute('method','POST');
         
