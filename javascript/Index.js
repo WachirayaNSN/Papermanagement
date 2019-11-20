@@ -3,12 +3,12 @@ var Name = 'Paper Management ';
 var Role = document.getElementById('Role').value
 var R = document.getElementById('Role_');
 
-document.getElementById('Role').value = 'Admin';
+document.getElementById('Role').value = 'Student';
 if(document.getElementById('Role').value == 'Student'){
     document.getElementById('Menu').style.backgroundColor = 'rgb(248, 198, 106)';
     document.getElementById('Hide').hidden =true;
     document.getElementById('Role').value = 'Student';
-    
+    document.getElementById('Hide_Set').hidden =true;
   }
 else if(document.getElementById('Role').value == 'Teacher'){
     document.getElementById('Menu').style.backgroundColor = 'rgb(138, 231, 142)';
@@ -44,7 +44,7 @@ function Menu3(){
     window.location='Approve_Teacher.html'
   }
   else if(document.getElementById('Role').value == 'Admin'){
-    alert('You not have permission!!!')  
+    window.location='Approve_Teacher.html' 
   }
 }
 function Menu4(){
