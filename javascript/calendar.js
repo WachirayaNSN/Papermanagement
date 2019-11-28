@@ -6,7 +6,6 @@ let selectYear = document.getElementById("year");
 let selectMonth = document.getElementById("month");
 let months = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฏาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
 let monthAndYear = document.getElementById("monthAndYear");
-currentYear+=543;
 showCalendar(currentMonth, currentYear);
 let Name_info = document.getElementById("Name_info");
 let Place_info = document.getElementById("Place_info");
@@ -67,7 +66,10 @@ function showCalendar(month, year) {
         //creating individual cells, filing them up with data.
         for (let j = 0; j < 7; j++) {
             if (i === 0 && j < firstDay) {
-                break;
+                let cell = document.createElement("td");
+                let cellText = document.createTextNode("");
+                cell.appendChild(cellText);
+                row.appendChild(cell);
             }
             else if (date > daysInMonth) {
                 break;
@@ -75,9 +77,8 @@ function showCalendar(month, year) {
 
             else {
                 let cell = document.createElement("td");
-
                 let cellText = document.createTextNode(date);
-                if (date === today.getDate() && year === today.getFullYear()+543 && month === today.getMonth()) {
+                if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     cell.classList.add("Today");
                     //C+=1;
                 } // color today's date
