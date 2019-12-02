@@ -18,8 +18,8 @@
         <a href="Profile.html" id="Profile">Profile</a>
         <a href="login.html" id="signout">Sign Out</a>
         <button id="Menu1" onclick="Menu1()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >แบบฟอร์มเอกสาร</div></button>
-        <button id="Menu1" onclick="Menu2()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสารที่ส่ง</div><span class="badge badge-light" id="Count"></span></button>
-        <div id="Hide"><button id="Menu1" onclick="Menu3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >การพิจารณาเอกสาร</div><span class="badge badge-light" id="Count_T"></span></button></div>
+        <button id="Menu1" onclick="Menu2()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสารที่ส่ง</div><span class="badge badge-light" id="Count" style="font-weight: bolder; font-size: 100%;"></span></button>
+        <div id="Hide"><button id="Menu1" onclick="Menu3()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >การพิจารณาเอกสาร</div><span class="badge badge-light" id="Count_T" style="font-weight: bolder; font-size: 100%;"></span></button></div>
         <div id="Hide_Set"> <button id="Menu1" onclick="Menu4()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >ตั้งค่าเอกสาร</div></button></div>
 <form>
                 
@@ -93,71 +93,71 @@
     <div id="form" >
         <div class="form-group text" >
                 <div class="row">
-                        <div class="column" >
-                                <div class="text" style="margin-top: 30px; margin-left: 100px;">ชื่อ / Name : </div>
+                        <div class="col-md-4" >
+                                <div class="text" >ชื่อ / Name : </div>
                         </div>
-                        <div class="column">
-                                <div  id="Name_User" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
-                        </div>
-                </div>
-        </div>
-        <div class="form-group text" >
-                <div class="row">
-                        <div class="column" >
-                                <div class="text" style="margin-top: 30px; margin-left: 100px;">รหัสนักศึกษา / ID : </div>
-                        </div>
-                        <div class="column">
-                                <div  id="ID" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        <div class="col-md-4">
+                                <div  id="Name_User" class="text content" ></div>
                         </div>
                 </div>
         </div>
         <div class="form-group text" >
                 <div class="row">
-                        <div class="column">
-                                <div class="text" style="margin-top: 30px; margin-left: 100px;">ชั้นปี / Years : </div>
+                        <div class="col-md-4" >
+                                <div class="text" >รหัสนักศึกษา / ID : </div>
                         </div>
-                        <div class="column">
-                                <div  id="Years" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        <div class="col-md-4">
+                                <div  id="ID" class="text content" ></div>
+                        </div>
+                </div>
+        </div>
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="col-md-4">
+                                <div class="text" >ชั้นปี / Years : </div>
+                        </div>
+                        <div class="col-md-4">
+                                <div  id="Years" class="text content" ></div>
                         </div>
                 </div>
         </div>        
         <div class="form-group text" >
                 <div class="row">
-                        <div class="column" >
-                                <div class="text" style="margin-top: 30px; margin-left: 100px;">คณะ / Faculty : </div>
+                        <div class="col-md-4" >
+                                <div class="text" >คณะ / Faculty : </div>
                         </div>
-                        <div class="column">
-                                <div  id="Department" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        <div class="col-md-4">
+                                <div  id="Department" class="text content" ></div>
                         </div>
                 </div>
         </div>    
         <div class="form-group text" >
                 <div class="row">
-                        <div class="column" >
-                                <div class="text" style="margin-top: 30px; margin-left: 100px;">ภาควิชา / Major : </div>
+                        <div class="col-md-4" >
+                                <div class="text" >ภาควิชา / Major : </div>
                         </div>
-                        <div class="column">
-                                <div  id="Major" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
-                        </div>
-                </div>
-        </div> 
-        <div class="form-group text" >
-                <div class="row">
-                        <div class="column" >
-                                <div class="text" style="margin-top: 30px; margin-left: 100px;">เบอร์ติดต่อ / Tel. : </div>
-                        </div>
-                        <div class="column">
-                                <div  id="Tel" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        <div class="col-md-4">
+                                <div  id="Major" class="text content" ></div>
                         </div>
                 </div>
         </div> 
         <div class="form-group text" >
                 <div class="row">
-                        <div class="column" style="margin-bottom: 30px;">
-                                <div class="text" style="margin-top: 30px; margin-left: 100px;">Email : </div>
+                        <div class="col-md-4" >
+                                <div class="text">เบอร์ติดต่อ / Tel. : </div>
                         </div>
-                        <div class="column">
-                                <div  id="Email" class="text content" style="margin-top: 30px; margin-left: 100px;"></div>
+                        <div class="col-md-4">
+                                <div  id="Tel" class="text content" ></div>
+                        </div>
+                </div>
+        </div> 
+        <div class="form-group text" >
+                <div class="row">
+                        <div class="col-md-4" style="margin-bottom: 30px;">
+                                <div class="text" >Email : </div>
+                        </div>
+                        <div class="col-md-4">
+                                <div  id="Email" class="text content" ></div>
                         </div>
                 </div>
         </div> 
@@ -203,7 +203,7 @@
 <!------------------------------------------------------------------Time---------------------------------------------------------------------------------->
                             <form>
                                 <div class="row" style="margin-top: 50px;">
-                                        <label for="Time-b" style="font-size: larger;">เวลา </label>
+                                        <label for="Time-b" >เวลา </label>
                                     <div class="col">
                                             <select class="form-control" name="time" id="Time_Before"> 
                                                 <option value="">เวลาในการใช้สถานที่</option>
@@ -283,7 +283,7 @@
  <!------------------------------------------------------------------Check---------------------------------------------------------------------------------->
                           <div class="form-check">
                                 <input class="form-check-input" type="checkbox"  id="electric" onchange="checkelec()">
-                                <label class="form-check-label" for="electric"  style="font-weight: bolder; font-size: larger;">
+                                <label class="form-check-label" for="electric" >
                                   ใช้ไฟฟ้า
                                 </label>
                               </div>
@@ -292,7 +292,7 @@
                               <div class="form-check">
                                 <input id="checkrule" class="form-check-input" type="checkbox" onchange="checkRule()"  >
                                 <label class="form-check-label" for="checkrule">
-                                        <a href="Rule.html" id="rule" target="_blank"  style="font-weight: bolder; font-size: larger;"> ยอมรับ ระเบียบการใช้สถานที่ </a>
+                                        <a href="Rule.html" id="rule" target="_blank"  > ยอมรับ ระเบียบการใช้สถานที่ </a>
                                         <input type="hidden" id="Rule_">
                                 </label>
                               </div>
@@ -306,10 +306,10 @@
                       </form>
     <!------------------------------------------------------------------Submit---------------------------------------------------------------------------------->
     <div class="row">
-            <div class="column" >
-                    <button onclick="Submit()" class="btn btn-lg btn-success" style="margin-top: 30px; margin-bottom: 30px; margin-left: 100px;" id="but" data-toggle="modal" data-target="#Info_modal" >Submit</button>
+            <div class="col-md-4" >
+                    <button onclick="Submit()" class="btn btn-lg btn-success"  id="but" data-toggle="modal" data-target="#Info_modal" >Submit</button>
             </div>
-            <div class="column">
+            <div class="col-md-4">
                     <div id="alert" class="alert alert-danger collapse" style="margin-left: 20px; margin-top: 50px; margin-bottom: 30px;">
                             <a id="Close" onclick="Close('#alert')" class="close"  aria-label="close">&times;</a>
                             <div><strong>คำเตือน!</strong>
@@ -405,13 +405,13 @@
     .text{
         font-size: larger;
         }
-  #Profile{
-        margin-top: 20px;
-        margin-left: 40px;
-        padding-bottom: 40px;
+        #Profile{
+        margin-top: 20%;
+        margin-left: 15%;
+        padding-bottom: 10%;
         font-size: larger;
         color: rgb(72, 87, 114);
-    }
+    }  
     .d-block{
         height: 500px;
     }
@@ -447,90 +447,93 @@
         display: block;
         position: relative;
     }
-    #Menu{
-        background-color: rgb(248, 198, 106);
-        position: fixed;
-        left: 0px;
-        height: 100vh;
-        width: 300px;
-
-    }
-    .T{
-        text-align: center;
-        font-size: large;
-        color:rgb(97, 97, 97);
-
-    }
-    .T:hover{
-        opacity: 0.5;
-        color: black;
-    }   
-    .M{
+        .container{
+            display: block;
+            position: relative;
+        }
+        #Menu{
+            background-color: rgb(248, 198, 106);
+            position: fixed;
+            left: 0px;
+            height: 100%;
+            width: 23%;
+        }
+        .T{
+            text-align: center;
+            font-size: large;
+            color:rgb(97, 97, 97);
+    
+        }
+        .T:hover{
+            opacity: 0.5;
+            color: black;
+        }   
+        .M{
+            
+            padding: 10%;
+        }
+        #Menu1{
+            margin-top: 13%;
+            font-weight: bold;
+            color:bisque;
+        }
+        #Menu2{
+            margin-top: 10%;
+            font-weight: bold;
+            color:bisque;
+        }
+        #Menu3{
+            margin-top: 10%;
+            font-weight: bold;
+            color:bisque;
+        }
+        #Menu4{
+            margin-top: 10%;
+            font-weight: bold;
+            color:bisque;
+        }
         
-        padding: 20px;
-    }
-    #Menu1{
-        margin-top: 25px;
-        font-weight: bold;
-        color:bisque;
-    }
-    #Menu2{
-        margin-top: 40px;
-        font-weight: bold;
-        color:bisque;
-    }
-    #Menu3{
-        margin-top: 40px;
-        font-weight: bold;
-        color:bisque;
-    }
-    #Menu4{
-        margin-top: 40px;
-        font-weight: bold;
-        color:bisque;
-    }
-    
-    #Name{
-        margin-top:40px;
-    }
-    #signout{
-        margin-top: 20px;
-        margin-left: 40px;
-        padding-bottom: 40px;
-        font-size: larger;
-        color: rgb(141, 141, 141);
-    }
-    #logo{
-        position: absolute;
-        bottom: 0px;
-        height: 90px;
-        width: 250px;
-        transition: transform .2s;
-    }
-    #logo:hover{
-        transform: scale(1.1);
-    }
-    
-    #T3{
-        text-align: center;
-        font-size: large;
-        background-color: rgba(66, 66, 66, 0.295);
-        color: rgb(53, 53, 53);
-    }
-    #T3:hover{
-        opacity: 0.5;
-        color: black;
-    }
+        #Name{
+            margin-top:13%;
+        }
+        #signout{
+            margin-top: 10%;
+            margin-left: 10%;
+            padding-bottom: 10%;
+            font-size: larger;
+            color: rgb(141, 141, 141);
+        }
+        #logo{
+            position: absolute;
+            bottom: 0px;
+            height: 15%;
+            width: 80%;
+            transition: transform .2s;
+        }
+        #logo:hover{
+            transform: scale(1.1);
+        }
+        
+        #T3{
+            text-align: center;
+            font-size: large;
+            background-color: rgba(66, 66, 66, 0.295);
+            color: rgb(53, 53, 53);
+        }
+        #T3:hover{
+            opacity: 0.5;
+            color: black;
+        }
     #form{
         position: relative;     
-        margin-left: 295px;
-        width: 78%;
+        margin-left: 23%;
+        width: 77%;
         height:auto;
         font-weight: bold;
         right: 0;
-        padding-top:50px ;
-        padding-left:30px;
-        padding-right: 30px;
+        padding-top:5% ;
+        padding-left:5%;
+        padding-right: 11%;
         background-color:rgba(240, 239, 239, 0.63);
     }
 </style>
