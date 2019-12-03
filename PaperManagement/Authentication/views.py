@@ -132,12 +132,15 @@ def send_request (request):
     context['Major'] = user_profile.user_stFaculty.faculty_name
     
     if request.method == "POST":
-        
-        place = Place.objects.get(place_name=request.POST['Place_'])
+        #advisor_name = request.POST['advisor'].split()
+        #advisor = User.objects.get(first_name = advisor_name[0],last_name = advisor_name[1])
+        advisor = user
+        place = Place.objects.get(place_name=request.POST['Sel'])
         requestor = user
         form_type = FormType.objects.get(pk=1)
         tel = User_Profile.objects.get (user=requestor).user_tel
-        form = AllForm.objects.create(form_type = form_type , requestor = requestor , advisor = requestor , request_tel = tel )
+        form = AllForm.objects.create(form_type = form_type , requestor = requestor , advisor = advisor , request_tel = tel )
+        detail_form = Bookplace_form.objects.create(form=form,)
         
 
     return render(request,'form/From_place_V2.html',context)

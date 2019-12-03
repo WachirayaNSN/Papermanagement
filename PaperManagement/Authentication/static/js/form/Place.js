@@ -1,18 +1,17 @@
 
 var Rule = document.getElementById('checkrule').value;
 var reason = document.getElementById('Reason').value
-var Place = document.getElementById('Sel')
+var Place = document.getElementById('Sel').value
 var Time_b = document.getElementById('Time_Before').value
 var Time_a = document.getElementById('Time_After').value
 var Date_before = document.getElementById('date_before').value
 var File = document.getElementById('File').value
 var Date_after = document.getElementById('date_after').value
 var fileList = document.getElementById('File').file;
-var Time_be = document.getElementById('Time_be').value;
-var Time_af = document.getElementById('Time_af').value;
+
+
 
 var Reason_Data = document.getElementById('Reason_').value;
-var Place_Data = document.getElementById('Place_').value;
 var Elec_Data = document.getElementById('Elec_').value;
 
 var Rule_text = ''
@@ -20,6 +19,8 @@ var Reason_text = ''
 var Place_text = ''
 var Time_text = ''
 var Date_text = ''
+
+
 
 
 
@@ -63,12 +64,12 @@ function Select(){
 ////////////////////////////////////////////////////////////////////////
 function Submit(){
     
-    if(Rule == 'on'){
+    if(Rule != ture){
         Rule_text = '- โปรดกดยอมรับ ระเบียบการใช้สถานที่'
         document.getElementById('Rule_text').innerHTML = Rule_text 
         $('#alert').show('fade');
     }
-    else if(Rule == 'off'){
+    else if(Rule == ture){
         Rule_text = ''
         document.getElementById('Rule_text').innerHTML = Rule_text 
     }
@@ -118,51 +119,27 @@ function Submit(){
         event.stopPropagation();
         event.preventDefault();
     }
-    else if(document.getElementById('date_before').value != ''|| document.getElementById('date_after').value != ''&&Rule != 'on'&&document.getElementById('Reason').value != ''&&Place != ''&&document.getElementById('Time_Before').value != '' || document.getElementById('Time_After').value != ''){
-        
-        
-        Reason_Data = reason;
-        Place_Data = Val
-        Time_be = document.getElementById('Time_Before').value;
-        Time_af = document.getElementById('Time_After').value;
+    else if(document.getElementById('date_before').value != ''|| document.getElementById('date_after').value != ''&&Rule == true &&document.getElementById('Reason').value != ''&&Place != ''&&document.getElementById('Time_Before').value != '' || document.getElementById('Time_After').value != ''){
         document.getElementById('alert').hidden;
-        document.getElementById('Information').setAttribute('method','POST');
-        
+        Reason_Data = document.getElementById('Reason').value
+        document.getElementById('Information').setAttribute('method','POST'); 
+       //$("#Info_modal").modal("show");
     }
     else{event.preventDefault();}
     
-
+    
     /////////////////////////////////////////////////////////////////////////
     
 }
 /////////////////////////////////////////////////////////////////////////////////
-function checkrule(){
-    alert('!!')
-    if(Rule == 'on'){
-        Rule = 'off';
-    }
-    else if (Rule =='off'){
-        Rule = 'on';
-    }
-}
-function checkelec(){
-    if(Elec == 'on'){
-        Elec = 'off';
-    }
-    else if (Elec =='off'){
-        Elec = 'on';
-    }
-}
-function checkRule(){
-    if(Rule == 'on'){
-        Rule_text = ''
-        Rule = 'off';
-    }
-    else if (Rule =='off'){
+/*function Confirm(){
+    document.getElementById('alert').hidden;
+    Reason_Data = document.getElementById('Reason').value
+    document.getElementById('Information').setAttribute('method','POST');
+    //document.getElementById('Information').submit();
+}*/
 
-        Rule = 'on';
-    }
-}
+
 function Close(ID){
     $(ID).hide();
 }
@@ -171,9 +148,9 @@ function Info_close(){
     document.getElementById('Information').setAttribute('method','');
     event.preventDefault();
 }
-function Info_submit(){
+/*function Info_submit(){
     alert("คุณได้ยืนยันเอกสาร");
-}
+}*/
 document.getElementById('Reason_text').innerHTML += Reason_text 
 document.getElementById('Place_text').innerHTML += Place_text 
 document.getElementById('Time_text').innerHTML += Time_text 

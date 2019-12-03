@@ -1,7 +1,7 @@
 {
-    "python.pythonPath": "C:\\Users\\wisar\\Anaconda3\\envs\\env4myweb\\python.exe",
+    "python.pythonPath": "C:\\Users\\ASUS\\Anaconda3\\envs\\env4myweb\\python.exe",
     "python.linting.pylintEnabled": false,
-    "python.linting.mypyEnabled": false,
+    "python.linting.mypyEnabled": true,
     "python.linting.enabled": true,
-    "python.linting.prospectorEnabled": true
+    "python.linting.prospectorEnabled": false
 }
