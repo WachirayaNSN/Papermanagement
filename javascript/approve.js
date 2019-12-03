@@ -59,7 +59,7 @@ function Add(D){
         document.getElementById(ID).style.backgroundRepeat = "no-repeat"
     }
     else if(Role == 'Teacher'){
-        document.getElementById('A').innerHTML += '<a href="Info_Access.html" class="link " ><div class="card paper "id="paper'+ID+'" ><div id='+ID+' class="overlay approve '+Status+'"></div></div></a>'
+        document.getElementById('A').innerHTML += '<a href="Approve_Access.html" class="link " ><div class="card paper "id="paper'+ID+'" ><div id='+ID+' class="overlay approve '+Status+'"></div></div></a>'
         document.getElementById(ID).style.backgroundImage = Status;
         document.getElementById(ID).style.backgroundRepeat = "no-repeat"        
         document.getElementById(ID).style.backgroundColor = Color;
