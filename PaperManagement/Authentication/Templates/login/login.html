@@ -33,7 +33,9 @@
                                     <button id="Login"  type="submit" class="btn btn-warning  btn-lg ">Submit</button> 
                                     <a id="PIN" href = "{% url 'user_pin' %}" class="btn btn-primary  btn-sm">6 PIN</a>
                             </form>
-                                  <input type="hidden" id="response" name="response" value={{error}}>
+                                  {% try: 
+                                    <input type="hidden" id="response" name="response" value={{error}}>
+                                  %}
                             <a id="forget" href="Forget.html">Forget Password</a>
                                   
                     </div>

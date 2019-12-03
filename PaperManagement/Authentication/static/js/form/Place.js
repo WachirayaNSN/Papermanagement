@@ -1,5 +1,5 @@
 
-var Rule = document.getElementById('checkrule').value;
+
 var reason = document.getElementById('Reason').value
 var Place = document.getElementById('Sel').value
 var Time_b = document.getElementById('Time_Before').value
@@ -8,9 +8,10 @@ var Date_before = document.getElementById('date_before').value
 var File = document.getElementById('File').value
 var Date_after = document.getElementById('date_after').value
 var fileList = document.getElementById('File').file;
+var advisor = document.getElementById('Teacher').value;
 
 
-
+var advisor = document.getElementById('Teacher').value;
 var Reason_Data = document.getElementById('Reason_').value;
 var Elec_Data = document.getElementById('Elec_').value;
 
@@ -18,12 +19,15 @@ var Rule_text = ''
 var Reason_text = ''
 var Place_text = ''
 var Time_text = ''
+var advisor_text = ''
 var Date_text = ''
+var Rule = document.getElementById('rule_').value;
+var notify = document.getElementById('notify_').value;
 
 
-
-
-
+if(notify=='send'){
+    alert("คุณได้ยืนยันเอกสาร");
+}
 
 
 function Select(){
@@ -63,13 +67,18 @@ function Select(){
 }
 ////////////////////////////////////////////////////////////////////////
 function Submit(){
-    
-    if(Rule != ture){
+    if (confirm('Do you want to submit?')) {
+        yourformelement.submit();
+    } else {
+        return false;
+    }
+    /*
+    if(Rule != "on"){
         Rule_text = '- โปรดกดยอมรับ ระเบียบการใช้สถานที่'
         document.getElementById('Rule_text').innerHTML = Rule_text 
         $('#alert').show('fade');
     }
-    else if(Rule == ture){
+    else if(Rule == "on"){
         Rule_text = ''
         document.getElementById('Rule_text').innerHTML = Rule_text 
     }
@@ -93,6 +102,15 @@ function Submit(){
         Place_text = ''
         document.getElementById('Place_text').innerHTML = Place_text 
     }
+    if(advisor == ''){
+        advisor_text = '- โปรดเลือกอาจารย์ที่ปรึกษา'
+        document.getElementById('advisor_text').innerHTML = advisor_text 
+        $('#alert').show('fade');
+    }
+    else if(advisor != ''){
+        advisor_text = ''
+        document.getElementById('advisor_text').innerHTML = advisor_text 
+    }
     /////////////////////////////////////////////////////////////////////////
     if(document.getElementById('Time_Before').value == '' || document.getElementById('Time_After').value == ''){
         Time_text = '- โปรดเลือกเวลาในการใช้สถานที่'
@@ -114,31 +132,49 @@ function Submit(){
         document.getElementById('Date_text').innerHTML = Date_text
     }
     /////////////////////////////////////////////////////////////////////////
-    if(document.getElementById('date_before').value == ''||document.getElementById('date_after').value == ''&&Rule == 'on'&&document.getElementById('Reason').value == ''&&Place == ''&&document.getElementById('Time_Before').value == '' || document.getElementById('Time_After').value == ''){
+    if(document.getElementById('date_before').value == ''||document.getElementById('date_after').value == ''&&Rule != 'on'&&document.getElementById('Reason').value == ''&&Place == ''&&document.getElementById('Time_Before').value == '' || document.getElementById('Time_After').value == ''){
         alert('กรุณากรอกเอกสารให้ครบถ้วน');
         event.stopPropagation();
         event.preventDefault();
     }
-    else if(document.getElementById('date_before').value != ''|| document.getElementById('date_after').value != ''&&Rule == true &&document.getElementById('Reason').value != ''&&Place != ''&&document.getElementById('Time_Before').value != '' || document.getElementById('Time_After').value != ''){
-        document.getElementById('alert').hidden;
+    else if(document.getElementById('date_before').value != ''|| document.getElementById('date_after').value != ''&&Rule == "on" &&document.getElementById('Reason').value != ''&&Place != ''&&document.getElementById('Time_Before').value != '' || document.getElementById('Time_After').value != ''){
+       
         Reason_Data = document.getElementById('Reason').value
-        document.getElementById('Information').setAttribute('method','POST'); 
-       //$("#Info_modal").modal("show");
+        document.getElementById('alert').hidden;
+        document.getElementById('Information').setAttribute('method','POST');
+        
     }
     else{event.preventDefault();}
     
-    
+
     /////////////////////////////////////////////////////////////////////////
-    
+    */
 }
 /////////////////////////////////////////////////////////////////////////////////
-/*function Confirm(){
-    document.getElementById('alert').hidden;
-    Reason_Data = document.getElementById('Reason').value
-    document.getElementById('Information').setAttribute('method','POST');
-    //document.getElementById('Information').submit();
+/*function checkrule(){
+    alert('!!')
+    if(Rule == 'on'){
+        Rule = 'off';
+    }
+    else if (Rule =='off'){
+        Rule = 'on';
+    }
+}*/
+/*function checkelec(){
+    if(Elec == 'on'){
+        Elec = 'off';
+    }
+    else if (Elec =='off'){
+        Elec = 'on';
+    }
 }*/
 
+function checkRule(){
+    
+    Rule_text = ''
+    document.getElementById('rule_').value  = document.getElementById('checkrule').value
+    
+}
 
 function Close(ID){
     $(ID).hide();
@@ -148,10 +184,9 @@ function Info_close(){
     document.getElementById('Information').setAttribute('method','');
     event.preventDefault();
 }
-/*function Info_submit(){
-    alert("คุณได้ยืนยันเอกสาร");
-}*/
+
 document.getElementById('Reason_text').innerHTML += Reason_text 
 document.getElementById('Place_text').innerHTML += Place_text 
 document.getElementById('Time_text').innerHTML += Time_text 
 document.getElementById('Date_text').innerHTML += Date_text 
+

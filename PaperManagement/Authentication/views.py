@@ -9,6 +9,9 @@ from Authentication.models import *
 
 # Create your views here.
 
+def localhost (request):
+    return HttpResponseRedirect(reverse("user_login"))
+
 # Login Done
 def user_login(request):
     context = {}
@@ -112,7 +115,10 @@ def profile(request):
         context['stID'] = user_profile.user_stID
         context['Years'] = user_profile.user_stYear
         context['Level'] = user_profile.user_stLevel.level_name
-        context['Major'] = user_profile.user_stFaculty.faculty_name
+        if (user_profile.user_stFaculty == None):
+            context['Major'] = "-"
+        else :
+            context['Major'] = user_profile.user_stFaculty.faculty_name
     elif request.session['user_role'] in ["Approver","Officer","Admin"] :
         context['Position'] = user_profile.user_officerPosition.position_name
     return render(request,'Profile.html',context)
@@ -123,26 +129,31 @@ def send_request (request):
     user_profile = User_Profile.objects.get(user=user)
     context['stID'] = user_profile.user_stID
     context['Name'] = user.first_name +"  "+user.last_name
-    context['Tel'] = user_profile.user_tel
+    if (user_profile.user_tel == None):
+        context['Tel'] = "-"
+    else :
+        context['Tel'] = user_profile.user_tel
     context['Email'] = user.email
     context['Department'] = user_profile.user_Department.department_name
     context['stID'] = user_profile.user_stID
     context['Years'] = user_profile.user_stYear
     context['Level'] = user_profile.user_stLevel.level_name
-    context['Major'] = user_profile.user_stFaculty.faculty_name
-    
+    if (user_profile.user_stFaculty == None):
+        context['Major'] = "-"
+    else :
+        context['Major'] = user_profile.user_stFaculty.faculty_name
     if request.method == "POST":
-        #advisor_name = request.POST['advisor'].split()
-        #advisor = User.objects.get(first_name = advisor_name[0],last_name = advisor_name[1])
-        advisor = user
+        advisor_name = request.POST['Teacher'].split()
+        advisor = User.objects.get(first_name = advisor_name[0],last_name = advisor_name[1])
         place = Place.objects.get(place_name=request.POST['Sel'])
         requestor = user
         form_type = FormType.objects.get(pk=1)
         tel = User_Profile.objects.get (user=requestor).user_tel
         form = AllForm.objects.create(form_type = form_type , requestor = requestor , advisor = advisor , request_tel = tel )
-        detail_form = Bookplace_form.objects.create(form=form,)
-        
-
+        datetime_being = request.POST['date_before'] +','+request.POST['Time_Before']
+        datetime_end = request.POST['date_after'] +','+request.POST['Time_After']
+        detail_form = Bookplace_form.objects.create(form=form,place = place,book_datetime_being=datetime_being,book_datetime_end=datetime_end,air='yes')
+        context['notify'] = 'send'
     return render(request,'form/From_place_V2.html',context)
 
 
@@ -186,3 +197,8 @@ def approve_request_list (request):
     context['request_list'] = AllForm.objects.filter(advisor=request.session['user_id']) 
 
     return render(request,'request_list/Approve_Teacher.html',context)
+
+
+def type01_rule (request):
+    context={}
+    return render(request,'form/rule.html',context)

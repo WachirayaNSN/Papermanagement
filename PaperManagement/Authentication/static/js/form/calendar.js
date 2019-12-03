@@ -6,8 +6,6 @@ let selectYear = document.getElementById("year");
 let selectMonth = document.getElementById("month");
 let months = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฏาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
 let monthAndYear = document.getElementById("monthAndYear");
-currentYear+=543;
-
 showCalendar(currentMonth, currentYear);
 let Name_info = document.getElementById("Name_info");
 let Place_info = document.getElementById("Place_info");
@@ -20,12 +18,12 @@ let Status = document.getElementById("Status");
 
 
 
-    Name_info.innerHTML = 'B'+String(i);
-    Place_info.innerHTML = 'B';
-    Date_info.innerHTML = 'C';
-    Time_info.innerHTML = 'D';
-    Name_Teacher.innerHTML = 'E';
-    Status.innerHTML ='F';
+Name_info.innerHTML = 'B';// + String(i);
+Place_info.innerHTML = 'B';
+Date_info.innerHTML = 'C';
+Time_info.innerHTML = 'D';
+Name_Teacher.innerHTML = 'E';
+Status.innerHTML = 'F';
 
 function next() {
     currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
@@ -68,40 +66,39 @@ function showCalendar(month, year) {
         //creating individual cells, filing them up with data.
         for (let j = 0; j < 7; j++) {
             if (i === 0 && j < firstDay) {
-                break;
-            }
-            else if (date > daysInMonth) {
-                break;
-            }
-
-            else {
                 let cell = document.createElement("td");
-
+                let cellText = document.createTextNode("");
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+            } else if (date > daysInMonth) {
+                break;
+            } else {
+                let cell = document.createElement("td");
                 let cellText = document.createTextNode(date);
-                if (date === today.getDate() && year === today.getFullYear()+543 && month === today.getMonth()) {
+                if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     cell.classList.add("Today");
                     //C+=1;
                 } // color today's date
                 cell.classList.add('Day');
                 cell.appendChild(cellText);
-                for(var k=1;k<=S;k++){
+                for (var k = 1; k <= S; k++) {
                     let D = document.createElement("div");
                     let B = document.createElement("button");
-                    B.setAttribute("id","B"+String(k)+String(C)+String(currentMonth+1)+String(currentYear));
-                    B.setAttribute("type","button");
-                    B.setAttribute("class","btn ");
-                    B.setAttribute("onclick","Atest("+String(k)+String(C)+String(currentMonth+1)+String(currentYear)+")");
-                    B.setAttribute("data-toggle","modal");
-                    B.setAttribute("data-target",'#info');
-                    D.setAttribute("id",'A'+String(C));
+                    B.setAttribute("id", "B" + String(k) + String(C) + String(currentMonth + 1) + String(currentYear));
+                    B.setAttribute("type", "button");
+                    B.setAttribute("class", "btn ");
+                    B.setAttribute("onclick", "Atest(" + String(k) + String(C) + String(currentMonth + 1) + String(currentYear) + ")");
+                    B.setAttribute("data-toggle", "modal");
+                    B.setAttribute("data-target", '#info');
+                    D.setAttribute("id", 'A' + String(C));
                     D.appendChild(B);
                     cell.appendChild(D);
                     row.appendChild(cell);
-                    document.getElementById('CA').style.marginBottom = String(k*20)+'px';
-                    document.getElementById('DA').style.height= String((k*220)+650)+'px';
+                    document.getElementById('CA').style.marginBottom = String(k * 20) + 'px';
+                    document.getElementById('DA').style.height = String((k * 220) + 650) + 'px';
                 }
-                
-                C+=1;
+
+                C += 1;
                 date++;
             }
 
@@ -110,17 +107,19 @@ function showCalendar(month, year) {
         tbl.appendChild(row); // appending each row into calendar body.
     }
 
-    for(var i=1;i<=C;i++){
-       for(var k=1;k<=S;k++){
-        document.getElementById("B"+String(k)+String(i)+String(currentMonth+1)+String(currentYear)).innerHTML = String(k)+':'+"B"+String(i)+String(currentMonth+1)+String(currentYear);
-       }
+    for (var i = 1; i <= C; i++) {
+        for (var k = 1; k <= S; k++) {
+            if (document.getElementById("B" + String(k) + String(i) + String(currentMonth + 1) + String(currentYear)))
+                document.getElementById("B" + String(k) + String(i) + String(currentMonth + 1) + String(currentYear)).innerHTML = String(k) + ':' + "B" + String(i) + String(currentMonth + 1) + String(currentYear);
+        }
     }
 }
-function Atest(D){
-    document.getElementById('Name_info').innerHTML = 'ชื่อผู้รับผิดชอบ : '+String(D);
-    document.getElementById("Place_info").innerHTML ='สถานที่ : '+ String(D);
-    document.getElementById("Date_info").innerHTML = 'วันที่ : '+String(D);
-    document.getElementById("Time_info").innerHTML = 'เวลา : '+String(D);
-    document.getElementById("Name_Teacher_info").innerHTML = 'อาจารย์ที่ปรึกษา : '+String(D);
-    document.getElementById("Status").innerHTML = 'สถานะ : '+String(D);
+
+function Atest(D) {
+    document.getElementById('Name_info').innerHTML = 'ชื่อผู้รับผิดชอบ : ' + String(D);
+    document.getElementById("Place_info").innerHTML = 'สถานที่ : ' + String(D);
+    document.getElementById("Date_info").innerHTML = 'วันที่ : ' + String(D);
+    document.getElementById("Time_info").innerHTML = 'เวลา : ' + String(D);
+    document.getElementById("Name_Teacher_info").innerHTML = 'อาจารย์ที่ปรึกษา : ' + String(D);
+    document.getElementById("Status").innerHTML = 'สถานะ : ' + String(D);
 }

@@ -60,8 +60,9 @@ class Bookplace_form (models.Model):
     form = models.ForeignKey(AllForm,on_delete=models.CASCADE)
     place = models.ForeignKey(Place,on_delete=models.CASCADE)
     detail = models.TextField()
-    book_datetime_being =models.CharField(max_length=10, null=True, blank=True)
-    book_datetime_end =models.CharField(max_length=10, null=True, blank=True)
+    book_datetime_being =models.CharField(max_length=16, null=True, blank=True)
+    book_datetime_end =models.CharField(max_length=16, null=True, blank=True)
+    air =models.CharField(max_length=3, null=True, blank=True)
 
         
 class Step (models.Model):

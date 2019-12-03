@@ -17,6 +17,7 @@ from Authentication import views
 from django.urls import path
 
 urlpatterns = [
+    path('',views.localhost, name ='localhost'),
     path('login/',views.user_login, name ='user_login'),
     path('login/pin/',views.user_login_pin, name='user_pin'),
     path('logout/',views.user_logout, name ='user_logout'),
@@ -24,6 +25,7 @@ urlpatterns = [
     path('Home/Developer_team',views.team, name ='team'),
     path('Home/Profile',views.profile, name ='profile'),
     path('Home/form/formtype_01',views.send_request, name ='send_request'),
+    path('Home/form/formtype_01/rule',views.type01_rule, name ='rule'),
     path('Home/Request_list/send',views.Approve_User, name ='send_list'),
     path('Home/Request_list/approve',views.approve_request_list, name ='approve_list'),
     
