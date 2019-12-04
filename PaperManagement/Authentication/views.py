@@ -154,6 +154,9 @@ def send_request (request):
         datetime_end = request.POST['date_after'] +','+request.POST['Time_After']
         detail_form = Bookplace_form.objects.create(form=form,place = place,book_datetime_being=datetime_being,book_datetime_end=datetime_end,air='yes')
         context['notify'] = 'send'
+        step = Step.objects.get(step_name = 'advisor_approving', form_type = form_type)
+        state = State.objects.get(state_name = 'wait')
+        timestamp = ProcessTime.objects.create(form=form,step=step,state=state, approver=advisor)
     return render(request,'form/From_place_V2.html',context)
 
 
@@ -163,26 +166,31 @@ def Approve_User (request):
     context={}
     user_profile = User_Profile.objects.get(pk=request.session['user_id'])
     user = User.objects.get(pk=request.session['user_id'])
-    Place_Name=" "
-    TimeDate_Name =" "
-    Teacher_Name =" "
-    N_user_from = 0
+    form_id = []
+    Place_Name=[]
+    TimeDate_Name =[]
+    Teacher_Name =[]
+    state = []
+    form_Number = 0
     try:
-        user_from = AllForm.objects.get(requestor = user)
-        N_user_from = user_from.len    
-        for From in user_from:
-            Bookplace_form = Bookplace_form.get(form=From)
-            ProcessTime = ProcessTime.get(form=From)
-            Place_Name+=','+(Bookplace_form.place.place_name)
-            TimeDate_Name+=','+(ProcessTime.datetime)
-            Teacher_Name+=','+(From.advisor.first_name +"  "+From.advisor.last_name)
+        user_form = AllForm.objects.filter(requestor = user)
+        form_Number = user_form.len    
+        for Form in user_form:
+            form_id.append(Form.pk)
+            Bookplace_form = Bookplace_form.get(form=Form)
+            ProcessTime = ProcessTime.filter(form=Form)[0]
+            Place_Name.append(Bookplace_form.place.place_name)
+            TimeDate_Name.append(ProcessTime.datetime)
+            Teacher_Name.append(Form.advisor.first_name +"  "+ Form.advisor.last_name)
+            state.append(Bookplace_form.state.state_name)
     except:
         pass
-    context['N_user_from'] = N_user_from
+    context['form_id'] = form_id
+    context['form_Number'] = form_Number
     context['Place'] = Place_Name
     context['TimeDate'] = TimeDate_Name
     context['Teacher_Name'] = Teacher_Name
-    
+    context['state'] = state
     context['Name'] = user.first_name +"  "+user.last_name
     context['Role'] = request.session['user_role']
     return render(request,'request_list/Approve_User.html',context)

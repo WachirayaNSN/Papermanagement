@@ -64,22 +64,21 @@ class Bookplace_form (models.Model):
     book_datetime_end =models.CharField(max_length=16, null=True, blank=True)
     air =models.CharField(max_length=3, null=True, blank=True)
 
-        
+# advisor_approving , officer_approving      
 class Step (models.Model):
-    step_name = models.CharField(max_length=10)
+    step_name = models.CharField(max_length=20)
     form_type = models.ForeignKey(FormType,on_delete=models.CASCADE)
+    approver = models.ForeignKey(User,on_delete=models.CASCADE,null=True, blank=True)
 
-
+# wait , pass , denied
 class State (models.Model):
     state_name = models.CharField(max_length=10)
+    
 
 class ProcessTime (models.Model):
     form = models.ForeignKey(AllForm,on_delete=models.CASCADE)
     step = models.ForeignKey(Step,on_delete=models.CASCADE)
     state = models.ForeignKey(State,on_delete=models.CASCADE)
-    approver = models.ForeignKey(User,on_delete=models.CASCADE)
+    approver = models.ForeignKey(User,on_delete=models.CASCADE,null=True, blank=True)
     datetime = models.DateTimeField(auto_now_add=True) 
 
-class Deadline_step (models.Model):
-    step = models.ForeignKey(Step,on_delete=models.CASCADE)
-    SLA =models.TimeField()

@@ -10,10 +10,10 @@ var Name_ = 'ARM'
 var C = 0;
 var State = 'OK';
 var Role = document.getElementById('Role').value;
-var Place_Name = ((document.getElementById('Place').value).split(",")).shift();
-var DateTime_Name = ((document.getElementById('TimeDate').value).split(",")).shift();
-var Teacher_Name = ((document.getElementById('Teacher_Name').value).split(",")).shift();
-var N_user_from = int(document.getElementById('N_user_from'))
+var Place_Name = ['AAA','BBB','CCC','DDD'];
+var Time_Name = ['AAA','BBB','CCC','DDD'];
+var Date_Name = ['AAA','BBB','CCC','DDD'];
+var Teacher_Name = ['AAA','BBB','CCC','DDD' ];
 
 //$('#A').html('<a href="Info_Approve.html" class="link"><div class="card" id="paper"><div id="A1" class="overlay approve">ไม่อนุมัติ</div></div></a>);
 let Name_use = document.createElement('div');
@@ -22,9 +22,7 @@ let Time_use = document.createElement('div');
 let Date_use = document.createElement('div');
 let Teacher_use = document.createElement('div');
 
-
-for(var i=1;i<=N_user_from;i++)
-    {
+for(var i=1;i<=3;i++){
     if(i==2){
         Add('NO');
 
@@ -39,7 +37,8 @@ for(var i=1;i<=N_user_from;i++)
     document.getElementById('paper'+String(i)).appendChild(Date_use);
     document.getElementById('paper'+String(i)).appendChild(Teacher_use);    
     document.getElementById('Place_use'+String(i)).innerHTML = 'สถานที่ : '+Place_Name[i-1];
-    document.getElementById('Time_use'+String(i)).innerHTML = 'วัน:เวลา : '+DateTime_Name[i-1];
+    document.getElementById('Time_use'+String(i)).innerHTML = 'เวลา : '+Time_Name[i-1];
+    document.getElementById('Date_use'+String(i)).innerHTML = 'วันที่ : '+Date_Name[i-1];
     document.getElementById('Teacher_use'+String(i)).innerHTML = 'อาจารย์ปรึกษา : '+Teacher_Name[i-1];
 }
 function Add(D){
@@ -60,10 +59,11 @@ function Add(D){
         document.getElementById(ID).style.backgroundRepeat = "no-repeat"
     }
     else if(Role == 'Teacher'){
-        document.getElementById('A').innerHTML += '<a href="Info_Access.html" class="link " ><div class="card paper "id="paper'+ID+'" ><div id='+ID+' class="overlay approve '+Status+'"></div></div></a>'
+        document.getElementById('A').innerHTML += '<a href="Approve_Access.html" class="link " ><div class="card paper "id="paper'+ID+'" ><div id='+ID+' class="overlay approve '+Status+'"></div></div></a>'
         document.getElementById(ID).style.backgroundImage = Status;
         document.getElementById(ID).style.backgroundRepeat = "no-repeat"        
         document.getElementById(ID).style.backgroundColor = Color;
     } 
     
 }
+

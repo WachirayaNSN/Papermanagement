@@ -498,7 +498,9 @@
         <!---------------------------------------------------------------------------------------------------------------------------------------------------->
 
         <input type="hidden" id="Role" value={{request.session.user_role}}>
+        {% if notify != None %}
         <input type="hidden" id="notify_" value={{notify}}>
+        {% endif %}
 
         </form>
         <script src="{% static 'js/home/Notification.js' %}"></script>

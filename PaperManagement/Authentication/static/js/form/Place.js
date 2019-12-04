@@ -184,9 +184,9 @@ function Info_close(){
     document.getElementById('Information').setAttribute('method','');
     event.preventDefault();
 }
-
+/*
 document.getElementById('Reason_text').innerHTML += Reason_text 
 document.getElementById('Place_text').innerHTML += Place_text 
 document.getElementById('Time_text').innerHTML += Time_text 
-document.getElementById('Date_text').innerHTML += Date_text 
+document.getElementById('Date_text').innerHTML += Date_text */
 

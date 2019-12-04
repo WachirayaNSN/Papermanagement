@@ -22,6 +22,7 @@
       <a id="Menu1" href="{% url 'home' %}" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >แบบฟอร์มเอกสาร</div></a>
       <a id="Menu1" href="{% url 'send_list' %}" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >เอกสารที่ส่ง</div><span class="badge badge-light" id="Count"></span></a>
       <div id="Hide"><a id="Menu3" href="{% url 'approve_list' %}" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >การพิจารณาเอกสาร</div><span class="badge badge-light" id="Count_T"></span></a></div>
+      <div id="Hide_Set"> <button id="Menu1" onclick="Menu4()" class="btn btn-outline-light btn-lg btn-block M"><div class="container T " >ตั้งค่าเอกสาร</div></button></div
   </div>
 
     <div id="from" >
@@ -31,7 +32,7 @@
             </div>
         </div>
     <input type = "hidden" id="Role" value={{Role}} >
-    <input type = "hidden" id="N_user_from" value={{N_user_from}} >
+    <input type = "hidden" id="form_Number" value={{form_Number}} >
     <input type = "hidden" id="Place" value= {{Place}} >
     <input type = "hidden" id="TimeDate" value={{TimeDate}} >
     <input type = "hidden" id="Teacher_Name" value = {{Teacher_Name}} >
